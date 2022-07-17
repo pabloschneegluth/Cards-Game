@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5vmin;
+  line-height: 1;
+}
+
+body {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  margin: 8vh auto 2vh;
+  max-width: 90vw;
+  background: #93b995;
+}
+
+button {
+  font: inherit;
+}
+
+ul {
+  padding: 0 2vw;
+  margin: 0;
+}
+
+.panel {
+  box-shadow: inset 0 0 0vmin 0.1vmin rgba(0, 0, 0, 0.8),
+    0 0 0.1vmin 0.1vmin rgba(0, 0, 0, 0.7);
+  background-color: #fff9e3;
+  padding: 1rem;
+}
+
+.header {
+  /* background is a yellow pastel color with nice padding */
+  display: flex;
+  background: #e9dfbb;
+  position: fixed;
+  font-size: 2.3vmin;
+  top: 0.7vh;
+  left: 0.3vw;
+  width: 15.5vw;
+  box-shadow: inset 0 0 0vmin 0.1vmin rgba(0, 0, 0, 0.8),
+    0 0 0.1vmin 0.1vmin rgba(0, 0, 0, 0.7);
+}
+
+.header a,
+.header span {
+  display: block;
+  line-height: 3.6vh;
+  height: 3.6vh;
+  padding: 0 0.5vw;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+.header a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.blog a {
+  display: block;
+  font-size: larger;
+  margin-top: 2vh;
+  margin-bottom: 0.1vh;
+  color: #6d6137;
+  text-decoration: none;
+}
+.blog a::before {
+  content: "» ";
+}
+.blog :first-child a {
+  margin-top: 0vh;
+}
+.blog a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+.post-package {
+  font-size: smaller;
+  background: #fff4cc;
+  margin-left: 0.2vw;
+  padding: 0 0.2vw;
+}
+.post-title {
+  font-size: 5vmin;
+  margin-bottom: 0;
+}
+
+.post-body {
+  max-width: 40rem;
+  font-size: 1.8vmin;
+  margin-top: 3.6vh;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.7);
+}
+.post-body :first-child {
+  margin-top: 0;
+}
+.post-body :last-child {
+  margin-bottom: 0;
+}
+
+.post-body div:has(table) {
+  overflow-x: auto;
+  margin: 1rem -0.95rem;
+}
+
+.post-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  overflow: hide;
+}
+
+.post-body table td,
+.post-body table th {
+  border: 1px solid #b8ac81;
+  padding: 0.2rem 0.5rem;
+}
+
+.post-body table td:first-child,
+.post-body table th:first-child {
+  border-left: none;
+}
+.post-body table td:last-child,
+.post-body table th:last-child {
+  border-right: none;
+}
+
+.post-body table tr:nth-child(even) {
+  background-color: #f8edc57d;
+}
+
+.post-body table tr:hover {
+  background-color: #93b99567;
+}
+
+.post-body table th {
+  text-align: left;
+  background-color: #e9dfbb;
+}
+
+.game-header {
+  display: flex;
+  flex-direction: row-reverse;
+  background: #e9dfbb;
+  position: fixed;
+  bottom: 0.7vh;
+  right: 0.3vw;
+  z-index: 99999;
+  box-shadow: inset 0 0 0vmin 0.1vmin rgba(0, 0, 0, 0.8),
+    0 0 0.1vmin 0.1vmin rgba(0, 0, 0, 0.7);
+}
+
+.game-header button {
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 0.5vh 1vw;
+  margin: 0vh 0vw;
+  height: 3.6vh;
+}
+
+.game-header button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.idea-sidebar {
+  position: fixed;
+  top: 5vh;
+  left: 0.3vw;
+  bottom: 37vh;
+  box-shadow: inset 0 0 0vmin 0.1vmin rgba(0, 0, 0, 0.8),
+    0 0 0.1vmin 0.1vmin rgba(0, 0, 0, 0.7);
+  background-color: #fff9e3;
+  width: 15.5vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0.4vh 0.3vw;
+  overflow-y: scroll;
+}
+
+.discard {
+  display: block;
+  background: #ff705510;
+  padding: 1.3vh 0.8vw;
+}
+.discard:hover {
+  background: #ff7055;
+}
+
+.idea {
+  /* background is a yellow pastel green with nice padding */
+  display: block;
+  background: #fff5cf;
+  padding: 0.9vh 0.4vw;
+  margin-top: 0.4vh;
+  cursor: pointer;
+  height: 3.2vh;
+  /* when dragged shows the contents */
+}
+.idea small {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.with-details > .details {
+  box-shadow: inset 0 0 0vmin 0.1vmin rgba(0, 0, 0, 0.8),
+    0 0 0.1vmin 0.1vmin rgba(0, 0, 0, 0.7);
+
+  position: fixed;
+  left: 0.3vw;
+  top: 63.6vh;
+  bottom: 0.7vh;
+  width: 15.5vw;
+
+  display: none;
+  background: inherit;
+  position: fixed;
+  padding: 1.3vh 0.8vw;
+  overflow: auto;
+}
+
+.with-details:hover > .details {
+  display: block;
+}
+
+.table {
+  /* background is a wood pastel purple with nice padding */
+  position: fixed;
+  top: 0.5vh;
+  left: 16.2vw;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0.8vw;
+}
+
+.stack {
+  position: relative;
+  background: #ede2da80;
+  padding: 0.8rem;
+  padding-bottom: 10.3rem;
+  width: 10.5rem;
+  min-height: 15rem;
+}
+
+.stack:hover {
+  background: #ede2da90;
+  cursor: pointer;
+}
+
+.card {
+  /* background is a wood pastel purple with nice padding */
+  background: #ede2da;
+  position: relative;
+  margin-bottom: -9.5rem;
+
+  width: 9rem;
+  height: 11rem;
+
+  box-shadow: inset 0 0 0vmin 0.1vmin rgba(0, 0, 0, 0.8),
+    0 0 0.1vmin 0.1vmin rgba(0, 0, 0, 0.7);
+
+  cursor: pointer;
+}
+.card:hover {
+  outline: 0.1rem solid #000;
+}
+.card.active {
+  outline: 0.2rem solid #fd6f55;
+}
+.card.has-progress {
+  margin-top: 0.5rem;
+}
+
+.card-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: #ffffff40;
+  padding: 0.2rem 0.5rem;
+}
+
+.card-progress {
+  position: absolute;
+  top: -1rem;
+  font-size: 61%;
+  padding: 0.1rem 0;
+  background: black;
+  color: white;
+  text-align: center;
+  left: 1rem;
+  right: 1rem;
+}
+
+.card.Food {
+  background-color: #eb9952;
+}
+.card.Villager {
+  background-color: #fbf5e0;
+}
+.card.Plant {
+  background-color: #a39f88;
+}
+.card.Idea {
+  background-color: #687fb9;
+}
+
+.card img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1rem;
+  width: 9rem;
+}

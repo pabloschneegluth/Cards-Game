@@ -1,0 +1,82 @@
+{
+  "name": "classroom--cards-game--2022",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.3",
+    "md5": "^2.3.0",
+    "open": "^8.4.0",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-freeze": "^0.1.7",
+    "remark-gfm": "^3.0.1",
+    "reselect": "^4.1.6",
+    "underscore": "^1.13.4",
+    "unist-util-visit": "^4.1.1",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "create-tests": "node src/system/create-tests.js",
+    "test-coverage": "node src/system/test-coverage.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">= 18.6.0"
+  },
+  "devDependencies": {
+    "@babel/code-frame": "^7.18.6",
+    "@babel/highlight": "^7.18.6",
+    "fast-levenshtein": "^3.0.0",
+    "jest-message-util": "^29.0.2"
+  },
+  "prettier": {
+    "trailingComma": "all"
+  },
+  "proxy": "http://localhost:8080",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/www/**/*.{js,jsx,ts,tsx}",
+      "!src/www/__test__"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/www/__test__",
+      "src/www/index.js",
+      "src/www/backend.js",
+      "src/www/reportWebVitals.js",
+      "src/www/blog/remarkTableResponsive.js"
+    ]
+  }
+}
