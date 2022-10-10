@@ -16,5 +16,5 @@ There are two initial types of cards:
 You can see them when you enter in the game for the first time.
 
  * Enter the game.
- * There should be 7 "coins" cards.
- * There should be 0 "points" cards.
+ * There should be 7 "Coins" cards.
+ * There should be 0 "Points" cards.
