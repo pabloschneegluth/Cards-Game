@@ -1,6 +1,5 @@
 ---
 writer: 6Q
-coder: drpicox
 package: game
 ---
 # coins and points
