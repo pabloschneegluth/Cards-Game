@@ -87,7 +87,7 @@ function makeContextMethod(post, method) {
   const { name, arguments: args, text } = method;
   const formalArguments = args.map(({ name, type }) => `${type} ${name}`);
   const methodSignature = `${name}(${formalArguments.join(", ")})`;
-  const closest = findClosestMethod(post, method);
+  const closest = findClosestMethod(post, method, true);
   const lowerName = name.toLowerCase();
 
   return [
