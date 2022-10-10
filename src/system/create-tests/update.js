@@ -9,6 +9,9 @@ const { registerPost } = require("./posts");
 const { writeOriginalCopy } = require("./writeOriginalCopy");
 const { debugPost } = require("./debugPost");
 
+const UPDATED = " Updated ";
+const CORRECT = " Correct ";
+const CREATED = " Created ";
 async function update(filePath) {
   const post = await readBlogPost(filePath);
 
@@ -29,9 +32,9 @@ async function update(filePath) {
     await writeJsContextFile(post);
   }
 
-  let action = chalk.inverse(" Updated ");
-  if (!post.hasCoder) action = chalk.yellowBright.inverse(" Skipped ");
-  if (contextWritten) action = chalk.greenBright.inverse(" Created ");
+  let action = chalk.inverse(UPDATED);
+  if (!post.hasCoder) action = chalk.yellowBright.inverse(CORRECT);
+  if (contextWritten) action = chalk.greenBright.inverse(CREATED);
 
   const stats = `(${post.contextMethods.length} methods, ${post.testCalls.length} calls)`;
 

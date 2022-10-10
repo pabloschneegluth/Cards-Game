@@ -15,8 +15,8 @@ function registerPost(post) {
 }
 exports.registerPost = registerPost;
 
-function findClosestMethod(post, method) {
-  const usages = findOtherPostsMethodUsages(post);
+function findClosestMethod(post, method, implemented = false) {
+  const usages = findOtherPostsMethodUsages(post, implemented);
   const targetName = method.name;
 
   if (usages.length === 0) return null;
@@ -38,10 +38,12 @@ exports.findClosestMethod = findClosestMethod;
 
 let memoizedPost = null;
 let memoizedResult = null;
-function findOtherPostsMethodUsages(post) {
+function findOtherPostsMethodUsages(post, implemented) {
   if (memoizedPost === post) return memoizedResult;
   let posts = findOtherPosts(post);
   posts = posts.slice().sort().reverse();
+  if (implemented) posts = posts.filter((p) => p?.frontmatter?.values?.coder);
+
   const usages = {};
   posts.forEach((post) => {
     post.contextMethods.forEach((method) => {
