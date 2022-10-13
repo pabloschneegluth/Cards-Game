@@ -1,6 +1,6 @@
 ---
 writer: PFernandezTorres
-package: buildings
+package: building
 ---
 # Wood House
 
