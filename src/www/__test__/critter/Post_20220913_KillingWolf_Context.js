@@ -26,7 +26,7 @@ export class Post_20220913_KillingWolf_Context {
     await waitForEndMoon();
   }
 
-  async thereShouldBeNSCards(expected, s1) {
+  async thereShouldBeNSCards(count, cardName) {
     // text:  * There should be 0 "Wolf" cards.
     // code: await this.thereShouldBeNSCards(0, "Wolf")
     // hint: Post_20220725_IdeasHaveLevels_Context.thereShouldBeNSCards
