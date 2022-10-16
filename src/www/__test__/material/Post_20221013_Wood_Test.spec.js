@@ -10,7 +10,7 @@ import { Post_20221013_Wood_Context } from "./Post_20221013_Wood_Context";
 test("2022-10-13_wood.md", async () => {
   await runBeforeTestStarts(
     "2022-10-13_wood",
-    "56a2ead165aadb240365e58fa21ddcb9"
+    "1967b7c683917c39434f841f7204f193"
   );
 
   const context = new Post_20221013_Wood_Context();
@@ -24,7 +24,7 @@ test("2022-10-13_wood.md", async () => {
     1,
     "Villager"
   ); //         // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
-  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0); //                             // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                             // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Wood"); //                                          // * The "Woods Stroll Idea" may create a "Wood" card.
   await context.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(
     "Wood",

@@ -1,4 +1,4 @@
-package com.drpicox.game.materials;
+package com.drpicox.game.material;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +23,13 @@ public class Post_20221013_Wood_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-13_wood", "56a2ead165aadb240365e58fa21ddcb9");
+        testUtils.runBeforeTestStarts("2022-10-13_wood", "1967b7c683917c39434f841f7204f193");
         context.beforeTest();
 
         // # Wood                                                                                          // # Wood
         // ### Finding more things in the woods                                                            // ### Finding more things in the woods
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");         // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
-        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0);                             // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                             // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Wood");                                          // * The "Woods Stroll Idea" may create a "Wood" card.
         context.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard("Wood", "Woods Stroll Idea");           // * Given that the odds are that we will get a "Wood" card from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                       // * End the current moon.
