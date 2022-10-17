@@ -10,13 +10,14 @@ import { Post_20220913_KillingWolf_Context } from "./Post_20220913_KillingWolf_C
 test("2022-09-13_killing_wolf.md", async () => {
   await runBeforeTestStarts(
     "2022-09-13_killing_wolf",
-    "b38c5b852bc8eea8e5d6070067155789"
+
+    "0305cf01484d35c632fa63fcbc0fbd3f"
   );
 
   const context = new Post_20220913_KillingWolf_Context();
   await context.beforeTest();
 
-  // # Killing Wolf!                                   // # Killing Wolf!
+  // # Killing Wolf                                    // # Killing Wolf
 
   // ## How to kill a wolf?                            // ## How to kill a wolf?
   await context.givenThereAreNSCards(1, "Militia"); // // * Given there are 1 "Militia" cards.

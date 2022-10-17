@@ -23,10 +23,10 @@ public class Post_20220913_KillingWolf_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-09-13_killing_wolf", "b38c5b852bc8eea8e5d6070067155789");
+        testUtils.runBeforeTestStarts("2022-09-13_killing_wolf", "0305cf01484d35c632fa63fcbc0fbd3f");
         context.beforeTest();
 
-        // # Killing Wolf!                          // # Killing Wolf!
+        // # Killing Wolf                           // # Killing Wolf
 
         // ## How to kill a wolf?                   // ## How to kill a wolf?
         context.givenThereAreNSCards(1, "Militia"); // * Given there are 1 "Militia" cards.
