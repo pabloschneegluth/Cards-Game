@@ -5,6 +5,7 @@ import com.drpicox.game.moon.EndMoonSettings;
 import com.drpicox.game.moon.EndMoonStep;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class EndMoonStep_200_MilitiaKillWolf implements EndMoonStep {
     private final CardService cardService;
