@@ -51,3 +51,4 @@ yarn-error.log*
 # production
 /build
 
+.vscode/settings.json
