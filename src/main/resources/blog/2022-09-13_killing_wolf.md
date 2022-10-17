@@ -3,6 +3,7 @@ writer: marcserranog
 coder: 99riospol
 package: critter
 ---
+
 # Killing Wolf
 
 Unfortunatly in the village you can find

@@ -1,4 +1,4 @@
-package com.drpicox.game.materials;
+package com.drpicox.game.material;
 
 import com.drpicox.game.card.GivenStackService;
 import com.drpicox.game.card.api.StackListDTO;
