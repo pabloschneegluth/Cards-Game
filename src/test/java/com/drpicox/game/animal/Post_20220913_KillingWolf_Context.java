@@ -1,4 +1,4 @@
-package com.drpicox.game.critter;
+package com.drpicox.game.animal;
 
 import org.springframework.stereotype.Component;
 

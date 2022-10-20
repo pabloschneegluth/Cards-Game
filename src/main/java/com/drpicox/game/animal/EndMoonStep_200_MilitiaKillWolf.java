@@ -1,4 +1,4 @@
-package com.drpicox.game.critter;
+package com.drpicox.game.animal;
 
 import com.drpicox.game.card.CardService;
 import com.drpicox.game.moon.EndMoonSettings;
