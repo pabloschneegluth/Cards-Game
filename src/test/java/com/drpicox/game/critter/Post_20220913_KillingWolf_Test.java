@@ -23,7 +23,7 @@ public class Post_20220913_KillingWolf_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-09-13_killing_wolf", "0305cf01484d35c632fa63fcbc0fbd3f");
+        testUtils.runBeforeTestStarts("2022-09-13_killing_wolf", "c6fa9ec8ca7a618bbe5bbc0a7b0de71e");
         context.beforeTest();
 
         // # Killing Wolf                           // # Killing Wolf
