@@ -1,0 +1,120 @@
+[33mcommit 246060aff7afe749a1c04bbc3a590960fb6ed5d7[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/2022-10-13_gold[m[33m, [m[1;31morigin/feature/2022-10-13_gold[m[33m)[m
+Author: PolRC <prios@edu.tecnocampus.cat>
+Date:   Sun Oct 16 15:59:20 2022 +0200
+
+    Post FE Gold ended
+
+[33mcommit acb336478daccb74ef703ade99aeb9750bb5e680[m
+Author: PolRC <prios@edu.tecnocampus.cat>
+Date:   Sun Oct 16 15:44:44 2022 +0200
+
+    ended FE Post_Gold
+
+[33mcommit 9950fc045830438b80d790165d4e1a95d74d3559[m
+Author: marcserranog <91466710+marcserranog@users.noreply.github.com>
+Date:   Sun Oct 16 15:08:29 2022 +0200
+
+    BackEnd Implemented
+
+[33mcommit 390bb03665da6f254fd8d29a91f60c390338156e[m
+Author: marcserranog <91466710+marcserranog@users.noreply.github.com>
+Date:   Sat Oct 15 15:09:21 2022 +0200
+
+    BackEnd Implemented
+
+[33mcommit 4fce50129ffe08e13ab77ad89d1b77a7b4228941[m
+Author: marcserranog <91466710+marcserranog@users.noreply.github.com>
+Date:   Sat Oct 15 14:45:35 2022 +0200
+
+    Gold
+
+[33mcommit 88da238ba589f080cb136abaafd40b0f580343e2[m
+Author: PolRC <prios@edu.tecnocampus.cat>
+Date:   Thu Oct 13 20:54:18 2022 +0200
+
+    Post FE 2022-10-13_gold ENDED
+
+[33mcommit b73556ddbd1b83ecb38879aa4c2d03fe338d1451[m
+Author: PolRC <prios@edu.tecnocampus.cat>
+Date:   Thu Oct 13 20:53:52 2022 +0200
+
+    Post FE 2022-10-13_gold ENDED
+
+[33mcommit 0ac6db2b7f739396b43a4bb1069c178f3d2d7a1d[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 89f058c bdeab58
+Author: David Rodenas <david.rodenas+gt@gmail.com>
+Date:   Mon Oct 10 14:11:54 2022 +0200
+
+    Merge pull request #2 from TC-LS2/feature/improve-create-tests
+    
+    create-tests: improve hint completion and rename Skipped to Correct f…
+
+[33mcommit bdeab584fb55c319073a3dae151f3d37c7f4f2fe[m
+Merge: 72036f7 89f058c
+Author: David Rodenas <david.rodenas+gt@gmail.com>
+Date:   Mon Oct 10 14:07:22 2022 +0200
+
+    Merge branch 'main' into feature/improve-create-tests
+
+[33mcommit 72036f74a1182e727a19c13f5fe72a1d1b78d40b[m
+Author: David Rodenas <david.rodenas+gt@gmail.com>
+Date:   Mon Oct 10 13:50:12 2022 +0200
+
+    create-tests: improve hint completion and rename Skipped to Correct feedback
+
+[33mcommit 89f058c701b80320a7be1bb45a6f14d62f07ccc3[m
+Merge: 3739dd2 14a8f06
+Author: Francesc Famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 11:43:37 2022 +0200
+
+    Merge pull request #1 from TC-LS2/posts_coinsandpoints_points
+    
+    writting two posts
+
+[33mcommit 14a8f0645e225ae625580e05335265fe2980cba3[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 11:40:43 2022 +0200
+
+    writting two posts
+
+[33mcommit ab65765a29571f6a549b599697cea1a39b25b01e[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 11:18:42 2022 +0200
+
+    writting two posts
+
+[33mcommit 507e8c5c86c932d3728deee9b57b366b976a8f74[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 10:54:40 2022 +0200
+
+    writting two posts
+
+[33mcommit 65aa1fa323e863a6b05ceaf7c0f26ec9f7866300[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 10:42:55 2022 +0200
+
+    writting two posts
+
+[33mcommit 67b17747e83eac877baa5740d6cd577ea2ec9a25[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 10:39:32 2022 +0200
+
+     writting two posts
+
+[33mcommit 17442fc554dd28cd4212ffb32fc28f686b4c641b[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 10:36:16 2022 +0200
+
+     writting two posts
+
+[33mcommit 96832dd37b8eca1e476aa21c76fd54116c6a6b7f[m
+Author: francesc famadas <kiski97@gmail.com>
+Date:   Mon Oct 10 10:33:31 2022 +0200
+
+    writting two posts
+
+[33mcommit 3739dd2583bdf98f195537e60d5cd9a18a7e8bdd[m
+Author: David Rodenas <david.rodenas+gt@gmail.com>
+Date:   Sun Jul 17 23:01:40 2022 +0200
+
+    Initial commit
