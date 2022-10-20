@@ -1,6 +1,6 @@
 ---
 writer: 6Q
-package: buildings
+package: building
 ---
 # warehouse
 

@@ -1,7 +1,7 @@
 ---
 writer: marcserranog
 coder: 99riospol
-package: critter
+package: animal
 ---
 
 # Killing Wolf
