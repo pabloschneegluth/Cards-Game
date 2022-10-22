@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ClassroomCardsGame2022Application<game22>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.drpicox.game.ClassroomCardsGame2022Application",
+      "projectName": "game22",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

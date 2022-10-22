@@ -1,4 +1,4 @@
-package com.drpicox.game.materials;
+package com.drpicox.game.material;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class Post_20221013_Wood_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-13_wood", "012c14dcdbe6076d5a55588ca7c9ac4c");
+        testUtils.runBeforeTestStarts("2022-10-13_wood", "1967b7c683917c39434f841f7204f193");
         context.beforeTest();
 
         // # Wood                                                                                          // # Wood
