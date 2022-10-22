@@ -16,9 +16,12 @@ public class EndMoonStep_200_MilitiaKillWolf implements EndMoonStep {
     @Override
     public void execute(EndMoonSettings settings){
         var wolfs= cardService.findAllByName("Wolf");
-        for(var wolf: wolfs){
-            cardService.discardCard(wolf);
+        var militias = cardService.findAllByName("Militia");
+        if(militias.size() != 0){
+            for(var militia: militias){
+                for(var wolf: wolfs)
+                    cardService.discardCard(wolf);
+            }
         }
     }
-
 }
