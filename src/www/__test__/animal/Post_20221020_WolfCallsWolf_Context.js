@@ -2,15 +2,12 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { queryAllCardByName } from "../card/queries";
 
 export class Post_20221020_WolfCallsWolf_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenThereAreNSCards(n1, s1) {
@@ -19,10 +16,6 @@ export class Post_20221020_WolfCallsWolf_Context {
     // hint: Post_20220913_KillingWolf_Context.givenThereAreNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenThereAreNSCards(n1, s1) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -31,21 +24,15 @@ export class Post_20221020_WolfCallsWolf_Context {
     // hint: Post_20221013_Wood_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
-  async thereShouldBeNSCards(expected, s1) {
+  async thereShouldBeNSCards(count, cardName) {
     // text:  * There should be 2 "Wolf" cards.
     // code: await this.thereShouldBeNSCards(2, "Wolf")
     // hint: Post_20220913_KillingWolf_Context.thereShouldBeNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
-
-    throw new Error(
-      "The method thereShouldBeNSCards(expected, s1) is not implemented yet."
-    );
+    var actual = queryAllCardByName(mainView, cardName);
+    expect(actual).toHaveLength(count);
   }
 
   async afterTest() {
