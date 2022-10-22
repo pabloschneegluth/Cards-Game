@@ -1,23 +1,22 @@
-package com.drpicox.game.materials;
+package com.drpicox.game.material;
 
-import com.drpicox.game.card.GivenStackService;
-import com.drpicox.game.card.api.StackListDTO;
-import com.drpicox.game.idea.GivenIdeaService;
-import com.drpicox.game.util.RandomPickerServiceMock;
 import org.springframework.stereotype.Component;
-
-import static com.drpicox.game.idea.api.IdeaListDTO.getIdea;
-import static com.drpicox.game.util.Names.byName;
-import static com.drpicox.game.util.Names.byNames;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth8.assertThat;
 import com.drpicox.game.util.FrontendSimulator;
+import com.drpicox.game.util.RandomPickerServiceMock;
 import com.drpicox.game.game.GivenGameService;
 import com.drpicox.game.card.GivenCardService;
+import com.drpicox.game.card.GivenStackService;
 import com.drpicox.game.game.api.GameDTO;
+import com.drpicox.game.idea.GivenIdeaService;
+import static com.drpicox.game.util.Names.byNames;
+import static com.drpicox.game.util.Names.byName;
+import static com.drpicox.game.idea.api.IdeaListDTO.getIdea;
+import com.drpicox.game.card.api.StackListDTO;
 
 @Component
-public class Post_20221013_Wood_Context {
+public class Post_20221013_Stone_Context {
 
     private final FrontendSimulator frontendSimulator;
     private final GivenGameService givenGameService;
@@ -27,7 +26,7 @@ public class Post_20221013_Wood_Context {
     private final GivenStackService givenStackService;
     private final RandomPickerServiceMock randomPickerServiceMock;
 
-    Post_20221013_Wood_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService, GivenIdeaService givenIdeaService, GivenStackService givenStackService, RandomPickerServiceMock randomPickerServiceMock) {
+    Post_20221013_Stone_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService, GivenIdeaService givenIdeaService, GivenStackService givenStackService, RandomPickerServiceMock randomPickerServiceMock) {
         this.frontendSimulator = frontendSimulator;
         this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
@@ -62,27 +61,28 @@ public class Post_20221013_Wood_Context {
     public void givenThereIsTheSIdeaAtLevelNAndNXp(String ideaName, int level, int xp) {
         // text:  * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
         // code: this.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0)
-        // hint: Post_20220725_IdeasHaveLevels_Context.givenThereIsTheSIdeaAtLevelNAndNXp
+        // hint: Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context.givenThereIsTheSIdeaAtLevelNAndNXp
 
         // Add here what is given
         givenIdeaService.givenIdea(ideaName, level, xp);
+
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+
     }
 
     public void theSMayCreateASCard(String ideaName, String cardName) {
-        // text:  * The "Woods Stroll Idea" may create a "Wood" card.
-        // code: this.theSMayCreateASCard("Woods Stroll Idea", "Wood")
+        // text:  * The "Woods Stroll Idea" may create a "Stone" card.
+        // code: this.theSMayCreateASCard("Woods Stroll Idea", "Stone")
         // hint: Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context.theSMayCreateASCard
-
         var idea = getIdea(gameDTO, byName(ideaName));
         var rewards = idea.getCardRewards();
         assertThat(rewards).contains(cardName);
     }
 
     public void givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(String cardName, String ideaName) {
-        // text:  * Given that the odds are that we will get a "Wood" card from the "Woods Stroll Idea" card.
-        // code: this.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard("Wood", "Woods Stroll Idea")
+        // text:  * Given that the odds are that we will get a "Stone" card from the "Woods Stroll Idea" card.
+        // code: this.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard("Stone", "Woods Stroll Idea")
 
         // Add here what is given
         randomPickerServiceMock.mockPick(ideaName, cardName);
@@ -93,15 +93,14 @@ public class Post_20221013_Wood_Context {
     public void endTheCurrentMoon() {
         // text:  * End the current moon.
         // code: this.endTheCurrentMoon()
-        // hint: Post_20220725_IdeasHaveLevels_Context.endTheCurrentMoon
-
+        // hint: Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context.endTheCurrentMoon
         gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
     }
 
     public void thereShouldBeNStacksOfNSNSAndNSCards(int expected, int count1, String name1, int count2, String name2, int count3, String name3) {
-        // text:  * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Wood" cards.
-        // code: this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Wood")
-        // hint: Post_20220725_IdeasHaveLevels_Context.thereShouldBeNStacksOfNSNSAndNSCards
+        // text:  * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Stone" cards.
+        // code: this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Stone")
+        // hint: Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
         var stacks = StackListDTO.findAllStack(gameDTO,
             byNames(count1, name1).and(count2, name2).and(count3, name3)
