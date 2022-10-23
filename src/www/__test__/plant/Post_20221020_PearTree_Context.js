@@ -2,37 +2,30 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { getAllCardDigestByName } from "../card/queries";
 
 export class Post_20221020_PearTree_Context {
   async beforeTest() {
     // Do your setup here
-    await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
+    await waitForEnterTheGame()
   }
 
   async givenANewGame() {
     // text:  * Given a new game.
     // code: await this.givenANewGame()
-    // hint: Post_20220725_IdeasHaveLevels_Context.givenANewGame
+    // hint: Post_20220723_Ideas_Context.givenANewGame
 
     await waitForReloadGame();
-
-    throw new Error("The method givenANewGame() is not implemented yet.");
   }
 
   async givenThereIsTheSIdea(s1) {
     // text:  * Given there is the "Harvest Idea" idea.
     // code: await this.givenThereIsTheSIdea("Harvest Idea")
-    // hint: Post_20220725_IdeasHaveLevels_Context.givenThereIsTheSIdea
+    // hint: Post_20220723_Ideas_Context.givenThereIsTheSIdea
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereIsTheSIdea(s1) is not implemented yet."
-    );
+
   }
 
   async givenThereAreNSCards(n1, s1) {
@@ -42,31 +35,22 @@ export class Post_20221020_PearTree_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereAreNSCards(n1, s1) is not implemented yet."
-    );
   }
 
   async givenThereAreNStacksOfNSNSAndNSCards(n1, n2, s1, n3, s2, n4, s3) {
     // text:  * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
     // code: await this.givenThereAreNStacksOfNSNSAndNSCards(1, 1, "Harvest Idea", 1, "Villager", 1, "Pear Tree")
-    // hint: Post_20220725_IdeasHaveLevels_Context.givenThereAreNStacksOfNSNSAndNSCards
+    // hint: Post_20220723_Ideas_Context.givenThereAreNStacksOfNSNSAndNSCards
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereAreNStacksOfNSNSAndNSCards(n1, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
     // text:  * End the current moon.
     // code: await this.endTheCurrentMoon()
     // hint: Post_20221020_WolfCallsWolf_Context.endTheCurrentMoon
-
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSNSNSAndNSCards(
@@ -87,19 +71,40 @@ export class Post_20221020_PearTree_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3, n5, s4) is not implemented yet."
-    );
   }
 
-  async theSCardDescriptionShouldSaySIsS(s1, s2, s3) {
+  async theSCardDescriptionShouldSaySIsS(cardName, term, description) {
     // text:  * The "Pear Tree" card description should say "Fruit" is "Pear".
     // code: await this.theSCardDescriptionShouldSaySIsS("Pear Tree", "Fruit", "Pear")
-    // hint: Post_20220725_IdeasHaveLevels_Context.theSCardDescriptionShouldSaySIsS
+    // hint: Post_20220723_Ideas_Context.theSCardDescriptionShouldSaySIs
 
-    throw new Error(
-      "The method theSCardDescriptionShouldSaySIsS(s1, s2, s3) is not implemented yet."
-    );
+    const [card] = getAllCardDigestByName(mainView, cardName);
+    expect(card.terms).toMatchObject({ [term]: description });
+  }
+
+  async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
+    // text:  * Given there is the "Seed Idea" idea at level 2 and 0 XP.
+    // code: await this.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 2, 0)
+    // hint: Post_20221020_BuildIdea_Context.givenThereIsTheSIdeaAtLevelNAndNXp
+
+    await waitForReloadGame()
+  }
+
+  async givenThereAreNStacksOfNSCards(n1, n2, s1) {
+    // text:  * Given there are 1 stacks of 5 "Berry" cards.
+    // code: await this.givenThereAreNStacksOfNSCards(1, 5, "Berry")
+    // hint: Post_20220725_IdeasHaveLevels_Context.givenThereAreNStacksOfNSCards
+
+    await waitForReloadGame()
+  }
+
+  async theSCardShouldHaveNInSTag(cardName, count, tagName) {
+    // text:  * The "Pear" card should have 1 in "Seed" tag.
+    // code: await this.theSCardShouldHaveNInSTag("Pear", 1, "Seed")
+    // hint: Post_20220719_VillagersEatFood_Context.theSCardShouldHaveNInST
+
+    const [card] = getAllCardDigestByName(mainView, cardName);
+    expect(card.tags).toMatchObject({ [tagName]: count });
   }
 
   async afterTest() {
