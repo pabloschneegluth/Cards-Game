@@ -10,7 +10,7 @@ import { Post_20221020_PearTree_Context } from "./Post_20221020_PearTree_Context
 test("2022-10-20_pear_tree.md", async () => {
   await runBeforeTestStarts(
     "2022-10-20_pear_tree",
-    "108aecfae3f20120523e146cf98d0478"
+    "489f9899e9c27c3ea5f97e7f45ad1728"
   );
 
   const context = new Post_20221020_PearTree_Context();
@@ -18,18 +18,14 @@ test("2022-10-20_pear_tree.md", async () => {
 
   // # Pear Tree                                                                                                           // # Pear Tree
   // ### How to obtain Pears from a Pear Tree                                                                              // ### How to obtain Pears from a Pear Tree
-  await context.givenANewGame(); //                                                                                        // * Given a new game.
-  await context.givenThereIsTheSIdea("Harvest Idea"); //                                                                   // * Given there is the "Harvest Idea" idea.
-  await context.givenThereAreNSCards(1, "Pear"); //                                                                        // * Given there are 1 "Pear" cards.
-  await context.givenThereAreNStacksOfNSNSAndNSCards(
-    1,
+  await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
     "Harvest Idea",
     1,
     "Villager",
     1,
     "Pear Tree"
-  ); //              // * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
+  ); //              // * Given a new game with a stack of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
   await context.endTheCurrentMoon(); //                                                                                    // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -44,9 +40,8 @@ test("2022-10-20_pear_tree.md", async () => {
   ); // // * There should be 1 stacks of 1 "Harvest Idea", 1 "Villager", 1 "Pear Tree", and 2 "Pear" cards.
   await context.theSCardDescriptionShouldSaySIsS("Pear Tree", "Fruit", "Pear"); //                                         // * The "Pear Tree" card description should say "Fruit" is "Pear".
   // ### How to obtain the Pear Tree                                                                                       // ### How to obtain the Pear Tree
-  await context.givenANewGame(); //                                                                                        // * Given a new game.
+  await context.givenANewGameWithAStackOfNS(5, "Berry"); //                                                                // * Given a new game with a stack of 5 "Berry".
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 2, 0); //                                                  // * Given there is the "Seed Idea" idea at level 2 and 0 XP.
-  await context.givenThereAreNStacksOfNSCards(1, 5, "Berry"); //                                                           // * Given there are 1 stacks of 5 "Berry" cards.
   await context.givenThereAreNStacksOfNSNSAndNSCards(
     1,
     1,

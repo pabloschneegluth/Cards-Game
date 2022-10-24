@@ -2,12 +2,11 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
-import { getAllCardDigestByName } from "../card/queries";
+import {getAllCardDigestByName, queryAllCardByName} from "../card/queries";
 
 export class Post_20221020_PearTree_Context {
   async beforeTest() {
     // Do your setup here
-    await waitForEnterTheGame()
   }
 
   async givenANewGame() {
@@ -109,5 +108,10 @@ export class Post_20221020_PearTree_Context {
 
   async afterTest() {
     // Do your teardown here, if necessary
+  }
+
+  async thereShouldBeNSCards(number, pearTree) {
+    var cards = queryAllCardByName(mainView, pearTree);
+    expect(cards).toHaveLength(number);
   }
 }

@@ -23,22 +23,18 @@ public class Post_20221020_PearTree_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-20_pear_tree", "108aecfae3f20120523e146cf98d0478");
+        testUtils.runBeforeTestStarts("2022-10-20_pear_tree", "489f9899e9c27c3ea5f97e7f45ad1728");
         context.beforeTest();
 
         // # Pear Tree                                                                                                  // # Pear Tree
         // ### How to obtain Pears from a Pear Tree                                                                     // ### How to obtain Pears from a Pear Tree
-        context.givenANewGame();                                                                                        // * Given a new game.
-        context.givenThereIsTheSIdea("Harvest Idea");                                                                   // * Given there is the "Harvest Idea" idea.
-        context.givenThereAreNSCards(1, "Pear");                                                                        // * Given there are 1 "Pear" cards.
-        context.givenThereAreNStacksOfNSNSAndNSCards(1, 1, "Harvest Idea", 1, "Villager", 1, "Pear Tree");              // * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
+        context.givenANewGameWithAStackOfNSNSAndNSCards(1, "Harvest Idea", 1, "Villager", 1, "Pear Tree");              // * Given a new game with a stack of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
         context.endTheCurrentMoon();                                                                                    // * End the current moon.
         context.thereShouldBeNStacksOfNSNSNSAndNSCards(1, 1, "Harvest Idea", 1, "Villager", 1, "Pear Tree", 2, "Pear"); // * There should be 1 stacks of 1 "Harvest Idea", 1 "Villager", 1 "Pear Tree", and 2 "Pear" cards.
         context.theSCardDescriptionShouldSaySIsS("Pear Tree", "Fruit", "Pear");                                         // * The "Pear Tree" card description should say "Fruit" is "Pear".
         // ### How to obtain the Pear Tree                                                                              // ### How to obtain the Pear Tree
-        context.givenANewGame();                                                                                        // * Given a new game.
+        context.givenANewGameWithAStackOfNS(5, "Berry");                                                                // * Given a new game with a stack of 5 "Berry".
         context.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 2, 0);                                                  // * Given there is the "Seed Idea" idea at level 2 and 0 XP.
-        context.givenThereAreNStacksOfNSCards(1, 5, "Berry");                                                           // * Given there are 1 stacks of 5 "Berry" cards.
         context.givenThereAreNStacksOfNSNSAndNSCards(1, 1, "Seed Idea", 1, "Villager", 1, "Pear");                      // * Given there are 1 stacks of 1 "Seed Idea", 1 "Villager", and 1 "Pear" cards.
         context.givenThereAreNSCards(0, "Pear Tree");                                                                   // * Given there are 0 "Pear Tree" cards.
         context.theSCardShouldHaveNInSTag("Pear", 1, "Seed");                                                           // * The "Pear" card should have 1 in "Seed" tag.

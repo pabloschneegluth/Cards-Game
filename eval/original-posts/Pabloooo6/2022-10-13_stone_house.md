@@ -8,6 +8,7 @@ Is a building where the villager can sleep.
 
 ## How to buy a Stone House
 
- * Given a new game with a stack of 1 "Villager" cards and 4 "Stone" cards
+ * Given a new game with a stack of 1 "Build Idea" card, 1 "Villager" cards and 4 "Stone" cards
+ * The "Build Idea" may create a "Stone House" card.
  * End the current moon.
  * There should be 1 stacks of 1 "Stone House" cards

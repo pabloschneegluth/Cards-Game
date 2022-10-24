@@ -45,15 +45,15 @@ public class Post_20221020_PearTree_Context {
 
     public void beforeTest() throws Throwable {
         // Do your setup here
-        givenGameService.givenGame("empty");
-        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+        //givenGameService.givenGame("empty");
+        //gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
         // Please, verify that:
         // [ ] there are villagers, militia, ... that need berries? How many? How many moons?
         // [ ] is the empty game right for this post?
     }
 
-    public void givenANewGame() {
+    public void givenANewGame() throws IOException, URISyntaxException {
         // text:  * Given a new game.
         // code: this.givenANewGame()
         // hint: Post_20220725_IdeasHaveLevels_Context.givenANewGame
@@ -61,6 +61,7 @@ public class Post_20221020_PearTree_Context {
         // Add here what is given
 
         // And make sure that the game is in the right state (also for the frontend)
+        givenGameService.givenGame("empty");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
