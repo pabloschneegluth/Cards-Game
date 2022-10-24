@@ -8,13 +8,18 @@ import { getIdeaByName, getIdeaDigestByName } from "./queries";
 export class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context {
   async beforeTest() {
     // Do your setup here, if necessary
+    await waitForEnterTheGame();
+  }
+
+  async givenANewExample() {
+    await waitForReloadGame();
   }
 
   async enterTheGame() {
     // text:  * Enter the game.
     // code: await this.enterTheGame()
     // hint: Post_20220725_IdeasHaveLevels_Context.enterTheGame
-    await waitForEnterTheGame();
+    await waitForReloadGame();
   }
 
   async thereShouldBeTheSIdea(expectedName) {
@@ -40,6 +45,14 @@ export class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
 
     var idea = getIdeaDigestByName(mainView, ideaName);
     expect(idea.mayCreateCards).toContain(cardName);
+  }
+
+  async theSMayNotCreateASCard(ideaName, cardName) {
+    // text:  * The "Woods Stroll Idea" may create a "Berry" card.
+    // code: await this.theSMayCreateASCard("Woods Stroll Idea", "Berry")
+
+    var idea = getIdeaDigestByName(mainView, ideaName);
+    expect(idea.mayCreateCards).not.toContain(cardName);
   }
 
   async theSIdeaShouldRequireNCardWithAtLeastNInSTag(
