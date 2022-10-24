@@ -41,13 +41,25 @@ public class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
 
     public void beforeTest() throws Throwable {
         // Do your setup here, and change this contents, if necessary
-        givenGameService.givenGame("default");
+        givenGameService.givenGame("empty");
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
-    public void enterTheGame() {
+    public void givenANewExample() throws Throwable {
+        // NOTE: This method simulates beforeTest of a new test
+        //       It is used to separate examples in the same test,
+        //       which in your case should be different posts
+
+        givenGameService.givenGame("empty");
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+    }
+
+    public void enterTheGame() throws IOException, URISyntaxException {
         // text:  * Enter the game.
         // code: this.enterTheGame()
         // hint: Post_20220725_IdeasHaveLevels_Context.enterTheGame
+
+        givenGameService.givenGame("default");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 

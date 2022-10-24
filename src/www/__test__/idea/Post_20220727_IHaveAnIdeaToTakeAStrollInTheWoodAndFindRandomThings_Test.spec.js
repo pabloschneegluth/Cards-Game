@@ -10,7 +10,7 @@ import { Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Cont
 test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things.md", async () => {
   await runBeforeTestStarts(
     "2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things",
-    "7c519bed8fcf06800ccd76e688c8b105"
+    "4e6cbcdcee02cb846cbbbb62aec5041f"
   );
 
   const context =
@@ -20,9 +20,12 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   // # I have an idea to take a stroll in the wood and find random things                                         // # I have an idea to take a stroll in the wood and find random things
 
   // ## Walk in the woods idea                                                                                    // ## Walk in the woods idea
+  await context.givenANewExample(); //                                                                            // * Given a new example.
   await context.enterTheGame(); //                                                                                // * Enter the game.
   await context.thereShouldBeTheSIdea("Harvest Idea"); //                                                         // * There should be the "Harvest Idea" idea.
   await context.theSShouldHaveLevelNAndNXp("Woods Stroll Idea", 1, 0); //                                         // * The "Woods Stroll Idea" should have level 1 and 0 XP.
+  await context.givenANewExample(); //                                                                            // * Given a new example.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 1, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 1 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Berry"); //                                             // * The "Woods Stroll Idea" may create a "Berry" card.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Apple"); //                                             // * The "Woods Stroll Idea" may create a "Apple" card.
   await context.theSIdeaShouldRequireNCardWithAtLeastNInSTag(
@@ -37,6 +40,7 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   // #### | $CardName |                                                                                           // #### | $CardName |
   // #### |-----------|                                                                                           // #### |-----------|
   // #### | Berry     |                                                                                           // #### | Berry     |
+  await context.givenANewExample(); //                                                                            // * Given a new example.
   await context.givenANewGameWithAStackOfNSCardsAndNSCards(
     1,
     "Woods Stroll Idea",
@@ -61,6 +65,7 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   // #### | $CardName |                                                                                           // #### | $CardName |
   // #### |-----------|                                                                                           // #### |-----------|
   // #### | Apple     |                                                                                           // #### | Apple     |
+  await context.givenANewExample(); //                                                                            // * Given a new example.
   await context.givenANewGameWithAStackOfNSCardsAndNSCards(
     1,
     "Woods Stroll Idea",
@@ -82,10 +87,20 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
     "Apple"
   ); //    // * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Apple" cards.
   // ### In the level 1                                                                                           // ### In the level 1
+  await context.givenANewExample(); //                                                                            // * Given a new example.
+  await context.givenANewGameWithAStackOfNSCardsAndNSCards(
+    1,
+    "Woods Stroll Idea",
+    1,
+    "Villager"
+  ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 0); //                                      // * Given there is the "Harvest Idea" idea at level 1 and 0 XP.
+  await context.theSMayNotCreateASCard("Woods Stroll Idea", "Villager"); //                                       // * The "Woods Stroll Idea" may not create a "Villager" card.
   // ### In a higher level                                                                                        // ### In a higher level
   // #### | $CardName |                                                                                           // #### | $CardName |
   // #### |-----------|                                                                                           // #### |-----------|
   // #### | Berry     |                                                                                           // #### | Berry     |
+  await context.givenANewExample(); //                                                                            // * Given a new example.
   await context.givenANewGameWithAStackOfNSCardsAndNSCards(
     1,
     "Woods Stroll Idea",
@@ -94,6 +109,14 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Berry"); //                                             // * The "Woods Stroll Idea" may create a "Berry" card.
+  await context.givenANewExample(); //                                                                            // * Given a new example.
+  await context.givenANewGameWithAStackOfNSCardsAndNSCards(
+    1,
+    "Woods Stroll Idea",
+    1,
+    "Villager"
+  ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Berry",
     "Woods Stroll Idea"
@@ -112,6 +135,7 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   // #### | $CardName |                                                                                           // #### | $CardName |
   // #### |-----------|                                                                                           // #### |-----------|
   // #### | Apple     |                                                                                           // #### | Apple     |
+  await context.givenANewExample(); //                                                                            // * Given a new example.
   await context.givenANewGameWithAStackOfNSCardsAndNSCards(
     1,
     "Woods Stroll Idea",
@@ -120,6 +144,14 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Apple"); //                                             // * The "Woods Stroll Idea" may create a "Apple" card.
+  await context.givenANewExample(); //                                                                            // * Given a new example.
+  await context.givenANewGameWithAStackOfNSCardsAndNSCards(
+    1,
+    "Woods Stroll Idea",
+    1,
+    "Villager"
+  ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Apple",
     "Woods Stroll Idea"
@@ -138,6 +170,7 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   // #### | $CardName |                                                                                           // #### | $CardName |
   // #### |-----------|                                                                                           // #### |-----------|
   // #### | Villager  |                                                                                           // #### | Villager  |
+  await context.givenANewExample(); //                                                                            // * Given a new example.
   await context.givenANewGameWithAStackOfNSCardsAndNSCards(
     1,
     "Woods Stroll Idea",
@@ -146,6 +179,14 @@ test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_thi
   ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Villager"); //                                          // * The "Woods Stroll Idea" may create a "Villager" card.
+  await context.givenANewExample(); //                                                                            // * Given a new example.
+  await context.givenANewGameWithAStackOfNSCardsAndNSCards(
+    1,
+    "Woods Stroll Idea",
+    1,
+    "Villager"
+  ); //             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0); //                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Villager",
     "Woods Stroll Idea"
