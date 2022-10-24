@@ -10,7 +10,7 @@ import { Post_20220719_VillagersEatFood_Context } from "./Post_20220719_Villager
 test("2022-07-19_villagers_eat_food.md", async () => {
   await runBeforeTestStarts(
     "2022-07-19_villagers_eat_food",
-    "a574ebebe413ab14edcdd4ba1f736d27"
+    "9869885987d02408d5afe666704a1d63"
   );
 
   const context = new Post_20220719_VillagersEatFood_Context();
@@ -19,21 +19,32 @@ test("2022-07-19_villagers_eat_food.md", async () => {
   // # Villagers Eat Food!                                           // # Villagers Eat Food!
 
   // ## Berries are food                                             // ## Berries are food
-  await context.givenWeHaveEnteredIntoANewGame(); //                 // * Given we have entered into a new game.
+  await context.givenANewExample(); //                               // * Given a new example.
+  await context.givenThereAreNSCards(1, "Berry"); //                 // * Given there are 1 "Berry" cards.
   await context.theSCardShouldHaveNInSTag("Berry", 1, "Food"); //    // * The "Berry" card should have 1 in "Food" tag.
+  await context.givenANewExample(); //                               // * Given a new example.
+  await context.givenThereAreNSCards(1, "Villager"); //              // * Given there are 1 "Villager" cards.
   await context.theSCardShouldHaveNInSTag("Villager", 1, "Eats"); // // * The "Villager" card should have 1 in "Eats" tag.
 
   // ## Moons                                                        // ## Moons
+  await context.givenANewExample(); //                               // * Given a new example.
+  await context.givenThereAreNSCards(1, "Villager"); //              // * Given there are 1 "Villager" cards.
+  await context.givenThereAreNSCards(1, "Berry"); //                 // * Given there are 1 "Berry" cards.
   await context.endTheCurrentMoon(); //                              // * End the current moon.
   await context.thereShouldBeNSCards(0, "Berry"); //                 // * There should be 0 "Berry" cards.
   await context.thereShouldBeNSCards(1, "Villager"); //              // * There should be 1 "Villager" cards.
-  await context.thereShouldBeNSCards(1, "Berry Bush"); //            // * There should be 1 "Berry Bush" cards.
 
   // ## Starving                                                     // ## Starving
+  await context.givenANewExample(); //                               // * Given a new example.
+  await context.givenThereAreNSCards(0, "Berry"); //                 // * Given there are 0 "Berry" cards.
+  await context.givenThereAreNSCards(1, "Villager"); //              // * Given there are 1 "Villager" cards.
   await context.endTheCurrentMoon(); //                              // * End the current moon.
   await context.thereShouldBeNSCards(0, "Berry"); //                 // * There should be 0 "Berry" cards.
   await context.thereShouldBeNSCards(0, "Villager"); //              // * There should be 0 "Villager" cards.
-  await context.thereShouldBeNSCards(1, "Berry Bush"); //            // * There should be 1 "Berry Bush" cards.
+  await context.givenANewExample(); //                               // * Given a new example.
+  await context.givenThereAreNSCards(0, "Berry"); //                 // * Given there are 0 "Berry" cards.
+  await context.givenThereAreNSCards(1, "Villager"); //              // * Given there are 1 "Villager" cards.
+  await context.endTheCurrentMoon(); //                              // * End the current moon.
   await context.thereShouldBeNSCards(1, "Corpse"); //                // * There should be 1 "Corpse" cards.
 
   await context.afterTest();
