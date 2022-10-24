@@ -21,7 +21,7 @@ public class EndMoonStep_200_WolfCallsWolf implements EndMoonStep {
     public void execute(EndMoonSettings settings) {
         var wolfs = cardService.findAllByName("Wolf");
         if(wolfs.size() != 0 ){
-            cardFactory.makeCards(wolfs.size(), new CardFactorySettings("Wolf"));
+            cardFactory.makeCards(1, new CardFactorySettings("Wolf"));
         }
     }
 }
