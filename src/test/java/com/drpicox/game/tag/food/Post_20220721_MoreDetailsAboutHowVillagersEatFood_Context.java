@@ -5,6 +5,7 @@ import com.drpicox.game.card.api.CardListDTO;
 import com.drpicox.game.game.GameFactory;
 import com.drpicox.game.game.GameFactorySettings;
 import com.drpicox.game.game.GameService;
+import com.drpicox.game.game.GivenGameService;
 import org.springframework.stereotype.Component;
 
 import static com.drpicox.game.card.api.CardListDTO.findAllCard;
@@ -23,21 +24,28 @@ import java.net.URISyntaxException;
 public class Post_20220721_MoreDetailsAboutHowVillagersEatFood_Context {
 
     private final FrontendSimulator frontendSimulator;
-    private final GameService gameService;
-    private final GameFactory gameFactory;
+    private final GivenGameService givenGameService;
     private final GivenCardService givenCardService;
 
     private GameDTO gameDTO;
 
-    public Post_20220721_MoreDetailsAboutHowVillagersEatFood_Context(FrontendSimulator frontendSimulator, GameService gameService, GameFactory gameFactory, GivenCardService givenCardService) {
+    public Post_20220721_MoreDetailsAboutHowVillagersEatFood_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService) {
         this.frontendSimulator = frontendSimulator;
-        this.gameService = gameService;
-        this.gameFactory = gameFactory;
+        this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
     }
 
-    public void beforeTest() throws IOException, URISyntaxException {
-        gameFactory.makeGame(new GameFactorySettings());
+    public void beforeTest() throws Throwable {
+        givenGameService.givenGame("empty");
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+    }
+
+    public void givenANewExample() throws Throwable {
+        // NOTE: This method simulates beforeTest of a new test
+        //       It is used to separate examples in the same test,
+        //       which in your case should be different posts
+
+        givenGameService.givenGame("empty");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
