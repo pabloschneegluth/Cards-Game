@@ -16,19 +16,35 @@ export function BlogPage() {
     <div className="blog">
       <h1>Blog</h1>
 
+      <h2>Implemented</h2>
       <div className="panel">
-        {posts.map((post) => (
-          <BlogListItem key={post.id} post={post} />
-        ))}
+        {posts
+          .filter((post) => post.frontMatter.coder)
+          .map((post) => (
+            <BlogListItem key={post.id} post={post} />
+          ))}
+      </div>
+
+      <h2>Unimplemented</h2>
+      <div className="panel">
+        {posts
+          .filter((post) => !post.frontMatter.coder)
+          .map((post) => (
+            <BlogListItem
+              key={post.id}
+              post={post}
+              testId="unimplemented-post"
+            />
+          ))}
       </div>
     </div>
   );
 }
 
-function BlogListItem({ post }) {
+function BlogListItem({ post, testId = "post-list--item" }) {
   return (
     <div>
-      <Link to={`/blog/${post.id}`} data-testid="post-list--item">
+      <Link to={`/blog/${post.id}`} data-testid={testId}>
         {post.title}
       </Link>
       <small>
