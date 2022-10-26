@@ -23,16 +23,15 @@ public class Post_20221013_StoneHouse_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-13_stone_house", "8dc20c7970bb4e9fb0bcd4892749816f");
+        testUtils.runBeforeTestStarts("2022-10-13_stone_house", "01b41c689763ecbb7474da4cb3dfc435");
         context.beforeTest();
 
-        // # Stone House                                                                                       // # Stone House
+        // # Stone House                                                                                             // # Stone House
 
-        // ## How to build a Stone House                                                                       // ## How to build a Stone House
-        context.givenANewGameWithAStackOfNSCardsNSCardsAndNSCards(1, "Build Idea", 1, "Villager", 4, "Stone"); // * Given a new game with a stack of 1 "Build Idea" cards, 1 "Villager" cards and 4 "Stone" cards
-        context.endTheCurrentMoon();                                                                           // * End the current moon.
-        context.thereShouldBeNStacksOfNSCardsNSCards(1, 1, "Build Idea", 1, "Villager");                       // * There should be 1 stacks of 1 "Build Idea" cards, 1 "Villager" cards
-        context.thereShouldBeNStackOfNSCards(1, 1, "Stone House");                                             // * There should be 1 stack of 1 "Stone House" cards
+        // ## How to build a Stone House                                                                             // ## How to build a Stone House
+        context.givenANewGameWithAStackOfNSCardsNSCardsAndNSCards(1, "Build Idea", 1, "Villager", 4, "Stone");       // * Given a new game with a stack of 1 "Build Idea" cards, 1 "Villager" cards and 4 "Stone" cards
+        context.endTheCurrentMoon();                                                                                 // * End the current moon.
+        context.thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Stone House"); // * There should be 1 stacks of 1 "Build Idea" cards, 1 "Villager" cards and 1 "Stone House" cards
 
         context.afterTest();
         testUtils.runWhenTestSuccessful();

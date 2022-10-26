@@ -7,6 +7,7 @@ export class Post_20221013_StoneHouse_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
+
   }
 
   async givenANewGameWithAStackOfNSCardsNSCardsAndNSCards(
@@ -27,35 +28,27 @@ export class Post_20221013_StoneHouse_Context {
   async endTheCurrentMoon() {
     // text:  * End the current moon.
     // code: await this.endTheCurrentMoon()
-    // hint: Post_20221020_WolfCallsWolf_Context.endTheCurrentMoon
+    // hint: Post_20221024_Pickaxe_Context.endTheCurrentMoon
 
     await waitForEndMoon();
+
   }
 
-  // async thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(
-  //   expected,
-  //   n2,
-  //   s1,
-  //   n3,
-  //   s2,
-  //   n4,
-  //   s3
-  // ) {
-  //   // text:  * There should be 1 stacks of 1 "Build Idea" cards, 1 "Villager" cards and 1 "Stone House" cards
-  //   // code: await this.thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Stone House")
+  async thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(
+    expected,
+    n2,
+    s1,
+    n3,
+    s2,
+    n4,
+    s3
+  ) {
+    // text:  * There should be 1 stacks of 1 "Build Idea" cards, 1 "Villager" cards and 1 "Stone House" cards
+    // code: await this.thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Stone House")
 
-  //   var actual = expected; // FIXME
-  //   expect(actual).toEqual(expected);
-  // }
-
-  async thereShouldBeNStacksOfNSCardsNSCards(expected, numIdea, idea, numCard, card) {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
-  }
 
-  async thereShouldBeNStackOfNSCards(expected, numCard, card) {
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
   }
 
   async afterTest() {

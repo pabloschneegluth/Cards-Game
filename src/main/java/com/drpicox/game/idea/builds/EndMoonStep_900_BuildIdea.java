@@ -19,33 +19,60 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
     private final CardFactory cardFactory;
     private final StackService stackService;
     private final CardService cardService;
+    private final IdeaEndMoonStepExecutor ideaEndMoonStepExecutor;
 
-    public EndMoonStep_900_BuildIdea(CardFactory cardFactory,  StackService stackService, CardService cardService) {
+    public EndMoonStep_900_BuildIdea(CardFactory cardFactory,  StackService stackService, CardService cardService, IdeaEndMoonStepExecutor ideaEndMoonStepExecutor) {
         this.cardFactory = cardFactory;
         this.stackService = stackService;
         this.cardService = cardService;
+        this.ideaEndMoonStepExecutor = ideaEndMoonStepExecutor;
     }
 
     public void execute(EndMoonSettings settings) {
+        ideaEndMoonStepExecutor.execute(settings, IDEA_NAME, this::executeIdea);
+    }
+
+    private void executeIdea(IdeaEndMoonSettings settings) {
         var stacks = stackService.findAllStack();
 
         for (var stack : stacks) {
             var cards = stack.getCards();
-            createStoneHouse(cards);
+            createStoneHouse(cards, settings);
+            createPickAxe(cards, settings);
         }
     }
 
-    private void createStoneHouse(List<Card> cards) {
+    private void createStoneHouse(List<Card> cards, IdeaEndMoonSettings settings) {
         int countStone = 0;
         var stone = cardService.findAllByName("Stone");
+        var position = settings.getPosition();
+
         for (var card : cards) {
             if (card.getName().equalsIgnoreCase("Stone"))  {
                 countStone++;
             }
         }
         if (countStone == 4) {
-            cardFactory.makeCard(new CardFactorySettings("Stone House"));
+            cardFactory.makeCards(1, new CardFactorySettings("Stone House").withPosition(position));
             cardService.discardCards(stone);
+        }
+    }
+
+    private void createPickAxe(List<Card> cards, IdeaEndMoonSettings settings) {
+        int countMaterials = 0;
+        var iron = cardService.findAllByName("Iron");
+        var wood = cardService.findAllByName("Wood");
+        var position = settings.getPosition();
+
+        for (var card : cards) {
+            if (card.getName().equalsIgnoreCase("Iron") || card.getName().equalsIgnoreCase("Wood"))  {
+                countMaterials++;
+            }
+        }
+        if (countMaterials == 5) {
+            cardFactory.makeCards(1,new CardFactorySettings("Pickaxe").withPosition(position));
+            cardService.discardCards(wood);
+            cardService.discardCards(iron);
         }
     }
 }

@@ -56,6 +56,7 @@ public class Post_20221013_StoneHouse_Context {
         // hint: Post_20221020_BuildIdea_Context.givenANewGameWithAStackOfNSCardsNSCardAndNSCard
 
         // Add here what is given
+        givenIdeaService.givenIdea("Build Idea");
         givenStackService.givenStacks(1, byNames(n1, ideaCard).and(n2, card1).and(n3, card2));
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
@@ -74,16 +75,9 @@ public class Post_20221013_StoneHouse_Context {
         // Do your teardown here, if necessary
     }
 
-    public void thereShouldBeNStacksOfNSCardsNSCards(int expected, int numIdea, String idea, int numCard, String card) {
+    public void thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(int expected, int numIdea, String idea, int numCard, String card, int numCard2, String card2) {
         var stacks = StackListDTO.findAllStack(gameDTO,
-        byNames(numIdea, idea).and(numCard, card)
-    );
-    assertThat(stacks).hasSize(expected);
-    }
-
-    public void thereShouldBeNStackOfNSCards(int expected, int numCard, String card) {
-        var stacks = StackListDTO.findAllStack(gameDTO,
-        byNames(numCard, card)
+        byNames(numIdea, idea).and(numCard, card).and(numCard2, card2)
     );
     assertThat(stacks).hasSize(expected);
     }
