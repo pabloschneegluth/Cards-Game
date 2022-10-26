@@ -2,44 +2,17 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
-import {getAllCardDigestByName, queryAllCardByName} from "../card/queries";
 
 export class Post_20221020_PearTree_Context {
   async beforeTest() {
     // Do your setup here
-  }
-
-  async givenANewGame() {
-    // text:  * Given a new game.
-    // code: await this.givenANewGame()
-    // hint: Post_20220723_Ideas_Context.givenANewGame
-
-    await waitForReloadGame();
-  }
-
-  async givenThereIsTheSIdea(s1) {
-    // text:  * Given there is the "Harvest Idea" idea.
-    // code: await this.givenThereIsTheSIdea("Harvest Idea")
-    // hint: Post_20220723_Ideas_Context.givenThereIsTheSIdea
-
-    await waitForReloadGame();
-
+    await waitForEnterTheGame();
 
   }
 
-  async givenThereAreNSCards(n1, s1) {
-    // text:  * Given there are 1 "Pear" cards.
-    // code: await this.givenThereAreNSCards(1, "Pear")
-    // hint: Post_20221020_WolfCallsWolf_Context.givenThereAreNSCards
-
-    await waitForReloadGame();
-
-  }
-
-  async givenThereAreNStacksOfNSNSAndNSCards(n1, n2, s1, n3, s2, n4, s3) {
-    // text:  * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
-    // code: await this.givenThereAreNStacksOfNSNSAndNSCards(1, 1, "Harvest Idea", 1, "Villager", 1, "Pear Tree")
-    // hint: Post_20220723_Ideas_Context.givenThereAreNStacksOfNSNSAndNSCards
+  async givenANewGameWithAStackOfNSNSAndNSCards(n1, s1, n2, s2, n3, s3) {
+    // text:  * Given a new game with a stack of 1 "Harvest Idea", 1 "Villager", and 1 "Pear Tree" cards.
+    // code: await this.givenANewGameWithAStackOfNSNSAndNSCards(1, "Harvest Idea", 1, "Villager", 1, "Pear Tree")
 
     await waitForReloadGame();
 
@@ -48,8 +21,10 @@ export class Post_20221020_PearTree_Context {
   async endTheCurrentMoon() {
     // text:  * End the current moon.
     // code: await this.endTheCurrentMoon()
-    // hint: Post_20221020_WolfCallsWolf_Context.endTheCurrentMoon
+    // hint: Post_20221020_Pear_Context.endTheCurrentMoon
+
     await waitForEndMoon();
+
   }
 
   async thereShouldBeNStacksOfNSNSNSAndNSCards(
@@ -72,13 +47,20 @@ export class Post_20221020_PearTree_Context {
 
   }
 
-  async theSCardDescriptionShouldSaySIsS(cardName, term, description) {
+  async theSCardDescriptionShouldSaySIsS(s1, s2, s3) {
     // text:  * The "Pear Tree" card description should say "Fruit" is "Pear".
     // code: await this.theSCardDescriptionShouldSaySIsS("Pear Tree", "Fruit", "Pear")
-    // hint: Post_20220723_Ideas_Context.theSCardDescriptionShouldSaySIs
+    // hint: Post_20220725_IdeasHaveLevels_Context.theSCardDescriptionShouldSaySIsS
 
-    const [card] = getAllCardDigestByName(mainView, cardName);
-    expect(card.terms).toMatchObject({ [term]: description });
+
+  }
+
+  async givenANewGameWithAStackOfNS(n1, s1) {
+    // text:  * Given a new game with a stack of 5 "Berry".
+    // code: await this.givenANewGameWithAStackOfNS(5, "Berry")
+
+    await waitForReloadGame();
+
   }
 
   async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
@@ -86,32 +68,46 @@ export class Post_20221020_PearTree_Context {
     // code: await this.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 2, 0)
     // hint: Post_20221020_BuildIdea_Context.givenThereIsTheSIdeaAtLevelNAndNXp
 
-    await waitForReloadGame()
+    await waitForReloadGame();
+
   }
 
-  async givenThereAreNStacksOfNSCards(n1, n2, s1) {
-    // text:  * Given there are 1 stacks of 5 "Berry" cards.
-    // code: await this.givenThereAreNStacksOfNSCards(1, 5, "Berry")
-    // hint: Post_20220725_IdeasHaveLevels_Context.givenThereAreNStacksOfNSCards
+  async givenThereAreNStacksOfNSNSAndNSCards(n1, n2, s1, n3, s2, n4, s3) {
+    // text:  * Given there are 1 stacks of 1 "Seed Idea", 1 "Villager", and 1 "Pear" cards.
+    // code: await this.givenThereAreNStacksOfNSNSAndNSCards(1, 1, "Seed Idea", 1, "Villager", 1, "Pear")
+    // hint: Post_20220725_IdeasHaveLevels_Context.givenThereAreNStacksOfNSNSAndNSCards
 
-    await waitForReloadGame()
+    await waitForReloadGame();
+
   }
 
-  async theSCardShouldHaveNInSTag(cardName, count, tagName) {
+  async givenThereAreNSCards(n1, s1) {
+    // text:  * Given there are 0 "Pear Tree" cards.
+    // code: await this.givenThereAreNSCards(0, "Pear Tree")
+    // hint: Post_20221020_Pear_Context.givenThereAreNSCards
+
+    await waitForReloadGame();
+
+  }
+
+  async theSCardShouldHaveNInSTag(s1, n1, s2) {
     // text:  * The "Pear" card should have 1 in "Seed" tag.
     // code: await this.theSCardShouldHaveNInSTag("Pear", 1, "Seed")
-    // hint: Post_20220719_VillagersEatFood_Context.theSCardShouldHaveNInST
+    // hint: Post_20220725_IdeasHaveLevels_Context.theSCardShouldHaveNInSTag
 
-    const [card] = getAllCardDigestByName(mainView, cardName);
-    expect(card.tags).toMatchObject({ [tagName]: count });
+  }
+
+  async thereShouldBeNSCards(expected, s1) {
+    // text:  * There should be 1 "Pear Tree" cards.
+    // code: await this.thereShouldBeNSCards(1, "Pear Tree")
+    // hint: Post_20221020_Pear_Context.thereShouldBeNSCards
+
+    var actual = expected; // FIXME
+    expect(actual).toEqual(expected);
+
   }
 
   async afterTest() {
     // Do your teardown here, if necessary
-  }
-
-  async thereShouldBeNSCards(number, pearTree) {
-    var cards = queryAllCardByName(mainView, pearTree);
-    expect(cards).toHaveLength(number);
   }
 }
