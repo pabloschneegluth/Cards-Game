@@ -3,13 +3,12 @@ writer: PFernandezTorres
 package: animal
 ---
 
-# Wolf calls wolf
+# Wolf Calls wolf
 
-Wolfs may call another wolves. 
-If they do that, they can attack and do more damage
+Wolves are animals that always go in a group, they always help each other.
+If we are in front of a wolf and we do not kill it.
+or perform any action on it, it will call another wolf.
 
- * Given a new game with a stack of 1 "Woods Stroll Idea" cards, 1 "Villager" cards, 1 "Wolf" cards
- * The wolf may create another "Wolf" card
- * Given that the odds are that we will get a "Wolf" from the "Woods Stroll Idea" card.
- * End the current moon
- * There should be 1 stacks of 1 "Woods Stroll Idea" cards, 1 "Villager" cards, 2 "Wolf" cards
+ * Given there are 1 "Wolf" cards.
+ * End the current moon.
+ * There should be 2 "Wolf" cards.
