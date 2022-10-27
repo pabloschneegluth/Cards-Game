@@ -23,13 +23,14 @@ public class Post_20220913_Wolf_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-09-13_wolf", "88da1fea8c18bb5ad4bbda88164dc084");
+        testUtils.runBeforeTestStarts("2022-09-13_wolf", "8abe31e1a44330eb9de8632e3284acbf");
         context.beforeTest();
 
         // # Wolf!                                                                                              // # Wolf!
 
         // ## How to find a wolf?                                                                               // ## How to find a wolf?
         context.givenANewGameWithAStackOfNSCardsAndNSCard(1, "Woods Stroll Idea", 1, "Villager");               // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" card.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0);                                  // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Wolf");                                               // * The "Woods Stroll Idea" may create a "Wolf" card.
         context.givenThatTheOddsAreThatWeWillFindASCardFromTheSCard("Wolf", "Woods Stroll Idea");               // * Given that the odds are that we will find a "Wolf" card from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                            // * End the current moon.
