@@ -75,22 +75,22 @@ public class Post_20221020_FriendlyWolf_Context {
         gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
     }
 
-    public void thereShouldBeNSCard(int expected, String s1) {
+    public void thereShouldBeNSCard(int expected, String cardName) {
         // text:  * There should be 0 "Wolf" card.
         // code: this.thereShouldBeNSCard(0, "Wolf")
         // hint: Post_20220723_Ideas_Context.thereShouldBeNSCards
-
-        var actual = expected; // FIXME
-        assertThat(actual).isEqualTo(expected);
-
+        var stacks = StackListDTO.findAllStack(gameDTO,
+        byNames(cardName));
+        assertThat(stacks).hasSize(expected);
     }
 
     public void thereShouldBeNStackOfNSAndNS(int expected, int n2, String s1, int n3, String s2) {
         // text:  * There should be 1 stack of 1 "Villager" and 1 "Friendly Wolf"
         // code: this.thereShouldBeNStackOfNSAndNS(1, 1, "Villager", 1, "Friendly Wolf")
 
-        var actual = expected; // FIXME
-        assertThat(actual).isEqualTo(expected);
+        var stacks = StackListDTO.findAllStack(gameDTO,
+        byNames(n2,s1).and(n3,s2));
+        assertThat(stacks).hasSize(expected);
     }
 
     public void afterTest() {

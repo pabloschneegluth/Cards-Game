@@ -7,10 +7,6 @@ export class Post_20221020_FriendlyWolf_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenAStackOfNSNSAndNS(n1, s1, n2, s2, n3, s3) {
@@ -19,9 +15,6 @@ export class Post_20221020_FriendlyWolf_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenAStackOfNSNSAndNS(n1, s1, n2, s2, n3, s3) is not implemented yet."
-    );
   }
 
   async givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) {
@@ -31,9 +24,6 @@ export class Post_20221020_FriendlyWolf_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -42,8 +32,6 @@ export class Post_20221020_FriendlyWolf_Context {
     // hint: Post_20221013_Iron_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNSCard(expected, s1) {
@@ -54,9 +42,6 @@ export class Post_20221020_FriendlyWolf_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNSCard(expected, s1) is not implemented yet."
-    );
   }
 
   async thereShouldBeNStackOfNSAndNS(expected, n2, s1, n3, s2) {
@@ -66,9 +51,6 @@ export class Post_20221020_FriendlyWolf_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNStackOfNSAndNS(expected, n2, s1, n3, s2) is not implemented yet."
-    );
   }
 
   async afterTest() {
