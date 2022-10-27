@@ -102,4 +102,10 @@ public class Post_20220913_Wolf_Context {
             );
             assertThat(stacks).hasSize(stackNum);
     }
+
+    public void givenThereIsTheSIdeaAtLevelNAndNXp(String ideaName, int level, int xp) {
+        givenIdeaService.givenIdea(ideaName, level, xp);
+
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+    }
 }
