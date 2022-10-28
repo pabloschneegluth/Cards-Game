@@ -34,6 +34,7 @@ public class EndMoonStep_900_HarvestIdea implements EndMoonStep {
 
         var progress = ideaProgressService.progress(settings, 1);
         if (progress.hasBecomeLevel(2)) ideaFactory.makeIdea(new IdeaFactorySettings("Seed Idea"));
+        if (progress.hasBecomeLevel(3)) ideaFactory.makeIdea(new IdeaFactorySettings("Build Idea"));
 
         var plant = summary.getCardByDescriptionTermAndTagName("Fruit", "Fruit Plant");
         var fruitName = plant.getDescriptionTerm("Fruit");

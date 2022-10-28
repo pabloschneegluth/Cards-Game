@@ -17,6 +17,10 @@ export class Post_20220913_Wolf_Context {
     await waitForReloadGame();
 
   }
+  async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
+
+    await waitForReloadGame();
+  }
 
   async theSMayCreateASCard(s1, s2) {
     // text:  * The "Woods Stroll Idea" may create a "Wolf" card.
