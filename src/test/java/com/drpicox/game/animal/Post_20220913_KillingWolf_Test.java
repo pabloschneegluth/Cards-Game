@@ -1,4 +1,4 @@
-package com.drpicox.game.critter;
+package com.drpicox.game.animal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class Post_20220913_KillingWolf_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-09-13_killing_wolf", "0305cf01484d35c632fa63fcbc0fbd3f");
+        testUtils.runBeforeTestStarts("2022-09-13_killing_wolf", "5f4f5d4cc2b02c6322954ac2c919528b");
         context.beforeTest();
 
         // # Killing Wolf                           // # Killing Wolf

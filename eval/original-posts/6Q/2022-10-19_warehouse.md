@@ -1,27 +1,28 @@
 ---
 writer: 6Q
-package: buildings
+package: building
 ---
-# warehouse
+# Warehouse
 
-you need warehouse to hold cards in the game, more warehouses in game more cards you can have in game.
+You need warehouse to hold cards in the game, 
+more warehouses in game more cards you can have in game.
 
  * Enter the game.
  * there should be "0" warehouse cards.
  * the sum of the all cards should be "6".
 
- ## how to build warehouse
+ ## How to build warehouse
 
- * there should be "0" warehouse cards.
- * given "1" iron, "1" wood and "1" stone.
- * end the current moon.
- * there should be "1" warehouse cards.
- * given "0" iron, "0" wood and "0" stone.
+ * There should be "0" warehouse cards.
+ * Given "1" iron, "1" wood and "1" stone.
+ * End the current moon.
+ * There should be "1" warehouse cards.
+ * Given "0" iron, "0" wood and "0" stone.
 
- ## how warehouse work
+ ## How warehouse work
 
- * there should be "0" warehouse cards.
- * the sum of the all cards should be "6".
- * end the current moon.
- * there should be "1" warehouse cards.
- * the sum of the all cards should be "12".
+ * There should be "0" warehouse cards.
+ * The sum of the all cards should be "6".
+ * End the current moon.
+ * There should be "1" warehouse cards.
+ * The sum of the all cards should be "12".

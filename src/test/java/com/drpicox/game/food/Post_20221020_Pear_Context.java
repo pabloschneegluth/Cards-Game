@@ -1,5 +1,9 @@
-package com.drpicox.game.critter;
+package com.drpicox.game.food;
 
+import com.drpicox.game.card.GivenStackService;
+import com.drpicox.game.card.api.CardListDTO;
+import com.drpicox.game.idea.GivenIdeaService;
+import com.drpicox.game.util.RandomPickerServiceMock;
 import org.springframework.stereotype.Component;
 
 import static com.drpicox.game.card.api.CardListDTO.findAllCard;
@@ -12,23 +16,24 @@ import com.drpicox.game.card.GivenCardService;
 import com.drpicox.game.game.api.GameDTO;
 
 @Component
-public class Post_20220913_KillingWolf_Context {
+public class Post_20221020_Pear_Context {
 
     private final FrontendSimulator frontendSimulator;
     private final GivenGameService givenGameService;
     private final GivenCardService givenCardService;
     private GameDTO gameDTO;
 
-    Post_20220913_KillingWolf_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService) {
+    Post_20221020_Pear_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService) {
         this.frontendSimulator = frontendSimulator;
         this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
+
     }
 
     public void beforeTest() throws Throwable {
         // Do your setup here
         givenGameService.givenGame("empty");
-        givenCardService.givenCards(2, "Berry");
+        givenCardService.givenCards(0, "Berry");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
         // Please, verify that:
@@ -37,9 +42,9 @@ public class Post_20220913_KillingWolf_Context {
     }
 
     public void givenThereAreNSCards(int count, String cardName) {
-        // text:  * Given there are 1 "Militia" cards.
-        // code: this.givenThereAreNSCards(1, "Militia")
-        // hint: Post_20220725_IdeasHaveLevels_Context.givenThereAreNSCards
+        // text:  * Given there are 1 "Pear" cards.
+        // code: this.givenThereAreNSCards(1, "Pear")
+        // hint: Post_20221020_WolfCallsWolf_Context.givenThereAreNSCards
 
         // Add here what is given
         givenCardService.givenCards(count, cardName);
@@ -47,18 +52,28 @@ public class Post_20220913_KillingWolf_Context {
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
+    public void theSumOfAllSTagsValueShouldBeN(String tagName, int expected) {
+        // text:  * The sum of all "Eats" tags value should be 3.
+        // code: this.theSumOfAllSTagsValueShouldBeN("Eats", 3)
+        // hint: Post_20220721_MoreDetailsAboutHowVillagersEatFood_Context.theSumOfAllSTagsValueShouldBeN
+
+        var cards = CardListDTO.findAllCard(gameDTO);
+        var sum = cards.stream().mapToInt(c -> c.getTag(tagName)).sum();
+        assertThat(sum).isEqualTo(expected);
+    }
+
     public void endTheCurrentMoon() {
         // text:  * End the current moon.
         // code: this.endTheCurrentMoon()
-        // hint: Post_20220913_Wolf_Context.endTheCurrentMoon
+        // hint: Post_20221020_WolfCallsWolf_Context.endTheCurrentMoon
 
         gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
     }
 
     public void thereShouldBeNSCards(int expected, String cardName) {
-        // text:  * There should be 0 "Wolf" cards.
-        // code: this.thereShouldBeNSCards(0, "Wolf")
-        // hint: Post_20220725_IdeasHaveLevels_Context.thereShouldBeNSCards
+        // text:  * There should be 3 "Villager" cards.
+        // code: this.thereShouldBeNSCards(3, "Villager")
+        // hint: Post_20221020_WolfCallsWolf_Context.thereShouldBeNSCards
 
         var cards = findAllCard(gameDTO, byName(cardName));
         assertThat(cards).hasSize(expected);
