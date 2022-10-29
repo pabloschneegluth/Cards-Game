@@ -3,5 +3,6 @@
   "editor.formatOnSave": true,
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "java.jdt.ls.java.home": "C:/Program Files/Java/jdk-17"
 }
