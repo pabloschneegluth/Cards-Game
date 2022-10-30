@@ -1,5 +1,7 @@
 package com.drpicox.game.animal;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -37,17 +39,15 @@ public class EndMoonStep_200_BoneMakesFriendlyWolf implements EndMoonStep {
     }
 
     private void convertWolf(List<Card> cards) {
-        try {
-            var boneCard = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Bone")).findFirst().get();
-            var wolfCard = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Wolf")).findFirst().get();
+        var wolfCard = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Wolf")).findFirst();
+        var boneCard = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Bone")).findFirst();
 
-            if (boneCard != null && wolfCard != null) {
-                cardFactory.makeCard(new CardFactorySettings("Friendly Wolf").withPosition(wolfCard.getPosition()));
-                cardService.discardCard(boneCard);
-                cardService.discardCard(wolfCard);
-            }
-        } catch (Exception e) {
-        
+        if (boneCard.isEmpty() == false && wolfCard.isEmpty() == false) {
+            cardFactory.makeCard(new CardFactorySettings("Friendly Wolf").withPosition(wolfCard.get().getPosition()));
+                //cardService.discardCard(card);
+        }
+        else {
+            return;
         }
 
     }
