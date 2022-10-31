@@ -42,9 +42,12 @@ public class EndMoonStep_200_BoneMakesFriendlyWolf implements EndMoonStep {
         var wolfCard = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Wolf")).findFirst();
         var boneCard = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Bone")).findFirst();
 
-        if (boneCard.isEmpty() == false && wolfCard.isEmpty() == false) {
-            cardFactory.makeCard(new CardFactorySettings("Friendly Wolf").withPosition(wolfCard.get().getPosition()));
-                //cardService.discardCard(card);
+        if (wolfCard.isEmpty() || boneCard.isEmpty()) {
+            return;
         }
+
+        cardFactory.makeCard(new CardFactorySettings("Friendly Wolf").withPosition(wolfCard.get().getPosition()));
+        cardService.discardCard(wolfCard.get());
+        cardService.discardCard(boneCard.get());
     }
 }
