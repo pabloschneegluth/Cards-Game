@@ -2,15 +2,15 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { getIdeaDigestByName } from "../idea/queries";
+import { Names } from "../util/Names";
+import { queryAllStackDigestByCardNames } from "../stack/queries";
+
 
 export class Post_20221030_Cow_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGameWithAStackOfNSCardsAndNSCards(n1, s1, n2, s2) {
@@ -19,10 +19,6 @@ export class Post_20221030_Cow_Context {
     // hint: Post_20221024_Diamond_Context.givenANewGameWithAStackOfNSCardsAndNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSCardsAndNSCards(n1, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
@@ -31,20 +27,15 @@ export class Post_20221030_Cow_Context {
     // hint: Post_20221020_BuildIdea_Context.givenThereIsTheSIdeaAtLevelNAndNXp
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) is not implemented yet."
-    );
   }
 
-  async theSMayCreateASCard(s1, s2) {
+  async theSMayCreateASCard(ideaName, cardName) {
     // text:  * The "Woods Stroll Idea" may create a "Cow" card.
     // code: await this.theSMayCreateASCard("Woods Stroll Idea", "Cow")
     // hint: Post_20221024_Diamond_Context.theSMayCreateASCard
+    var idea = getIdeaDigestByName(mainView, ideaName);
+    expect(idea.mayCreateCards).toContain(cardName);
 
-    throw new Error(
-      "The method theSMayCreateASCard(s1, s2) is not implemented yet."
-    );
   }
 
   async givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) {
@@ -54,9 +45,6 @@ export class Post_20221030_Cow_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -65,21 +53,26 @@ export class Post_20221030_Cow_Context {
     // hint: Post_20221024_Diamond_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
-  async thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
+  async thereShouldBeNStacksOfNSNSAndNSCards(expected,
+    count1,
+    name1,
+    count2,
+    name2,
+    count3,
+    name3,) {
     // text:  * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Cow" cards.
     // code: await this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Cow")
     // hint: Post_20221024_Diamond_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(count1, name1)
+      .and(count2, name2)
+      .and(count3, name3)
+      .get();
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
   }
 
   async afterTest() {
