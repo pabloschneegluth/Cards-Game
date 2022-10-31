@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
     public static final String IDEA_NAME = "Build Idea";
-
     private final CardFactory cardFactory;
     private final StackService stackService;
     private final CardService cardService;
@@ -40,8 +39,8 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
     private void createFarm(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
-        var stone = cards.stream().filter(name -> name.getName().equalsIgnoreCase("stone"));
-        var wood = cards.stream().filter(name -> name.getName().equalsIgnoreCase("wood"));
+        var stone = cards.stream().filter(name -> name.getName().equalsIgnoreCase("stone")).toList();
+        var wood = cards.stream().filter(name -> name.getName().equalsIgnoreCase("wood")).toList();
     }
 
     private void createStoneHouse(IdeaEndMoonSettings settings) {

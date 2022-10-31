@@ -60,7 +60,6 @@ public class Post_20221013_StoneHouse_Context {
         givenStackService.givenStacks(1, byNames(n1, ideaCard).and(n2, card1).and(n3, card2));
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
-
     }
 
     public void endTheCurrentMoon() {

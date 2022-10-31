@@ -69,12 +69,11 @@ public class Post_20221019_Farm_Context {
         // code: this.givenThereIsNStackOfNSNSNSCards(1, 1, "Build Idea", 1, "Stone", 2, "Wood")
 
         // Add here what is given
-        givenIdeaService.givenIdea("Build Idea", level, xp);
-        givenStackService.givenStacks(1, byNames(numS1, s1).and(numS2, s2).and(numS3, s3));
+        givenIdeaService.givenIdea(s1, level, xp);
+        givenStackService.givenStacks(stackNum, byNames(numS1, s1).and(numS2, s2).and(numS3, s3));
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
-
-     }
+    }
 
     public void endTheCurrentMoon() {
         // text:  * end the current moon.
@@ -95,7 +94,7 @@ public class Post_20221019_Farm_Context {
         );
         assertThat(stacks).hasSize(expected);
 
-   }
+    }
 
     public void givenANewEmptyGame() throws IOException, URISyntaxException {
         // text:  * Given a new empty game
@@ -117,7 +116,7 @@ public class Post_20221019_Farm_Context {
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
-     }
+    }
 
     public void thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(int expected, int n2, String s1, int n3, String s2, int n4, String s3, int n5, String s4) {
         // text:  * There should be 1 stack of 5 "Berry" cards, 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards.
@@ -129,7 +128,7 @@ public class Post_20221019_Farm_Context {
         assertThat(stacks).hasSize(expected);
 
 
-     }
+    }
 
     public void afterTest() {
         // Do your teardown here, if necessary
