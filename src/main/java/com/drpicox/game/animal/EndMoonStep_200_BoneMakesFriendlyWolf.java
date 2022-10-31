@@ -46,9 +46,5 @@ public class EndMoonStep_200_BoneMakesFriendlyWolf implements EndMoonStep {
             cardFactory.makeCard(new CardFactorySettings("Friendly Wolf").withPosition(wolfCard.get().getPosition()));
                 //cardService.discardCard(card);
         }
-        else {
-            return;
-        }
-
     }
 }
