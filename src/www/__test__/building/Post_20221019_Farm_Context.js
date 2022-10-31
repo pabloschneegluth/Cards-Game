@@ -8,9 +8,6 @@ export class Post_20221019_Farm_Context {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async thereShouldBeNSCard(expected, s1) {
@@ -21,20 +18,6 @@ export class Post_20221019_Farm_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNSCard(expected, s1) is not implemented yet."
-    );
-  }
-
-  async givenNSNSNSCards(n1, s1, n2, s2, n3, s3) {
-    // text:  * given 1 "Build Idea", 1 "Stone", 2 "Wood" cards
-    // code: await this.givenNSNSNSCards(1, "Build Idea", 1, "Stone", 2, "Wood")
-
-    await waitForReloadGame();
-
-    throw new Error(
-      "The method givenNSNSNSCards(n1, s1, n2, s2, n3, s3) is not implemented yet."
-    );
   }
 
   async givenThereIsTheSCardAtLevelNAndNXp(s1, n1, n2) {
@@ -43,31 +26,42 @@ export class Post_20221019_Farm_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereIsTheSCardAtLevelNAndNXp(s1, n1, n2) is not implemented yet."
-    );
+  }
+
+  async givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(
+    n1,
+    n2,
+    s1,
+    n3,
+    n4,
+    n5,
+    s2,
+    n6,
+    s3
+  ) {
+    // text:  * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Stone", 2 "Wood" cards
+    // code: await this.givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(1, 1, "Build Idea", 2, 6, 1, "Stone", 2, "Wood")
+
+    await waitForReloadGame();
   }
 
   async endTheCurrentMoon() {
     // text:  * end the current moon.
     // code: await this.endTheCurrentMoon()
-    // hint: Post_20221024_Pickaxe_Context.endTheCurrentMoon
+    // hint: Post_20221024_Diamond_Context.endTheCurrentMoon
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
-  async thereShouldBeNSNSAndNSCards(expected, s1, n2, s2, n3, s3) {
-    // text:  * there should be 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
-    // code: await this.thereShouldBeNSNSAndNSCards(0, "Stone", 0, "Wood", 0, "Berry Bush")
+  async thereShouldBeNStackOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
+    // text:  * there should be 1 stack of 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
+    // code: await this.thereShouldBeNStackOfNSNSAndNSCards(1, 0, "Stone", 0, "Wood", 0, "Berry Bush")
+    // hint: Post_20221024_Diamond_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNSNSAndNSCards(expected, s1, n2, s2, n3, s3) is not implemented yet."
-    );
   }
 
   async givenANewEmptyGame() {
@@ -76,43 +70,41 @@ export class Post_20221019_Farm_Context {
 
     await waitForReloadGame();
 
-    throw new Error("The method givenANewEmptyGame() is not implemented yet.");
   }
 
-  async givenThereAreNSCards(n1, s1) {
-    // text:  * Given there are 1 "Farm" cards.
-    // code: await this.givenThereAreNSCards(1, "Farm")
-    // hint: Post_20221020_WolfCallsWolf_Context.givenThereAreNSCards
+  async givenThereIsNStackOfNSCardsNSCardsAndNSCardsOrAnotherPlant(
+    n1,
+    n2,
+    s1,
+    n3,
+    s2,
+    n4,
+    s3
+  ) {
+    // text:  * Given there is 1 stack of 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards or another plant.
+    // code: await this.givenThereIsNStackOfNSCardsNSCardsAndNSCardsOrAnotherPlant(1, 1, "Farm", 1, "Villager", 1, "Berry Bush")
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereAreNSCards(n1, s1) is not implemented yet."
-    );
   }
 
-  async givenThereAreNSCardsOrAnotherPlant(n1, s1) {
-    // text:  * Given there are 1 "Berry Bush" cards or another plant.
-    // code: await this.givenThereAreNSCardsOrAnotherPlant(1, "Berry Bush")
-
-    await waitForReloadGame();
-
-    throw new Error(
-      "The method givenThereAreNSCardsOrAnotherPlant(n1, s1) is not implemented yet."
-    );
-  }
-
-  async thereShouldBeNSCards(expected, s1) {
-    // text:  * There should be 5 "Berry" cards.
-    // code: await this.thereShouldBeNSCards(5, "Berry")
-    // hint: Post_20221020_WolfCallsWolf_Context.thereShouldBeNSCards
+  async thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(
+    expected,
+    n2,
+    s1,
+    n3,
+    s2,
+    n4,
+    s3,
+    n5,
+    s4
+  ) {
+    // text:  * There should be 1 stack of 5 "Berry" cards, 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards.
+    // code: await this.thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(1, 5, "Berry", 1, "Farm", 1, "Villager", 1, "Berry Bush")
 
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNSCards(expected, s1) is not implemented yet."
-    );
   }
 
   async afterTest() {
