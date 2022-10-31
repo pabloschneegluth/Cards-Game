@@ -1,6 +1,7 @@
 ---
 writer: marcserranog
 package: animal
+coder: PFernandezTorres
 ---
 
 # Friendly Wolf!
