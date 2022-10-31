@@ -10,7 +10,7 @@ import { Post_20220913_Wolf_Context } from "./Post_20220913_Wolf_Context";
 test("2022-09-13_wolf.md", async () => {
   await runBeforeTestStarts(
     "2022-09-13_wolf",
-    "88da1fea8c18bb5ad4bbda88164dc084"
+    "8abe31e1a44330eb9de8632e3284acbf"
   );
 
   const context = new Post_20220913_Wolf_Context();
@@ -25,6 +25,7 @@ test("2022-09-13_wolf.md", async () => {
     1,
     "Villager"
   ); //               // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" card.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0); //                                  // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Wolf"); //                                               // * The "Woods Stroll Idea" may create a "Wolf" card.
   await context.givenThatTheOddsAreThatWeWillFindASCardFromTheSCard(
     "Wolf",
