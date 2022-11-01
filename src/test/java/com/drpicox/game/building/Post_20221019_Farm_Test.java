@@ -19,30 +19,28 @@ import com.drpicox.game.util.TestUtils;
 @AutoConfigureMockMvc
 public class Post_20221019_Farm_Test {
 
-    @Autowired
-    Post_20221019_Farm_Context context;
-    @Autowired
-    TestUtils testUtils;
+    @Autowired Post_20221019_Farm_Context context;
+    @Autowired TestUtils testUtils;
 
-    @Test
-    public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-19_farm", "61bfe58de5de4ec72b30cf26b738c408");
+    @Test public void testPost() throws Throwable {
+        testUtils.runBeforeTestStarts("2022-10-19_farm", "94434c0dbf9cd05a75852b27fe88f498");
         context.beforeTest();
 
-        // # farm                                                                                                               // # farm
-        context.thereShouldBeNSCard(0, "Farm");                                                                                 // * there should be 0 "Farm" card.
-        context.givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(1, 1, "Build Idea", 2, 6, 1, "Stone", 2, "Wood");                 // * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Stone", 2 "Wood" cards
-        context.endTheCurrentMoon();                                                                                            // * end the current moon.
-        context.thereShouldBeNSCard(0, "Farm");                                                                                 // * there should be 0 "Farm" card.
-        context.thereShouldBeNStackOfNSNSAndNSCards(1, 0, "Stone", 0, "Wood", 0, "Berry Bush");                                 // * there should be 1 stack of 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
+        // # farm                                                                                                                // # farm
+        context.thereShouldBeNSCard(0, "Farm");                                                                                  // * there should be 0 "Farm" card.
+        context.givenThereIsNStackOfNSAtLevelNAndNXpNSNSNSCards(1, 1, "Build Idea", 2, 6, 1, "Villager", 1, "Stone", 2, "Wood"); // * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Villager", 1 "Stone", 2 "Wood" cards
+        context.endTheCurrentMoon();                                                                                             // * end the current moon.
+        context.thereShouldBeNSCard(0, "Farm");                                                                                  // * there should be 0 "Farm" card.
+        context.thereShouldBeNStackOfNSNSAndNSCards(1, 0, "Stone", 0, "Wood", 0, "Berry Bush");                                  // * there should be 1 stack of 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
 
-        // ## how the farm works                                                                                                // ## how the farm works
-        context.givenANewEmptyGame();                                                                                           // * Given a new empty game
-        context.givenThereIsNStackOfNSCardsNSCardsAndNSCardsOrAnotherPlant(1, 1, "Farm", 1, "Villager", 1, "Berry Bush");       // * Given there is 1 stack of 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards or another plant.
-        context.endTheCurrentMoon();                                                                                            // * end the current moon.
-        context.thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(1, 5, "Berry", 1, "Farm", 1, "Villager", 1, "Berry Bush"); // * There should be 1 stack of 5 "Berry" cards, 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards.
+        // ## how the farm works                                                                                                 // ## how the farm works
+        context.givenANewEmptyGame();                                                                                            // * Given a new empty game
+        context.givenThereIsNStackOfNSCardsNSCardsAndNSCardsOrAnotherPlant(1, 1, "Farm", 1, "Villager", 1, "Berry Bush");        // * Given there is 1 stack of 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards or another plant.
+        context.endTheCurrentMoon();                                                                                             // * end the current moon.
+        context.thereShouldBeNStackOfNSCardsNSCardsNSAndNSCards(1, 1, "Farm", 1, "Villager", 1, "Berry Bush", 5, "Berry");       // * There should be 1 stack of 1 "Farm" cards, 1 "Villager" cards, 1 "Berry Bush" and 5 "Berry" cards
 
         context.afterTest();
         testUtils.runWhenTestSuccessful();
     }
+
 }

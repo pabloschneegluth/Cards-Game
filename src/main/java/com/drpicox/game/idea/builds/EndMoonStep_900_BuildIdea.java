@@ -41,6 +41,19 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         var cards = settings.getStack().getCards();
         var stone = cards.stream().filter(name -> name.getName().equalsIgnoreCase("stone")).toList();
         var wood = cards.stream().filter(name -> name.getName().equalsIgnoreCase("wood")).toList();
+        int woodToUse = 2;
+        int stoneToUse = 1;
+        int position = settings.getPosition();
+
+        if (stone.size() < stoneToUse || wood.size() < woodToUse) {
+            return;
+        }
+
+        stone.subList(0, stoneToUse);
+        wood.subList(0, woodToUse);
+        cardFactory.makeCards(1, new CardFactorySettings("Farm").withPosition(position));
+        cardService.discardCards(stone);
+        cardService.discardCards(wood);
     }
 
     private void createStoneHouse(IdeaEndMoonSettings settings) {

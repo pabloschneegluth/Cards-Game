@@ -64,13 +64,13 @@ public class Post_20221019_Farm_Context {
         assertThat(stacks).hasSize(expected);
     }
 
-    public void givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(int stackNum, int numS1, String s1, int level, int xp, int numS2, String s2, int numS3, String s3) {
+    public void givenThereIsNStackOfNSAtLevelNAndNXpNSNSNSCards(int stackNum, int numS1, String s1, int level, int xp, int numS2, String s2, int numS3, String s3, int numS4, String s4) {
         // text:  * given there is 1 stack of 1 "Build Idea", 1 "Stone", 2 "Wood" cards
         // code: this.givenThereIsNStackOfNSNSNSCards(1, 1, "Build Idea", 1, "Stone", 2, "Wood")
 
         // Add here what is given
-        givenIdeaService.givenIdea(s1, level, xp);
-        givenStackService.givenStacks(stackNum, byNames(numS1, s1).and(numS2, s2).and(numS3, s3));
+        givenIdeaService.givenIdea("Build Idea");
+        givenStackService.givenStacks(stackNum, byNames(numS1, s1).and(numS4, s4).and(numS2, s2).and(numS3, s3));
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
@@ -102,6 +102,7 @@ public class Post_20221019_Farm_Context {
 
         // Add here what is given
         givenGameService.givenGame("empty");
+        givenCardService.givenCards(1, "Berry");
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
@@ -118,7 +119,7 @@ public class Post_20221019_Farm_Context {
 
     }
 
-    public void thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(int expected, int n2, String s1, int n3, String s2, int n4, String s3, int n5, String s4) {
+    public void thereShouldBeNStackOfNSCardsNSCardsNSAndNSCards(int expected, int n2, String s1, int n3, String s2, int n4, String s3, int n5, String s4) {
         // text:  * There should be 1 stack of 5 "Berry" cards, 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards.
         // code: this.thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(1, 5, "Berry", 1, "Farm", 1, "Villager", 1, "Berry Bush")
 

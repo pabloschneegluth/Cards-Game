@@ -10,27 +10,29 @@ import { Post_20221019_Farm_Context } from "./Post_20221019_Farm_Context";
 test("2022-10-19_farm.md", async () => {
   await runBeforeTestStarts(
     "2022-10-19_farm",
-    "61bfe58de5de4ec72b30cf26b738c408"
+    "94434c0dbf9cd05a75852b27fe88f498"
   );
 
   const context = new Post_20221019_Farm_Context();
   await context.beforeTest();
 
-  // # farm                                                                                                                        // # farm
-  await context.thereShouldBeNSCard(0, "Farm"); //                                                                                 // * there should be 0 "Farm" card.
-  await context.givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(
+  // # farm                                                                                                                         // # farm
+  await context.thereShouldBeNSCard(0, "Farm"); //                                                                                  // * there should be 0 "Farm" card.
+  await context.givenThereIsNStackOfNSAtLevelNAndNXpNSNSNSCards(
     1,
     1,
     "Build Idea",
     2,
     6,
     1,
+    "Villager",
+    1,
     "Stone",
     2,
     "Wood"
-  ); //                 // * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Stone", 2 "Wood" cards
-  await context.endTheCurrentMoon(); //                                                                                            // * end the current moon.
-  await context.thereShouldBeNSCard(0, "Farm"); //                                                                                 // * there should be 0 "Farm" card.
+  ); // // * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Villager", 1 "Stone", 2 "Wood" cards
+  await context.endTheCurrentMoon(); //                                                                                             // * end the current moon.
+  await context.thereShouldBeNSCard(0, "Farm"); //                                                                                  // * there should be 0 "Farm" card.
   await context.thereShouldBeNStackOfNSNSAndNSCards(
     1,
     0,
@@ -39,10 +41,10 @@ test("2022-10-19_farm.md", async () => {
     "Wood",
     0,
     "Berry Bush"
-  ); //                                 // * there should be 1 stack of 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
+  ); //                                  // * there should be 1 stack of 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
 
-  // ## how the farm works                                                                                                         // ## how the farm works
-  await context.givenANewEmptyGame(); //                                                                                           // * Given a new empty game
+  // ## how the farm works                                                                                                          // ## how the farm works
+  await context.givenANewEmptyGame(); //                                                                                            // * Given a new empty game
   await context.givenThereIsNStackOfNSCardsNSCardsAndNSCardsOrAnotherPlant(
     1,
     1,
@@ -51,19 +53,19 @@ test("2022-10-19_farm.md", async () => {
     "Villager",
     1,
     "Berry Bush"
-  ); //       // * Given there is 1 stack of 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards or another plant.
-  await context.endTheCurrentMoon(); //                                                                                            // * end the current moon.
-  await context.thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(
+  ); //        // * Given there is 1 stack of 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards or another plant.
+  await context.endTheCurrentMoon(); //                                                                                             // * end the current moon.
+  await context.thereShouldBeNStackOfNSCardsNSCardsNSAndNSCards(
     1,
-    5,
-    "Berry",
     1,
     "Farm",
     1,
     "Villager",
     1,
-    "Berry Bush"
-  ); // // * There should be 1 stack of 5 "Berry" cards, 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards.
+    "Berry Bush",
+    5,
+    "Berry"
+  ); //       // * There should be 1 stack of 1 "Farm" cards, 1 "Villager" cards, 1 "Berry Bush" and 5 "Berry" cards
 
   await context.afterTest();
   await runWhenTestSuccessful();

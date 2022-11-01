@@ -7,28 +7,19 @@ export class Post_20221019_Farm_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
   }
 
   async thereShouldBeNSCard(expected, s1) {
     // text:  * there should be 0 "Farm" card.
     // code: await this.thereShouldBeNSCard(0, "Farm")
-    // hint: Post_20221020_WolfCallsWolf_Context.thereShouldBeNSCards
+    // hint: Post_20221020_FriendlyWolf_Context.thereShouldBeNSCard
 
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
   }
 
-  async givenThereIsTheSCardAtLevelNAndNXp(s1, n1, n2) {
-    // text:  * Given there is the "Build Idea" card at level 2 and 6 xp
-    // code: await this.givenThereIsTheSCardAtLevelNAndNXp("Build Idea", 2, 6)
-
-    await waitForReloadGame();
-
-  }
-
-  async givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(
+  async givenThereIsNStackOfNSAtLevelNAndNXpNSNSNSCards(
     n1,
     n2,
     s1,
@@ -37,18 +28,22 @@ export class Post_20221019_Farm_Context {
     n5,
     s2,
     n6,
-    s3
+    s3,
+    n7,
+    s4
   ) {
-    // text:  * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Stone", 2 "Wood" cards
-    // code: await this.givenThereIsNStackOfNSAtLevelNAndNXpNSNSCards(1, 1, "Build Idea", 2, 6, 1, "Stone", 2, "Wood")
+    // text:  * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Villager", 1 "Stone", 2 "Wood" cards
+    // code: await this.givenThereIsNStackOfNSAtLevelNAndNXpNSNSNSCards(1, 1, "Build Idea", 2, 6, 1, "Villager", 1, "Stone", 2, "Wood")
 
     await waitForReloadGame();
+
+
   }
 
   async endTheCurrentMoon() {
     // text:  * end the current moon.
     // code: await this.endTheCurrentMoon()
-    // hint: Post_20221024_Diamond_Context.endTheCurrentMoon
+    // hint: Post_20221024_Pickaxe_Context.endTheCurrentMoon
 
     await waitForEndMoon();
 
@@ -88,7 +83,7 @@ export class Post_20221019_Farm_Context {
 
   }
 
-  async thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(
+  async thereShouldBeNStackOfNSCardsNSCardsNSAndNSCards(
     expected,
     n2,
     s1,
@@ -99,8 +94,9 @@ export class Post_20221019_Farm_Context {
     n5,
     s4
   ) {
-    // text:  * There should be 1 stack of 5 "Berry" cards, 1 "Farm" cards, 1 "Villager" cards and 1 "Berry Bush" cards.
-    // code: await this.thereShouldBeNStackOfNSCardsNSCardsNSCardsAndNSCards(1, 5, "Berry", 1, "Farm", 1, "Villager", 1, "Berry Bush")
+    // text:  * There should be 1 stack of 1 "Farm" cards, 1 "Villager" cards, 1 "Berry Bush" and 5 "Berry" cards
+    // code: await this.thereShouldBeNStackOfNSCardsNSCardsNSAndNSCards(1, 1, "Farm", 1, "Villager", 1, "Berry Bush", 5, "Berry")
+    // hint: Post_20221013_StoneHouse_Context.thereShouldBeNStacksOfNSCardsNSCardsAndNSCards
 
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
