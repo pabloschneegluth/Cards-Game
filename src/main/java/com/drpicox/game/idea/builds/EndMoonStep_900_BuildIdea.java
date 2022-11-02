@@ -80,6 +80,22 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         cardService.discardCards(materials);
     }
 
+    private void createWoodHouse(List<Card> cards, IdeaEndMoonSettings settings) {
+        int countWood = 0;
+        var wood = cardService.findAllByName("Wood");
+        var position = settings.getPosition();
+
+        for (var card : cards) {
+            if (card.getName().equalsIgnoreCase("Wood"))  {
+                countWood++;
+            }
+        }
+        if (countWood == 4) {
+            cardFactory.makeCards(1, new CardFactorySettings("Wood House").withPosition(position));
+            cardService.discardCards(wood);
+        }
+    }
+
     private void createPickAxe(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
         var position = settings.getPosition();
