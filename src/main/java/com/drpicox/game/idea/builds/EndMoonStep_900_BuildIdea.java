@@ -98,7 +98,6 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         }
         cardFactory.makeCards(1, new CardFactorySettings("Pickaxe").withPosition(position));
         cardService.discardCards(materials);
-
     }
 
     private List<Card> getMaterialsToBuild(Map<String, Integer> materialsNeeded, List<Card> cards) {
