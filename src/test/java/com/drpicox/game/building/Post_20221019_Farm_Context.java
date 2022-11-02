@@ -69,8 +69,8 @@ public class Post_20221019_Farm_Context {
         // code: this.givenThereIsNStackOfNSNSNSCards(1, 1, "Build Idea", 1, "Stone", 2, "Wood")
 
         // Add here what is given
-        givenIdeaService.givenIdea("Build Idea");
-        givenStackService.givenStacks(stackNum, byNames(numS1, s1).and(numS4, s4).and(numS2, s2).and(numS3, s3));
+        givenIdeaService.givenIdea("Build Idea", level, xp);
+        givenStackService.givenStacks(stackNum, byNames(numS1, s1).and(numS2, s2).and(numS3, s3).and(numS4, s4));
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }

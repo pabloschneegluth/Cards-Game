@@ -23,15 +23,14 @@ public class Post_20221019_Farm_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-19_farm", "94434c0dbf9cd05a75852b27fe88f498");
+        testUtils.runBeforeTestStarts("2022-10-19_farm", "a59980514ce8f84350e4358b86d63e4e");
         context.beforeTest();
 
         // # farm                                                                                                                // # farm
         context.thereShouldBeNSCard(0, "Farm");                                                                                  // * there should be 0 "Farm" card.
         context.givenThereIsNStackOfNSAtLevelNAndNXpNSNSNSCards(1, 1, "Build Idea", 2, 6, 1, "Villager", 1, "Stone", 2, "Wood"); // * given there is 1 stack of 1 "Build Idea" at level 2 and 6 XP, 1 "Villager", 1 "Stone", 2 "Wood" cards
         context.endTheCurrentMoon();                                                                                             // * end the current moon.
-        context.thereShouldBeNSCard(0, "Farm");                                                                                  // * there should be 0 "Farm" card.
-        context.thereShouldBeNStackOfNSNSAndNSCards(1, 0, "Stone", 0, "Wood", 0, "Berry Bush");                                  // * there should be 1 stack of 0 "Stone", 0 "Wood" and 0 "Berry Bush" cards.
+        context.thereShouldBeNStackOfNSNSAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Farm");                               // * there should be 1 stack of 1 "Build Idea", 1 "Villager" and 1 "Farm" cards
 
         // ## how the farm works                                                                                                 // ## how the farm works
         context.givenANewEmptyGame();                                                                                            // * Given a new empty game
