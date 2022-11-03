@@ -1,7 +1,6 @@
 ---
 writer: Pabloooo6
 package: building
-debug: true
 ---
 
 # Old Village?
