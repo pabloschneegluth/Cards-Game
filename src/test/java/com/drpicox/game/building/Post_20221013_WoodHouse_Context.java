@@ -4,7 +4,6 @@ import com.drpicox.game.card.GivenStackService;
 import com.drpicox.game.card.StackService;
 import com.drpicox.game.card.api.StackListDTO;
 import com.drpicox.game.idea.GivenIdeaService;
-import com.drpicox.game.util.RandomPickerServiceMock;
 import org.springframework.stereotype.Component;
 
 import static com.drpicox.game.util.Names.byNames;
@@ -25,12 +24,15 @@ public class Post_20221013_WoodHouse_Context {
     private final GivenStackService givenStackService;
     private GameDTO gameDTO;
 
-    Post_20221013_WoodHouse_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService, GivenIdeaService givenIdeaService, GivenStackService givenStackService) {
+    private final StackService stackService;
+
+    Post_20221013_WoodHouse_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService, GivenIdeaService givenIdeaService, GivenStackService givenStackService, StackService stackService) {
         this.frontendSimulator = frontendSimulator;
         this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
         this.givenIdeaService = givenIdeaService;
         this.givenStackService = givenStackService;
+        this.stackService = stackService;
     }
 
     public void beforeTest() throws Throwable {
@@ -63,7 +65,7 @@ public class Post_20221013_WoodHouse_Context {
         // text:  * There should be 1 stacks of 1 "Build Idea" cards, 1 "Villager" cards and 1 "Wood House" cards
         // code: this.thereShouldBeNStacksOfNSCardsNSCardsAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Wood House")
         // hint: Post_20221013_StoneHouse_Context.thereShouldBeNStacksOfNSCardsNSCardsAndNSCards
-
+        var stack = stackService.findAllStack();
         var stacks = StackListDTO.findAllStack(gameDTO,
             byNames(numIdea, idea).and(numCard, card).and(numCard2, card2));
         assertThat(stacks).hasSize(expected);
