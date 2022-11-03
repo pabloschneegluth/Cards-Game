@@ -120,25 +120,6 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         cardService.discardCards(materials);
     }
 
-    private List<Card> getMaterialsToBuild(Map<String, Integer> materialsNeeded, List<Card> cards) {
-        List<Card> materials = new ArrayList<>();
-
-        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
-            int numMaterialsNeeded = (set.getValue());
-
-            cards.forEach(card -> {
-                var remaining = numMaterialsNeeded - materials.stream().
-                    filter(name -> name.getName().equalsIgnoreCase(set.getKey())).toList().size();
-
-                if (card.getName().equalsIgnoreCase(set.getKey()) && remaining != 0) {
-                    materials.add(card);
-                }
-            });
-        }
-
-        return materials;
-    }
-
     private void createSword(IdeaEndMoonSettings settings) {
         int countMaterials = 0;
         var cards = settings.getStack().getCards();
@@ -156,5 +137,24 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
             cardService.discardCards(wood);
             cardService.discardCards(iron);
         }
+    }
+
+    private List<Card> getMaterialsToBuild(Map<String, Integer> materialsNeeded, List<Card> cards) {
+        List<Card> materials = new ArrayList<>();
+
+        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
+            int numMaterialsNeeded = (set.getValue());
+
+            cards.forEach(card -> {
+                var remaining = numMaterialsNeeded - materials.stream().
+                    filter(name -> name.getName().equalsIgnoreCase(set.getKey())).toList().size();
+
+                if (card.getName().equalsIgnoreCase(set.getKey()) && remaining != 0) {
+                    materials.add(card);
+                }
+            });
+        }
+
+        return materials;
     }
 }
