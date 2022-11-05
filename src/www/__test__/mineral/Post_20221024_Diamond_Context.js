@@ -27,6 +27,10 @@ export class Post_20221024_Diamond_Context {
     var idea = getIdeaDigestByName(mainView, ideaName);
     expect(idea.mayCreateCards).toContain(cardName);
   }
+  async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
+
+    await waitForReloadGame();
+  }
 
   async givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) {
     // text:  * Given that the odds are that we will get a "Diamond" from the "Woods Stroll Idea" card.
