@@ -38,9 +38,12 @@ export class Post_20221013_Iron_Context {
     // hint: Post_20220723_Ideas_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
   }
+  async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
 
+    await waitForReloadGame();
+  }
+  
   async theSMayCreateASCard(ideaName, cardName) {
     // text:  * The "Woods Stroll Idea" may create a "Iron" card.
     // code: await this.theSMayCreateASCard("Woods Stroll Idea", "Iron")

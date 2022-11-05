@@ -64,6 +64,11 @@ public class Post_20221013_Iron_Context {
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
     }
+    public void givenThereIsTheSIdeaAtLevelNAndNXp(String ideaName, int level, int xp) {
+        givenIdeaService.givenIdea(ideaName, level, xp);
+
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+    }
 
     public void givenThatTheOddsAreThatWeWillGetASFromTheSCard(String cardName, String ideaName) {
         // text:  * Given that the odds are that we will get a "Iron" from the "Woods Stroll Idea" card.

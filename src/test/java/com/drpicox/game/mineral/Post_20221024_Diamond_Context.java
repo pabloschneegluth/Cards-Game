@@ -57,6 +57,11 @@ public class Post_20221024_Diamond_Context {
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
     }
+    public void givenThereIsTheSIdeaAtLevelNAndNXp(String ideaName, int level, int xp) {
+        givenIdeaService.givenIdea(ideaName, level, xp);
+
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+    }
 
     public void theSMayCreateASCard(String ideaName, String cardName) {
         // text:  * The "Woods Stroll Idea" may create a "Diamond" card.

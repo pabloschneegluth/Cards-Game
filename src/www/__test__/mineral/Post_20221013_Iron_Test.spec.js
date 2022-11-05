@@ -10,7 +10,7 @@ import { Post_20221013_Iron_Context } from "./Post_20221013_Iron_Context";
 test("2022-10-13_iron.md", async () => {
   await runBeforeTestStarts(
     "2022-10-13_iron",
-    "07cd2349f48cc6d172768f38493ff76c"
+    "6516380e53f712f6df2d63f1393774c2"
   );
 
   const context = new Post_20221013_Iron_Context();
@@ -25,6 +25,7 @@ test("2022-10-13_iron.md", async () => {
     1,
     "Villager"
   ); //         // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0); //                             // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Iron"); //                                          // * The "Woods Stroll Idea" may create a "Iron" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Iron",
