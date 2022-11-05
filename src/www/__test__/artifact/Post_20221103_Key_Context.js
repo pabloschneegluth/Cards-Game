@@ -17,9 +17,7 @@ export class Post_20221103_Key_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSCardsAndNSCards(n1, s1, n2, s2) is not implemented yet."
-    );
+
   }
 
   async theSMayCreateASCard(s1, s2) {
@@ -27,9 +25,7 @@ export class Post_20221103_Key_Context {
     // code: await this.theSMayCreateASCard("Woods Stroll Idea", "Key")
     // hint: Post_20221103_OldVillage_Context.theSMayCreateASCard
 
-    throw new Error(
-      "The method theSMayCreateASCard(s1, s2) is not implemented yet."
-    );
+
   }
 
   async givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(s1, s2) {
@@ -39,9 +35,6 @@ export class Post_20221103_Key_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(s1, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -51,7 +44,6 @@ export class Post_20221103_Key_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
@@ -62,9 +54,7 @@ export class Post_20221103_Key_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
+
   }
 
   async afterTest() {
