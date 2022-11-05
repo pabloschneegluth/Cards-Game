@@ -1,6 +1,6 @@
 ---
 writer: PFernandezTorres
-package: legendary_weapon
+package: weapon.legendary
 ---
 
 # LEGENDARY WEAPON
