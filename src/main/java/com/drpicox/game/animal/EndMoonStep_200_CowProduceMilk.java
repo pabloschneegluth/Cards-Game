@@ -24,8 +24,9 @@ public class EndMoonStep_200_CowProduceMilk implements EndMoonStep{
         var cows = cardService.findAllByName("Cow");
         int cowsize=cows.size();
         if(cowsize!= 0){
+            var cow = cows.get(0);
             for (int i = 0; i < cowsize; i++) {
-                cardFactory.makeCards(1,new CardFactorySettings("Milk"));
+                cardFactory.makeCards(1,new CardFactorySettings("Milk").withPosition(cow.getPosition()));
 
             }
         }

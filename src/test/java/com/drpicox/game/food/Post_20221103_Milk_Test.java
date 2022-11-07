@@ -32,6 +32,7 @@ public class Post_20221103_Milk_Test {
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Cow", 1, "Villager");         // * Given a new game with a stack of 1 "Cow" cards and 1 "Villager" cards.
         context.endTheCurrentMoon();                                                         // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Milk", 1, "Cow", 1, "Villager"); // * There should be 1 stacks of 1 "Milk", 1 "Cow" and 1 "Villager" cards.
+
         context.afterTest();
         testUtils.runWhenTestSuccessful();
     }
