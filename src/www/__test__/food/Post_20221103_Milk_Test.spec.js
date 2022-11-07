@@ -10,7 +10,7 @@ import { Post_20221103_Milk_Context } from "./Post_20221103_Milk_Context";
 test("2022-11-03_milk.md", async () => {
   await runBeforeTestStarts(
     "2022-11-03_milk",
-    "080a6655e771c0f3cc8f8033f13a9733"
+    "8b1794634ecfcc793ab1f19cd9f3c731"
   );
 
   const context = new Post_20221103_Milk_Context();
@@ -29,12 +29,12 @@ test("2022-11-03_milk.md", async () => {
   await context.thereShouldBeNStacksOfNSNSAndNSCards(
     1,
     1,
-    "Milk",
-    1,
     "Cow",
     1,
-    "Villager"
-  ); // // * There should be 1 stacks of 1 "Milk", 1 "Cow" and 1 "Villager" cards.
+    "Villager",
+    1,
+    "Milk"
+  ); // // * There should be 1 stacks of 1 "Cow", 1 "Villager" and 1 "Milk" cards.
 
   await context.afterTest();
   await runWhenTestSuccessful();

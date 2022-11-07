@@ -73,13 +73,11 @@ public class Post_20221103_Milk_Context {
 
     }
 
+
     public void afterTest() {
         // Do your teardown here, if necessary
     }
 
-    public void thereShouldBeNSCardNSCardAndNSCard(int i, String string, int j, String string2, int k, String string3) {
-    }
 
-    public void givenANewGame() {
-    }
+
 }

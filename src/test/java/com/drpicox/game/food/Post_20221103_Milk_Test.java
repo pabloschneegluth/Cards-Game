@@ -23,7 +23,7 @@ public class Post_20221103_Milk_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-11-03_milk", "080a6655e771c0f3cc8f8033f13a9733");
+        testUtils.runBeforeTestStarts("2022-11-03_milk", "8b1794634ecfcc793ab1f19cd9f3c731");
         context.beforeTest();
 
         // # Milk                                                                            // # Milk
@@ -31,7 +31,7 @@ public class Post_20221103_Milk_Test {
         // ## How to obtain milk from a cow                                                  // ## How to obtain milk from a cow
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Cow", 1, "Villager");         // * Given a new game with a stack of 1 "Cow" cards and 1 "Villager" cards.
         context.endTheCurrentMoon();                                                         // * End the current moon.
-        context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Milk", 1, "Cow", 1, "Villager"); // * There should be 1 stacks of 1 "Milk", 1 "Cow" and 1 "Villager" cards.
+        context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Cow", 1, "Villager", 1, "Milk"); // * There should be 1 stacks of 1 "Cow", 1 "Villager" and 1 "Milk" cards.
 
         context.afterTest();
         testUtils.runWhenTestSuccessful();
