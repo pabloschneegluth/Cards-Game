@@ -23,13 +23,14 @@ public class Post_20221024_Diamond_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-24_diamond", "47ed75686e1dc11294e1ccfbf421d090");
+        testUtils.runBeforeTestStarts("2022-10-24_diamond", "dcd6b0748aef03a336044007db7bdfcb");
         context.beforeTest();
 
         // # Diamond                                                                                          // # Diamond
 
         // ## How to obtain diamond?                                                                          // ## How to obtain diamond?
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");            // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0);                                // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Diamond");                                          // * The "Woods Stroll Idea" may create a "Diamond" card.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Diamond", "Woods Stroll Idea");               // * Given that the odds are that we will get a "Diamond" from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                          // * End the current moon.

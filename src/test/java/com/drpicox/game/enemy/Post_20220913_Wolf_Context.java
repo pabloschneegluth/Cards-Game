@@ -1,4 +1,4 @@
-package com.drpicox.game.animal;
+package com.drpicox.game.enemy;
 
 import org.springframework.stereotype.Component;
 import static com.google.common.truth.Truth.assertThat;
@@ -96,11 +96,11 @@ public class Post_20220913_Wolf_Context {
     }
 
     public void thereShouldBeNStacksOfNSNSCardsAndNSCards(int stackNum, int n1, String s1, int n2, String s2, int n3,
-            String s3) {
-                var stacks = StackListDTO.findAllStack(gameDTO,
-                byNames(n1, s1).and(n2, s2).and(n3, s3)
-            );
-            assertThat(stacks).hasSize(stackNum);
+                                                          String s3) {
+        var stacks = StackListDTO.findAllStack(gameDTO,
+            byNames(n1, s1).and(n2, s2).and(n3, s3)
+        );
+        assertThat(stacks).hasSize(stackNum);
     }
 
     public void givenThereIsTheSIdeaAtLevelNAndNXp(String ideaName, int level, int xp) {

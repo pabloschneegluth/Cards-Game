@@ -10,7 +10,7 @@ import { Post_20221024_Diamond_Context } from "./Post_20221024_Diamond_Context";
 test("2022-10-24_diamond.md", async () => {
   await runBeforeTestStarts(
     "2022-10-24_diamond",
-    "47ed75686e1dc11294e1ccfbf421d090"
+    "dcd6b0748aef03a336044007db7bdfcb"
   );
 
   const context = new Post_20221024_Diamond_Context();
@@ -25,6 +25,7 @@ test("2022-10-24_diamond.md", async () => {
     1,
     "Villager"
   ); //            // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+  await context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 3, 0); //                                // * Given there is the "Woods Stroll Idea" idea at level 3 and 0 XP.
   await context.theSMayCreateASCard("Woods Stroll Idea", "Diamond"); //                                          // * The "Woods Stroll Idea" may create a "Diamond" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Diamond",
