@@ -7,7 +7,11 @@ const { preparsePostLines } = require("./preparsePostLines");
 const { isLineStep, isLineHeading } = require("./postLineQueries");
 
 async function readBlogPost(path) {
-  const id = path.slice(watchPath.length + 1).split(".")[0];
+  const baseName = path.slice(watchPath.length + 1);
+  const wpkg = baseName.split("/").slice(0, -1).join(".");
+  const name = baseName.split("/").slice(-1)[0].slice(0, -3);
+  const fullPostName = baseName.split(".")[0];
+  const id = name.split(".")[0];
   const javaName = makeJavaName(id);
   const testName = `Post_${javaName}_Test`;
   const contextName = `Post_${javaName}_Context`;
@@ -27,8 +31,15 @@ async function readBlogPost(path) {
 
   parseLines(postLines, testCalls, contextMethods, tables);
 
-  const pkg = frontmatter.values.package;
+  const pkg = wpkg || frontmatter.values.package;
   const subPath = pkg ? pkg.split(".") : [];
+
+  if (wpkg && wpkg !== frontmatter.values.package) {
+    throw new Error(
+      `Package mismatch: ${wpkg} !== ${frontmatter.values.package}\n` +
+        `  Both directory package ("${wpkg}") and frontmatter package ("${frontmatter.values.package}") must specify the same package.\n`,
+    );
+  }
 
   const result = {
     id,
@@ -43,6 +54,7 @@ async function readBlogPost(path) {
     contextName,
     contextMethods,
     tables,
+    fullPostName,
     subPath,
     subPackage: pkg ? `.${pkg}` : "",
     parent: subPath.length ? subPath.map(() => "..").join("/") : ".",

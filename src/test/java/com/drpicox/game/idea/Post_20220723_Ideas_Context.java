@@ -18,6 +18,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth8.assertThat;
 import com.drpicox.game.util.FrontendSimulator;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 @Component
 public class Post_20220723_Ideas_Context {
 
@@ -40,13 +43,25 @@ public class Post_20220723_Ideas_Context {
 
     public void beforeTest() throws Throwable {
         // Do your setup here, and change this contents, if necessary
-        gameFactory.makeGame(new GameFactorySettings());
+        givenGameService.givenGame("empty");
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
-    public void enterTheGame() {
+    public void givenANewExample() throws Throwable {
+        // NOTE: This method simulates beforeTest of a new test
+        //       It is used to separate examples in the same test,
+        //       which in your case should be different posts
+
+        givenGameService.givenGame("empty");
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+    }
+
+    public void enterTheGame() throws IOException, URISyntaxException {
         // text:  * Enter the game.
         // code: this.enterTheGame()
         // hint: Post_20220717_BushesVillagersAndBerries_Context.enterTheGame
+
+        givenGameService.givenGame("default");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
@@ -124,14 +139,6 @@ public class Post_20220723_Ideas_Context {
         var requirement = idea.findTagRequirement(tagName).get();
         assertThat(requirement.getCardCount()).isEqualTo(cardCount);
         assertThat(requirement.getTagValue()).isEqualTo(tagValue);
-    }
-
-    public void givenANewGame() throws Throwable {
-        // text:  * Given a new game.
-        // code: this.givenANewGame()
-
-        givenGameService.givenGame("empty");
-        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
     public void moveTheSCardToItsOwnStack(String cardName) {

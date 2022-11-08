@@ -23,7 +23,7 @@ async function main() {
 }
 
 async function updateAll() {
-  const files = glob.sync(watchPath + "/*.md");
+  const files = glob.sync(watchPath + "/**/*.md");
   const updates = files.map(update);
   const posts = await Promise.all(updates);
 

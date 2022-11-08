@@ -6,7 +6,6 @@ const { readBlogPost } = require("./readBlogPost");
 const { writeJsTestFile } = require("./writeJsTestFile");
 const { writeJsContextFile } = require("./writeJsContextFile");
 const { registerPost } = require("./posts");
-const { writeOriginalCopy } = require("./writeOriginalCopy");
 const { debugPost } = require("./debugPost");
 
 const UPDATED = " Updated ";
@@ -20,8 +19,6 @@ async function update(filePath) {
   post.failed = !verifyPost(post);
   if (post.failed) return post;
   registerPost(post);
-
-  writeOriginalCopy(post);
 
   let testWritten = false;
   let contextWritten = false;

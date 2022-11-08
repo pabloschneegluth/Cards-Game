@@ -10,7 +10,7 @@ import { Post_20220725_IdeasHaveLevels_Context } from "./Post_20220725_IdeasHave
 test("2022-07-25_ideas_have_levels.md", async () => {
   await runBeforeTestStarts(
     "2022-07-25_ideas_have_levels",
-    "19ad66ca57a036c8ed22f51c75a62507"
+    "7f62b87a9601111aa1d1b08fc4007936"
   );
 
   const context = new Post_20220725_IdeasHaveLevels_Context();
@@ -19,9 +19,14 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   // # Ideas Have Levels                                                                                       // # Ideas Have Levels
 
   // ## Increasing XP                                                                                          // ## Increasing XP
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.enterTheGame(); //                                                                             // * Enter the game.
   await context.thereShouldBeTheSIdea("Harvest Idea"); //                                                      // * There should be the "Harvest Idea" idea.
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 1, 0); //                                           // * The "Harvest Idea" should have level 1 and 0 XP.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
+  await context.givenThereIsTheSIdea("Harvest Idea"); //                                                       // * Given there is the "Harvest Idea" idea.
+  await context.givenThereAreNSCards(1, "Villager"); //                                                        // * Given there are 1 "Villager" cards.
+  await context.givenThereAreNSCards(1, "Berry Bush"); //                                                      // * Given there are 1 "Berry Bush" cards.
   await context.drawACardFromTheSIdea("Harvest Idea"); //                                                      // * Draw a card from the "Harvest Idea" idea.
   await context.moveTheSCardToItsOwnStack("Harvest Idea"); //                                                  // * Move the "Harvest Idea" card to its own stack.
   await context.moveTheSCardOnTopOfTheSCard("Villager", "Harvest Idea"); //                                    // * Move the "Villager" card on top of the "Harvest Idea" card.
@@ -35,13 +40,24 @@ test("2022-07-25_ideas_have_levels.md", async () => {
     1,
     "Berry Bush"
   ); // // * There should be 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Berry Bush" cards.
-  await context.thereShouldBeNSCards(1, "Berry"); //                                                           // * There should be 1 "Berry" cards.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
+  await context.givenThereIsTheSIdea("Harvest Idea"); //                                                       // * Given there is the "Harvest Idea" idea.
+  await context.givenThereAreNSCards(1, "Berry"); //                                                           // * Given there are 1 "Berry" cards.
+  await context.givenThereAreNStacksOfNSNSAndNSCards(
+    1,
+    1,
+    "Harvest Idea",
+    1,
+    "Villager",
+    1,
+    "Berry Bush"
+  ); // // * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Berry Bush" cards.
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 1, 0); //                                           // * The "Harvest Idea" should have level 1 and 0 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 1, 1); //                                           // * The "Harvest Idea" should have level 1 and 1 XP.
   await context.thereShouldBeNSCards(2, "Berry"); //                                                           // * There should be 2 "Berry" cards.
   // ### Gaining several XP at once                                                                            // ### Gaining several XP at once
-  await context.givenANewGame(); //                                                                            // * Given a new game.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenThereIsTheSIdea("Harvest Idea"); //                                                       // * Given there is the "Harvest Idea" idea.
   await context.givenThereAreNSCards(2, "Berry"); //                                                           // * Given there are 2 "Berry" cards.
   await context.givenThereAreNStacksOfNSNSAndNSCards(
@@ -58,7 +74,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 1, 2); //                                           // * The "Harvest Idea" should have level 1 and 2 XP.
 
   // ## Increasing level                                                                                       // ## Increasing level
-  await context.givenANewGame(); //                                                                            // * Given a new game.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 9); //                                   // * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
   await context.givenThereAreNSCards(1, "Berry"); //                                                           // * Given there are 1 "Berry" cards.
   await context.givenThereAreNStacksOfNSNSAndNSCards(
@@ -77,6 +93,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |                                      // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |
   // #### |---------------:|--------------:|------------:|-------------:|                                      // #### |---------------:|--------------:|------------:|-------------:|
   // #### |              1 |             9 |           2 |            3 |                                      // #### |              1 |             9 |           2 |            3 |
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 9); //                                   // * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
@@ -87,6 +104,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |                                      // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |
   // #### |---------------:|--------------:|------------:|-------------:|                                      // #### |---------------:|--------------:|------------:|-------------:|
   // #### |              2 |            19 |           3 |            4 |                                      // #### |              2 |            19 |           3 |            4 |
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 2, 19); //                                  // * Given there is the "Harvest Idea" idea at level 2 and 19 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
@@ -97,6 +115,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |                                      // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |
   // #### |---------------:|--------------:|------------:|-------------:|                                      // #### |---------------:|--------------:|------------:|-------------:|
   // #### |              3 |            29 |           4 |            5 |                                      // #### |              3 |            29 |           4 |            5 |
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 3, 29); //                                  // * Given there is the "Harvest Idea" idea at level 3 and 29 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
@@ -107,6 +126,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |                                      // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |
   // #### |---------------:|--------------:|------------:|-------------:|                                      // #### |---------------:|--------------:|------------:|-------------:|
   // #### |              4 |            39 |           5 |            6 |                                      // #### |              4 |            39 |           5 |            6 |
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 4, 39); //                                  // * Given there is the "Harvest Idea" idea at level 4 and 39 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
@@ -117,6 +137,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |                                      // #### | $PreviousLevel |  $XPThreshold |  $NextLevel | $NextBerries |
   // #### |---------------:|--------------:|------------:|-------------:|                                      // #### |---------------:|--------------:|------------:|-------------:|
   // #### |              5 |            49 |           6 |            7 |                                      // #### |              5 |            49 |           6 |            7 |
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 5, 49); //                                  // * Given there is the "Harvest Idea" idea at level 5 and 49 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
@@ -124,12 +145,14 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 6, 0); //                                           // * The "Harvest Idea" should have level 6 and 0 XP.
   await context.thereShouldBeNSCards(7, "Berry"); //                                                           // * There should be 7 "Berry" cards.
   // ### XP are not lost                                                                                       // ### XP are not lost
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(3, "Berry Bush"); //                                        // * Given a new game with 3 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 9); //                                   // * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 2, 2); //                                           // * The "Harvest Idea" should have level 2 and 2 XP.
 
   // ## New ideas from existing ideas                                                                          // ## New ideas from existing ideas
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 9); //                                   // * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
   await context.thereShouldBeNoSIdea("Seed Idea"); //                                                          // * There should be no "Seed Idea" idea.
@@ -138,6 +161,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   await context.thereShouldBeTheSIdea("Seed Idea"); //                                                         // * There should be the "Seed Idea" idea.
   await context.theSShouldHaveLevelNAndNXp("Seed Idea", 1, 0); //                                              // * The "Seed Idea" should have level 1 and 0 XP.
   // ### Do not lose old XP gaining again                                                                      // ### Do not lose old XP gaining again
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenANewGameWithNSProductionStack(1, "Berry Bush"); //                                        // * Given a new game with 1 "Berry Bush" production stack.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 9); //                                   // * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 3, 12); //                                     // * Given there is the "Seed Idea" idea at level 3 and 12 XP.
@@ -145,8 +169,29 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   await context.theSShouldHaveLevelNAndNXp("Harvest Idea", 2, 0); //                                           // * The "Harvest Idea" should have level 2 and 0 XP.
   await context.theSShouldHaveLevelNAndNXp("Seed Idea", 3, 12); //                                             // * The "Seed Idea" should have level 3 and 12 XP.
 
+  // ## Seed Idea                                                                                              // ## Seed Idea
+  await context.givenANewExample(); //                                                                         // * Given a new example.
+  await context.givenThereIsTheSIdea("Seed Idea"); //                                                          // * Given there is the "Seed Idea" idea.
+  await context.theSIdeaShouldRequireNCardWithAtLeastNInSTag(
+    "Seed Idea",
+    1,
+    1,
+    "Seed"
+  ); //                    // * The "Seed Idea" idea should require 1 card with at least 1 in "Seed" tag.
+  await context.theSIdeaShouldRequireNCardWithAtLeastNInSTag(
+    "Seed Idea",
+    1,
+    1,
+    "Worker"
+  ); //                  // * The "Seed Idea" idea should require 1 card with at least 1 in "Worker" tag.
+  await context.theSShouldHaveLevelNAndNXp("Seed Idea", 1, 0); //                                              // * The "Seed Idea" should have level 1 and 0 XP.
+
+  // ## Berries know how to be seeds                                                                           // ## Berries know how to be seeds
+
+  // ## So do apples                                                                                           // ## So do apples
+
   // ## Ideas may take several moons.                                                                          // ## Ideas may take several moons.
-  await context.givenANewGame(); //                                                                            // * Given a new game.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 1, 0); //                                      // * Given there is the "Seed Idea" idea at level 1 and 0 XP.
   await context.givenThereAreNStacksOfNSCards(1, 5, "Berry"); //                                               // * Given there are 1 stacks of 5 "Berry" cards.
   await context.givenThereAreNStacksOfNSNSAndNSCards(
@@ -160,24 +205,6 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   ); //         // * Given there are 1 stacks of 1 "Seed Idea", 1 "Villager", and 1 "Berry" cards.
   await context.givenThereAreNSCards(0, "Berry Bush"); //                                                      // * Given there are 0 "Berry Bush" cards.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
-  await context.theSIdeaShouldRequireNCardWithAtLeastNInSTag(
-    "Seed Idea",
-    1,
-    1,
-    "Seed"
-  ); //                    // * The "Seed Idea" idea should require 1 card with at least 1 in "Seed" tag.
-  await context.theSIdeaShouldRequireNCardWithAtLeastNInSTag(
-    "Seed Idea",
-    1,
-    1,
-    "Worker"
-  ); //                  // * The "Seed Idea" idea should require 1 card with at least 1 in "Worker" tag.
-  await context.theSCardShouldHaveNInSTag("Berry", 1, "Seed"); //                                              // * The "Berry" card should have 1 in "Seed" tag.
-  await context.theSCardDescriptionShouldSaySIsS(
-    "Berry",
-    "Plant",
-    "Berry Bush"
-  ); //                           // * The "Berry" card description should say "Plant" is "Berry Bush".
   await context.theSShouldHaveLevelNAndNXp("Seed Idea", 1, 0); //                                              // * The "Seed Idea" should have level 1 and 0 XP.
   await context.thereShouldBeNSCards(0, "Berry Bush"); //                                                      // * There should be 0 "Berry Bush" cards.
   await context.theSCardProgressShouldBeNOfN("Seed Idea", 1, 5); //                                            // * The "Seed Idea" card progress should be 1 of 5.
@@ -194,7 +221,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
   await context.theSCardProgressShouldBeNOfN("Seed Idea", 0, 5); //                                            // * The "Seed Idea" card progress should be 0 of 5.
   await context.theSShouldHaveLevelNAndNXp("Seed Idea", 1, 1); //                                              // * The "Seed Idea" should have level 1 and 1 XP.
   await context.thereShouldBeNSCards(1, "Berry Bush"); //                                                      // * There should be 1 "Berry Bush" cards.
-  await context.givenANewGame(); //                                                                            // * Given a new game.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Seed Idea", 1, 0); //                                      // * Given there is the "Seed Idea" idea at level 1 and 0 XP.
   await context.givenThereAreNStacksOfNSCards(1, 5, "Berry"); //                                               // * Given there are 1 stacks of 5 "Berry" cards.
   await context.givenThereAreNStacksOfNSNSAndNSCards(
@@ -207,19 +234,13 @@ test("2022-07-25_ideas_have_levels.md", async () => {
     "Apple"
   ); //         // * Given there are 1 stacks of 1 "Seed Idea", 1 "Villager", and 1 "Apple" cards.
   await context.givenThereAreNSCards(0, "Apple Tree"); //                                                      // * Given there are 0 "Apple Tree" cards.
-  await context.theSCardShouldHaveNInSTag("Apple", 1, "Seed"); //                                              // * The "Apple" card should have 1 in "Seed" tag.
-  await context.theSCardDescriptionShouldSaySIsS(
-    "Apple",
-    "Plant",
-    "Apple Tree"
-  ); //                           // * The "Apple" card description should say "Plant" is "Apple Tree".
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
   await context.thereShouldBeNSCards(1, "Apple Tree"); //                                                      // * There should be 1 "Apple Tree" cards.
-  await context.givenANewGame(); //                                                                            // * Given a new game.
+  await context.givenANewExample(); //                                                                         // * Given a new example.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 0); //                                   // * Given there is the "Harvest Idea" idea at level 1 and 0 XP.
   await context.givenThereAreNStacksOfNSCards(1, 1, "Berry"); //                                               // * Given there are 1 stacks of 1 "Berry" cards.
   await context.givenThereAreNStacksOfNSNSAndNSCards(
@@ -232,7 +253,7 @@ test("2022-07-25_ideas_have_levels.md", async () => {
     "Apple Tree"
   ); // // * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Apple Tree" cards.
   await context.endTheCurrentMoon(); //                                                                        // * End the current moon.
-  await context.thereShouldBeNSCards(1, "Apple Tree"); //                                                      // * There should be 1 "Apple Tree" cards.
+  await context.thereShouldBeNSCards(2, "Apple"); //                                                           // * There should be 2 "Apple" cards.
 
   await context.afterTest();
   await runWhenTestSuccessful();

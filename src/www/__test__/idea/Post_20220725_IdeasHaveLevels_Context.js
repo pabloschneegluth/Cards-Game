@@ -19,13 +19,18 @@ import { queryAllStackDigestByCardNames } from "../stack/queries";
 export class Post_20220725_IdeasHaveLevels_Context {
   async beforeTest() {
     // Do your setup here, if necessary
+    await waitForEnterTheGame();
+  }
+
+  async givenANewExample() {
+    await waitForReloadGame();
   }
 
   async enterTheGame() {
     // text:  * Enter the game.
     // code: await this.enterTheGame()
     // hint: Post_20220723_Ideas_Context.enterTheGame
-    await waitForEnterTheGame();
+    await waitForReloadGame();
   }
 
   async thereShouldBeTheSIdea(expectedName) {
