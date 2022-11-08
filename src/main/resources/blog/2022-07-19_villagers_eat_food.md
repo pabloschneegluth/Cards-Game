@@ -16,11 +16,14 @@ If you look carefully to the cards, you will
 see that it has several properties.
 For example, berries are food.
 
- * Given we have entered into a new game.
+ * Given a new example.
+ * Given there are 1 "Berry" cards.
  * The "Berry" card should have 1 in "Food" tag.
 
 And villagers eats.
 
+ * Given a new example.
+ * Given there are 1 "Villager" cards.
  * The "Villager" card should have 1 in "Eats" tag.
 
 ## Moons
@@ -31,13 +34,15 @@ You can reorganize cards whenever your want.
 But when you have finish, you have to end the moon.
 When the moon ends, the rules applies and the magic begin.
 
+ * Given a new example.
+ * Given there are 1 "Villager" cards.
+ * Given there are 1 "Berry" cards.
  * End the current moon.
 
 And look to the results:
 
  * There should be 0 "Berry" cards.
  * There should be 1 "Villager" cards.
- * There should be 1 "Berry Bush" cards.
 
 The villager has eaten the berry, and there should be no 
 more berries available.
@@ -51,13 +56,19 @@ If we make one more moon pass,
 and if we do not have food for the villagers,
 they die.
 
+ * Given a new example.
+ * Given there are 0 "Berry" cards.
+ * Given there are 1 "Villager" cards.
  * End the current moon.
  * There should be 0 "Berry" cards.
  * There should be 0 "Villager" cards.
- * There should be 1 "Berry Bush" cards.
 
 Wait, what is that other card that we can see?
 
+ * Given a new example.
+ * Given there are 0 "Berry" cards.
+ * Given there are 1 "Villager" cards.
+ * End the current moon.
  * There should be 1 "Corpse" cards.
 
 It's a corpse! Your villager died,

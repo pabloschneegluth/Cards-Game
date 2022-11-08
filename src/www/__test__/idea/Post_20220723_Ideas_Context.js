@@ -18,13 +18,18 @@ import { queryAllStackDigestByCardNames } from "../stack/queries";
 export class Post_20220723_Ideas_Context {
   async beforeTest() {
     // Do your setup here, if necessary
+    await waitForEnterTheGame();
+  }
+
+  async givenANewExample() {
+    await waitForReloadGame();
   }
 
   async enterTheGame() {
     // text:  * Enter the game.
     // code: await this.enterTheGame()
     // hint: Post_20220717_BushesVillagersAndBerries_Context.enterTheGame
-    await waitForEnterTheGame();
+    await waitForReloadGame();
   }
 
   async thereShouldBeTheSIdea(expectedName) {
@@ -102,12 +107,6 @@ export class Post_20220723_Ideas_Context {
       var [card] = getAllCardByName(mainView, cardName);
       await waitForDiscardCard(card);
     }
-  }
-
-  async givenANewGame() {
-    // text:  * Given a new game.
-    // code: await this.givenANewGame()
-    await waitForReloadGame();
   }
 
   async givenThereAreNSCards() {

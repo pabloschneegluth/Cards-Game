@@ -23,15 +23,18 @@ public class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things", "7c519bed8fcf06800ccd76e688c8b105");
+        testUtils.runBeforeTestStarts("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things", "4e6cbcdcee02cb846cbbbb62aec5041f");
         context.beforeTest();
 
         // # I have an idea to take a stroll in the wood and find random things                                // # I have an idea to take a stroll in the wood and find random things
 
         // ## Walk in the woods idea                                                                           // ## Walk in the woods idea
+        context.givenANewExample();                                                                            // * Given a new example.
         context.enterTheGame();                                                                                // * Enter the game.
         context.thereShouldBeTheSIdea("Harvest Idea");                                                         // * There should be the "Harvest Idea" idea.
         context.theSShouldHaveLevelNAndNXp("Woods Stroll Idea", 1, 0);                                         // * The "Woods Stroll Idea" should have level 1 and 0 XP.
+        context.givenANewExample();                                                                            // * Given a new example.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 1, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 1 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Berry");                                             // * The "Woods Stroll Idea" may create a "Berry" card.
         context.theSMayCreateASCard("Woods Stroll Idea", "Apple");                                             // * The "Woods Stroll Idea" may create a "Apple" card.
         context.theSIdeaShouldRequireNCardWithAtLeastNInSTag("Woods Stroll Idea", 1, 1, "Worker");             // * The "Woods Stroll Idea" idea should require 1 card with at least 1 in "Worker" tag.
@@ -41,6 +44,7 @@ public class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
         // #### | $CardName |                                                                                  // #### | $CardName |
         // #### |-----------|                                                                                  // #### |-----------|
         // #### | Berry     |                                                                                  // #### | Berry     |
+        context.givenANewExample();                                                                            // * Given a new example.
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Berry", "Woods Stroll Idea");                  // * Given that the odds are that we will get a "Berry" from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                           // * End the current moon.
@@ -49,18 +53,27 @@ public class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
         // #### | $CardName |                                                                                  // #### | $CardName |
         // #### |-----------|                                                                                  // #### |-----------|
         // #### | Apple     |                                                                                  // #### | Apple     |
+        context.givenANewExample();                                                                            // * Given a new example.
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Apple", "Woods Stroll Idea");                  // * Given that the odds are that we will get a "Apple" from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                           // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Apple");    // * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Apple" cards.
         // ### In the level 1                                                                                  // ### In the level 1
+        context.givenANewExample();                                                                            // * Given a new example.
+        context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Harvest Idea", 1, 0);                                      // * Given there is the "Harvest Idea" idea at level 1 and 0 XP.
+        context.theSMayNotCreateASCard("Woods Stroll Idea", "Villager");                                       // * The "Woods Stroll Idea" may not create a "Villager" card.
         // ### In a higher level                                                                               // ### In a higher level
         // #### | $CardName |                                                                                  // #### | $CardName |
         // #### |-----------|                                                                                  // #### |-----------|
         // #### | Berry     |                                                                                  // #### | Berry     |
+        context.givenANewExample();                                                                            // * Given a new example.
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
         context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Berry");                                             // * The "Woods Stroll Idea" may create a "Berry" card.
+        context.givenANewExample();                                                                            // * Given a new example.
+        context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Berry", "Woods Stroll Idea");                  // * Given that the odds are that we will get a "Berry" from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                           // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Berry");    // * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager", and 1 "Berry" cards.
@@ -68,9 +81,13 @@ public class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
         // #### | $CardName |                                                                                  // #### | $CardName |
         // #### |-----------|                                                                                  // #### |-----------|
         // #### | Apple     |                                                                                  // #### | Apple     |
+        context.givenANewExample();                                                                            // * Given a new example.
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
         context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Apple");                                             // * The "Woods Stroll Idea" may create a "Apple" card.
+        context.givenANewExample();                                                                            // * Given a new example.
+        context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Apple", "Woods Stroll Idea");                  // * Given that the odds are that we will get a "Apple" from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                           // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Apple");    // * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager", and 1 "Apple" cards.
@@ -78,9 +95,13 @@ public class Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_
         // #### | $CardName |                                                                                  // #### | $CardName |
         // #### |-----------|                                                                                  // #### |-----------|
         // #### | Villager  |                                                                                  // #### | Villager  |
+        context.givenANewExample();                                                                            // * Given a new example.
         context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
         context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.theSMayCreateASCard("Woods Stroll Idea", "Villager");                                          // * The "Woods Stroll Idea" may create a "Villager" card.
+        context.givenANewExample();                                                                            // * Given a new example.
+        context.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager");             // * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+        context.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0);                                 // * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Villager", "Woods Stroll Idea");               // * Given that the odds are that we will get a "Villager" from the "Woods Stroll Idea" card.
         context.endTheCurrentMoon();                                                                           // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Villager"); // * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager", and 1 "Villager" cards.

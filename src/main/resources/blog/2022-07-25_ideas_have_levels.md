@@ -13,21 +13,29 @@ So get ready to accumulate experience points and increase levels!
 
 When the game begins, the XP in any idea is zero.
 
+ * Given a new example.
  * Enter the game.
  * There should be the "Harvest Idea" idea.
  * The "Harvest Idea" should have level 1 and 0 XP.
 
 But when you start using them, the XP in the "Harvest Idea" idea should increase.
 
+ * Given a new example.
+ * Given there is the "Harvest Idea" idea.
+ * Given there are 1 "Villager" cards.
+ * Given there are 1 "Berry Bush" cards.
  * Draw a card from the "Harvest Idea" idea.
  * Move the "Harvest Idea" card to its own stack.
  * Move the "Villager" card on top of the "Harvest Idea" card.
  * Move the "Berry Bush" card on top of the "Villager" card.
  * There should be 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Berry Bush" cards.
- * There should be 1 "Berry" cards.
 
 If we end the moon, we will se how the XP would increase.
 
+ * Given a new example.
+ * Given there is the "Harvest Idea" idea.
+ * Given there are 1 "Berry" cards.
+ * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Berry Bush" cards.
  * The "Harvest Idea" should have level 1 and 0 XP.
  * End the current moon.
  * The "Harvest Idea" should have level 1 and 1 XP.
@@ -40,7 +48,7 @@ But the level still remains. We need to gain more experience in this!
 We won only one XP because there was only one use of the idea.
 But what if we create two berry production piles?
 
- * Given a new game.
+ * Given a new example.
  * Given there is the "Harvest Idea" idea.
  * Given there are 2 "Berry" cards.
  * Given there are 2 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Berry Bush" cards.
@@ -55,7 +63,7 @@ We earned two XP because we used the idea twice.
 Each level has a different barrier, once you achieve the
 barrier for 10 XP, then you go to the level 2.
 
- * Given a new game.
+ * Given a new example.
  * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
  * Given there are 1 "Berry" cards.
  * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Berry Bush" cards.
@@ -80,6 +88,7 @@ Let's see it.
 |              4 |            39 |           5 |            6 |
 |              5 |            49 |           6 |            7 |
 
+ * Given a new example.
  * Given a new game with 1 "Berry Bush" production stack.
  * Given there is the "Harvest Idea" idea at level $PreviousLevel and $XPThreshold XP.
  * End the current moon.
@@ -94,7 +103,8 @@ It increased by each level, and it produces more berries at each level
 ### XP are not lost
 
 When we gain several XP, we keep the remaining points in the next level.
- 
+
+ * Given a new example.
  * Given a new game with 3 "Berry Bush" production stack.
  * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
  * End the current moon.
@@ -109,6 +119,7 @@ For example, if you would be expected that after observing how we can harvest be
 we realize that "Berry Bush" grow from "Berry". 
 So probably we can learn how to plant by harvesting.
 
+ * Given a new example.
  * Given a new game with 1 "Berry Bush" production stack.
  * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
  * There should be no "Seed Idea" idea.
@@ -124,6 +135,7 @@ do not worry, the XP points are kept.
 
 Let's see it:
 
+ * Given a new example.
  * Given a new game with 1 "Berry Bush" production stack.
  * Given there is the "Harvest Idea" idea at level 1 and 9 XP.
  * Given there is the "Seed Idea" idea at level 3 and 12 XP.
@@ -133,21 +145,45 @@ Let's see it:
 
 Your idea level and XP are not lost.
 
+## Seed Idea
+
+There is a seed idea, that will allow you to plant seeds.
+
+ * Given a new example.
+ * Given there is the "Seed Idea" idea.
+ * The "Seed Idea" idea should require 1 card with at least 1 in "Seed" tag.
+ * The "Seed Idea" idea should require 1 card with at least 1 in "Worker" tag.
+ * The "Seed Idea" should have level 1 and 0 XP.
+
+## Berries know how to be seeds
+
+Berries describe how they can become plants!
+
+* Given a new example.
+* Given there are 1 "Berry" cards.
+* The "Berry" card should have 1 in "Seed" tag.
+* The "Berry" card description should say "Plant" is "Berry Bush".
+
+## So do apples
+
+Berries describe how they can become plants!
+
+* Given a new example.
+* Given there are 1 "Apple" cards.
+* The "Apple" card should have 1 in "Seed" tag.
+* The "Apple" card description should say "Plant" is "Apple Tree".
+
 ## Ideas may take several moons.
 
 But not all ideas run at the same time, some ideas may take more time to develop.
 For example, harvesting is faster than seeding.
 
- * Given a new game.
+ * Given a new example.
  * Given there is the "Seed Idea" idea at level 1 and 0 XP.
  * Given there are 1 stacks of 5 "Berry" cards.
  * Given there are 1 stacks of 1 "Seed Idea", 1 "Villager", and 1 "Berry" cards.
  * Given there are 0 "Berry Bush" cards.
  * End the current moon.
- * The "Seed Idea" idea should require 1 card with at least 1 in "Seed" tag.
- * The "Seed Idea" idea should require 1 card with at least 1 in "Worker" tag.
- * The "Berry" card should have 1 in "Seed" tag.
- * The "Berry" card description should say "Plant" is "Berry Bush".
  * The "Seed Idea" should have level 1 and 0 XP.
  * There should be 0 "Berry Bush" cards.
 
@@ -178,13 +214,11 @@ Finally. After 5 exhausting moons working, we did it.
 
 And the same idea can grow an Apple Tree.
 
- * Given a new game.
+ * Given a new example.
  * Given there is the "Seed Idea" idea at level 1 and 0 XP.
  * Given there are 1 stacks of 5 "Berry" cards.
  * Given there are 1 stacks of 1 "Seed Idea", 1 "Villager", and 1 "Apple" cards.
  * Given there are 0 "Apple Tree" cards.
- * The "Apple" card should have 1 in "Seed" tag.
- * The "Apple" card description should say "Plant" is "Apple Tree".
  * End the current moon.
  * End the current moon.
  * End the current moon.
@@ -194,9 +228,9 @@ And the same idea can grow an Apple Tree.
 
 And Apple Trees can be also harvested:
 
- * Given a new game.
+ * Given a new example.
  * Given there is the "Harvest Idea" idea at level 1 and 0 XP.
  * Given there are 1 stacks of 1 "Berry" cards.
  * Given there are 1 stacks of 1 "Harvest Idea", 1 "Villager", and 1 "Apple Tree" cards.
  * End the current moon.
- * There should be 1 "Apple Tree" cards.
+ * There should be 2 "Apple" cards.

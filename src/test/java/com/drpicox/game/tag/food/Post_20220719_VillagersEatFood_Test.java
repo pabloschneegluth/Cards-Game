@@ -23,27 +23,38 @@ public class Post_20220719_VillagersEatFood_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-07-19_villagers_eat_food", "a574ebebe413ab14edcdd4ba1f736d27");
+        testUtils.runBeforeTestStarts("2022-07-19_villagers_eat_food", "9869885987d02408d5afe666704a1d63");
         context.beforeTest();
 
         // # Villagers Eat Food!                                  // # Villagers Eat Food!
 
         // ## Berries are food                                    // ## Berries are food
-        context.givenWeHaveEnteredIntoANewGame();                 // * Given we have entered into a new game.
+        context.givenANewExample();                               // * Given a new example.
+        context.givenThereAreNSCards(1, "Berry");                 // * Given there are 1 "Berry" cards.
         context.theSCardShouldHaveNInSTag("Berry", 1, "Food");    // * The "Berry" card should have 1 in "Food" tag.
+        context.givenANewExample();                               // * Given a new example.
+        context.givenThereAreNSCards(1, "Villager");              // * Given there are 1 "Villager" cards.
         context.theSCardShouldHaveNInSTag("Villager", 1, "Eats"); // * The "Villager" card should have 1 in "Eats" tag.
 
         // ## Moons                                               // ## Moons
+        context.givenANewExample();                               // * Given a new example.
+        context.givenThereAreNSCards(1, "Villager");              // * Given there are 1 "Villager" cards.
+        context.givenThereAreNSCards(1, "Berry");                 // * Given there are 1 "Berry" cards.
         context.endTheCurrentMoon();                              // * End the current moon.
         context.thereShouldBeNSCards(0, "Berry");                 // * There should be 0 "Berry" cards.
         context.thereShouldBeNSCards(1, "Villager");              // * There should be 1 "Villager" cards.
-        context.thereShouldBeNSCards(1, "Berry Bush");            // * There should be 1 "Berry Bush" cards.
 
         // ## Starving                                            // ## Starving
+        context.givenANewExample();                               // * Given a new example.
+        context.givenThereAreNSCards(0, "Berry");                 // * Given there are 0 "Berry" cards.
+        context.givenThereAreNSCards(1, "Villager");              // * Given there are 1 "Villager" cards.
         context.endTheCurrentMoon();                              // * End the current moon.
         context.thereShouldBeNSCards(0, "Berry");                 // * There should be 0 "Berry" cards.
         context.thereShouldBeNSCards(0, "Villager");              // * There should be 0 "Villager" cards.
-        context.thereShouldBeNSCards(1, "Berry Bush");            // * There should be 1 "Berry Bush" cards.
+        context.givenANewExample();                               // * Given a new example.
+        context.givenThereAreNSCards(0, "Berry");                 // * Given there are 0 "Berry" cards.
+        context.givenThereAreNSCards(1, "Villager");              // * Given there are 1 "Villager" cards.
+        context.endTheCurrentMoon();                              // * End the current moon.
         context.thereShouldBeNSCards(1, "Corpse");                // * There should be 1 "Corpse" cards.
 
         context.afterTest();

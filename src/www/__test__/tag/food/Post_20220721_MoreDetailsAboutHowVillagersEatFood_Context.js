@@ -1,4 +1,4 @@
-import { getByTestId, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import {
   getAllCardDigestByName,
   queryAllCardByName,
@@ -10,6 +10,10 @@ import { waitForEndMoon } from "../../moon/actions";
 
 export class Post_20220721_MoreDetailsAboutHowVillagersEatFood_Context {
   async beforeTest() {}
+
+  async givenANewExample() {
+    await waitForReloadGame();
+  }
 
   async givenThereAreNSAndNSCards() {
     await waitForReloadGame();
