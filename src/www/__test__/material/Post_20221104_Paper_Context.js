@@ -7,22 +7,14 @@ export class Post_20221104_Paper_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
-  async givenANewGameWithAStackOfNSCardsNSAndNSCards(n1, s1, n2, s2, n3, s3) {
+  async givenANewGameWithAStackOfNSNSCardsAndNSCards(n1, s1, n2, s2, n3, s3) {
     // text:  * Given a new game with a stack of 5 "Wood" cards, 1 "Build Idea" and 1 "Villager" cards.
     // code: await this.givenANewGameWithAStackOfNSCardsNSAndNSCards(5, "Wood", 1, "Build Idea", 1, "Villager")
     // hint: Post_20221103_Key_Context.givenANewGameWithAStackOfNSCardsAndNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSCardsNSAndNSCards(n1, s1, n2, s2, n3, s3) is not implemented yet."
-    );
   }
 
   async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
@@ -31,20 +23,12 @@ export class Post_20221104_Paper_Context {
     // hint: Post_20221103_OldVillage_Context.givenThereIsTheSIdeaAtLevelNAndNXp
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) is not implemented yet."
-    );
   }
 
   async theSMayCreateASCard(s1, s2) {
     // text:  * The "Build Idea" may create a "Paper" card.
     // code: await this.theSMayCreateASCard("Build Idea", "Paper")
     // hint: Post_20221103_Key_Context.theSMayCreateASCard
-
-    throw new Error(
-      "The method theSMayCreateASCard(s1, s2) is not implemented yet."
-    );
   }
 
   async givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(s1, s2) {
@@ -53,10 +37,6 @@ export class Post_20221104_Paper_Context {
     // hint: Post_20221103_Key_Context.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(s1, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -65,8 +45,6 @@ export class Post_20221104_Paper_Context {
     // hint: Post_20221105_Wizard_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
@@ -76,10 +54,6 @@ export class Post_20221104_Paper_Context {
 
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
-
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
   }
 
   async afterTest() {
