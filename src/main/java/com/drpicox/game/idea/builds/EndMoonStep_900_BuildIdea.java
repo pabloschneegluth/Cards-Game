@@ -39,6 +39,28 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         createFarm(settings);
         createSword(settings);
         createWoodHouse(settings);
+        createFishingRod(settings);
+    }
+
+    private void createFishingRod(IdeaEndMoonSettings settings) {
+        var cards = settings.getStack().getCards();
+        int position = settings.getPosition();
+        int totalMaterialsNeeded = 0;
+        Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
+            put("string", 1);
+            put("wood", 2);
+        }};
+        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
+            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
+        }
+
+        var materials = getMaterialsToBuild(materialsNeeded, cards);
+
+        if (materials.size() != totalMaterialsNeeded) {
+            return;
+        }
+        cardFactory.makeCards(1, new CardFactorySettings("Fishing Rod").withPosition(position));
+        cardService.discardCards(materials);
     }
 
     private void createFarm(IdeaEndMoonSettings settings) {
