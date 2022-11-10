@@ -164,7 +164,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         var position = settings.getPosition();
         int totalMaterialsNeeded = 0;
         Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
-            put("wood", 5);
+            put("wood", 2);
         }};
         for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
             totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();

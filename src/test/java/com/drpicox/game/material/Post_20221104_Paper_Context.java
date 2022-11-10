@@ -47,7 +47,7 @@ public class Post_20221104_Paper_Context {
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
 
-    public void givenANewGameWithAStackOfNSCardsNSAndNSCards(int n1, String s1, int n2, String s2, int n3, String s3) {
+    public void givenANewGameWithAStackOfNSNSCardsAndNSCards(int n1, String s1, int n2, String s2, int n3, String s3) {
         // text:  * Given a new game with a stack of 5 "Wood" cards, 1 "Build Idea" and 1 "Villager" cards.
         // code: this.givenANewGameWithAStackOfNSCardsNSAndNSCards(5, "Wood", 1, "Build Idea", 1, "Villager")
         // hint: Post_20221103_Key_Context.givenANewGameWithAStackOfNSCardsAndNSCards

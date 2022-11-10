@@ -23,13 +23,13 @@ public class Post_20221104_Paper_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-11-04_paper", "048eb415bfc62f1764437522a13159ae");
+        testUtils.runBeforeTestStarts("2022-11-04_paper", "a065791035e6ea7eb206c39203236fd5");
         context.beforeTest();
 
         // # Paper                                                                                       // # Paper
 
         // ## How to obtain paper                                                                        // ## How to obtain paper
-        context.givenANewGameWithAStackOfNSCardsNSAndNSCards(5, "Wood", 1, "Build Idea", 1, "Villager"); // * Given a new game with a stack of 5 "Wood" cards, 1 "Build Idea" and 1 "Villager" cards.
+        context.givenANewGameWithAStackOfNSNSCardsAndNSCards(1, "Build Idea", 1, "Villager", 2, "Wood"); // * Given a new game with a stack of 1 "Build Idea", 1 "Villager" cards and 2 "Wood" cards.
         context.givenThereIsTheSIdeaAtLevelNAndNXp("Build Idea", 2, 0);                                  // * Given there is the "Build Idea" idea at level 2 and 0 XP.
         context.endTheCurrentMoon();                                                                     // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Paper");     // * There should be 1 stacks of 1 "Build Idea", 1 "Villager" and 1 "Paper" cards.

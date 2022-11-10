@@ -10,7 +10,7 @@ import { Post_20221104_Paper_Context } from "./Post_20221104_Paper_Context";
 test("2022-11-04_paper.md", async () => {
   await runBeforeTestStarts(
     "2022-11-04_paper",
-    "048eb415bfc62f1764437522a13159ae"
+    "a065791035e6ea7eb206c39203236fd5"
   );
 
   const context = new Post_20221104_Paper_Context();
@@ -19,14 +19,14 @@ test("2022-11-04_paper.md", async () => {
   // # Paper                                                                                                // # Paper
 
   // ## How to obtain paper                                                                                 // ## How to obtain paper
-  await context.givenANewGameWithAStackOfNSCardsNSAndNSCards(
-    5,
-    "Wood",
+  await context.givenANewGameWithAStackOfNSNSCardsAndNSCards(
     1,
     "Build Idea",
     1,
-    "Villager"
-  ); // // * Given a new game with a stack of 5 "Wood" cards, 1 "Build Idea" and 1 "Villager" cards.
+    "Villager",
+    2,
+    "Wood"
+  ); // // * Given a new game with a stack of 1 "Build Idea", 1 "Villager" cards and 2 "Wood" cards.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Build Idea", 2, 0); //                                  // * Given there is the "Build Idea" idea at level 2 and 0 XP.
   await context.endTheCurrentMoon(); //                                                                     // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSAndNSCards(
