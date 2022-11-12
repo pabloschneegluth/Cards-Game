@@ -39,7 +39,6 @@ public class EndMoonStep_200_OldVillageCreateOldVillageStrollIdea implements End
     @Override
     public void execute(EndMoonSettings settings) {
 
-<<<<<<< Updated upstream
       var stack =  stackService.findAllStack();
       for (var cards : stack) {
           var location = cards.getCards();
@@ -49,17 +48,6 @@ public class EndMoonStep_200_OldVillageCreateOldVillageStrollIdea implements End
           }
 
       }
-=======
-        var stack =  stackService.findAllStack();
-        for (var cards : stack) {
-            var location = cards.getCards();
-            var oldVillage = location.stream().filter( x -> x.getName().equals("Old Village")).findFirst();
-            if(oldVillage.isEmpty()==false){
-                ideaFactory.makeIdea(new IdeaFactorySettings("Old Village Stroll Idea"));
-            }
-
-        }
->>>>>>> Stashed changes
 
 
 
