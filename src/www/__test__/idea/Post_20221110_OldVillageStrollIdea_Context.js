@@ -16,7 +16,11 @@ export class Post_20221110_OldVillageStrollIdea_Context {
   async givenANewGameWithAStackOfNSCardsAndNSCard(n1, s1, n2, s2) {
     // text:  * Given a new game with a stack of 1 "Old Village" cards and 1 "Villager" card.
     // code: await this.givenANewGameWithAStackOfNSCardsAndNSCard(1, "Old Village", 1, "Villager")
+<<<<<<< Updated upstream
     // hint: Post_20220913_Wolf_Context.givenANewGameWithAStackOfNSCardsAndNSCard
+=======
+    // hint: Post_20221103_Creeper_Context.givenANewGameWithAStackOfNSCardsAndNSCard
+>>>>>>> Stashed changes
 
     await waitForReloadGame();
 
@@ -28,7 +32,11 @@ export class Post_20221110_OldVillageStrollIdea_Context {
   async endTheCurrentMoon() {
     // text:  * End the current moon.
     // code: await this.endTheCurrentMoon()
+<<<<<<< Updated upstream
     // hint: Post_20221019_Farm_Context.endTheCurrentMoon
+=======
+    // hint: Post_20221013_WoodHouse_Context.endTheCurrentMoon
+>>>>>>> Stashed changes
 
     await waitForEndMoon();
 
