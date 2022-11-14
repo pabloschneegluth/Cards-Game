@@ -1,4 +1,4 @@
-package com.drpicox.game.animal;
+package com.drpicox.game.place;
 
 import com.drpicox.game.card.GivenStackService;
 import com.drpicox.game.card.StackService;
@@ -18,34 +18,31 @@ import com.drpicox.game.card.GivenCardService;
 import com.drpicox.game.game.api.GameDTO;
 
 @Component
-public class Post_20221030_Cow_Context {
+public class Post_20221106_Lake_Context {
 
     private final FrontendSimulator frontendSimulator;
     private final GivenGameService givenGameService;
     private final GivenCardService givenCardService;
-    private final GivenIdeaService givenIdeaService;
-
-    private final GivenStackService givenStackService;
-
-    private final RandomPickerServiceMock randomPickerServiceMock;
-
+    private GameDTO gameDTO;
+    private GivenIdeaService givenIdeaService;
+    private GivenStackService givenStackService;
+    private RandomPickerServiceMock randomPickerServiceMock;
     private StackService stackService;
 
-
-    private GameDTO gameDTO;
-
-    Post_20221030_Cow_Context(FrontendSimulator frontendSimulator,
-                              GivenGameService givenGameService, GivenCardService givenCardService,
-                              GivenIdeaService givenIdeaService,
-                              GivenStackService givenStackService, RandomPickerServiceMock randomPickerServiceMock,
-                              StackService stackService) {
+    Post_20221106_Lake_Context(FrontendSimulator frontendSimulator,
+                               GivenGameService givenGameService,
+                               GivenCardService givenCardService,
+                               GivenIdeaService givenIdeaService,
+                               GivenStackService givenStackService,
+                               RandomPickerServiceMock randomPickerServiceMock,
+                               StackService stackService) {
         this.frontendSimulator = frontendSimulator;
         this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
         this.givenIdeaService = givenIdeaService;
         this.givenStackService = givenStackService;
         this.randomPickerServiceMock = randomPickerServiceMock;
-        this.stackService=stackService;
+        this.stackService = stackService;
     }
 
     public void beforeTest() throws Throwable {
@@ -62,19 +59,21 @@ public class Post_20221030_Cow_Context {
     public void givenANewGameWithAStackOfNSCardsAndNSCards(int n1, String s1, int n2, String s2) {
         // text:  * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
         // code: this.givenANewGameWithAStackOfNSCardsAndNSCards(1, "Woods Stroll Idea", 1, "Villager")
-        // hint: Post_20221024_Diamond_Context.givenANewGameWithAStackOfNSCardsAndNSCards
+        // hint: Post_20221030_Cow_Context.givenANewGameWithAStackOfNSCardsAndNSCards
 
         // Add here what is given
         givenIdeaService.givenIdea("Woods Stroll Idea");
         givenStackService.givenStacks(1, byNames(n1, s1).and(n2, s2));
+
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+
     }
 
     public void givenThereIsTheSIdeaAtLevelNAndNXp(String ideaName, int level, int xp) {
-        // text:  * Given there is the "Woods Stroll Idea" idea at level 4 and 20 XP.
-        // code: this.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 4, 20)
-        // hint: Post_20221020_BuildIdea_Context.givenThereIsTheSIdeaAtLevelNAndNXp
+        // text:  * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
+        // code: this.givenThereIsTheSIdeaAtLevelNAndNXp("Woods Stroll Idea", 2, 0)
+        // hint: Post_20221030_Cow_Context.givenThereIsTheSIdeaAtLevelNAndNXp
 
         // Add here what is given
         givenIdeaService.givenIdea(ideaName, level, xp);
@@ -83,9 +82,9 @@ public class Post_20221030_Cow_Context {
     }
 
     public void theSMayCreateASCard(String ideaName, String cardName) {
-        // text:  * The "Woods Stroll Idea" may create a "Cow" card.
-        // code: this.theSMayCreateASCard("Woods Stroll Idea", "Cow")
-        // hint: Post_20221024_Diamond_Context.theSMayCreateASCard
+        // text:  * The "Woods Stroll Idea" may create a "Lake" card.
+        // code: this.theSMayCreateASCard("Woods Stroll Idea", "Lake")
+        // hint: Post_20221030_Cow_Context.theSMayCreateASCard
 
         var idea = getIdea(gameDTO, byName(ideaName));
         var rewards = idea.getCardRewards();
@@ -93,35 +92,37 @@ public class Post_20221030_Cow_Context {
 
     }
 
-    public void givenThatTheOddsAreThatWeWillGetASFromTheSCard(String cardName, String ideaName) {
-        // text:  * Given that the odds are that we will get a "Cow" from the "Woods Stroll Idea" card.
-        // code: this.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Cow", "Woods Stroll Idea")
-        // hint: Post_20221024_Diamond_Context.givenThatTheOddsAreThatWeWillGetASFromTheSCard
+    public void givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(String s1, String s2) {
+        // text:  * Given that the odds are that we will get a "Lake" card from the "Woods Stroll Idea" card.
+        // code: this.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard("Lake", "Woods Stroll Idea")
+        // hint: Post_20221103_OldVillage_Context.givenThatTheOddsAreThatWeWillGetASCardFromTheSCard
 
         // Add here what is given
-        randomPickerServiceMock.mockPick(ideaName, cardName);
+        randomPickerServiceMock.mockPick(s2, s1);
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+
     }
 
     public void endTheCurrentMoon() {
         // text:  * End the current moon.
         // code: this.endTheCurrentMoon()
-        // hint: Post_20221024_Diamond_Context.endTheCurrentMoon
+        // hint: Post_20221023_Barracks_Context.endTheCurrentMoon
 
         gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
     }
 
     public void thereShouldBeNStacksOfNSNSAndNSCards(int expected, int count1, String name1, int count2, String name2, int count3, String name3) {
-        // text:  * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Cow" cards.
-        // code: this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Cow")
-        // hint: Post_20221024_Diamond_Context.thereShouldBeNStacksOfNSNSAndNSCards
+        // text:  * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager" and 1 "Lake" cards.
+        // code: this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Lake")
+        // hint: Post_20221030_Cow_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
 
         var stacks = StackListDTO.findAllStack(gameDTO,
             byNames(count1, name1).and(count2, name2).and(count3, name3)
         );
         assertThat(stacks).hasSize(expected);
+
     }
 
     public void afterTest() {
