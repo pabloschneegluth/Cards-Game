@@ -9,7 +9,7 @@ import { Post_20221023_Barracks_Context } from "./Post_20221023_Barracks_Context
 
 test("2022-10-23_barracks.md", async () => {
   await runBeforeTestStarts(
-    "2022-10-23_barracks",
+    "building/2022-10-23_barracks",
     "3e3f752bf0671320c716f33bb10a5e0b"
   );
 
