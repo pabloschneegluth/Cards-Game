@@ -171,6 +171,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         }
         var materials = getMaterialsToBuild(materialsNeeded, cards);
 
+        if (cards.size() != 4) return;
         if (materials.size() != totalMaterialsNeeded) {
             return;
         }
