@@ -3,13 +3,28 @@ writer: Pabloooo6
 package: location
 ---
 
-# Finding things in Old Village
+# Finding more things in Old Village
 
 We can find any of the following things in the Old Village:
 
 | $CardName       |
 |-----------------|
 | Berry           |
+| Apple           |
+| Villager        |
+| Bone            |
+| Wolf            |
+| Stone           |
+| Gold            |
+| Iron            |
+| Pear            |
+| Diamond         |
+| Pickaxe         |
+| Militia         |
+| Sword           |
+| Cow             |
+| Wood            |
+| Magic Component |
 
  * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
  * The "Old Village" may create a "$CardName" card.
