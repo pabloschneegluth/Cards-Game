@@ -187,7 +187,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
             put("wood", 2);
         }};
         for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
-            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
+            totalMaterialsNeeded = totalMaterialsNeeded + set.getValue();
         }
 
         var materials = getMaterialsToBuild(materialsNeeded, cards);
@@ -197,4 +197,5 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         }
         cardFactory.makeCards(1, new CardFactorySettings("Fishing Rod").withPosition(position));
         cardService.discardCards(materials);
+    }
 }
