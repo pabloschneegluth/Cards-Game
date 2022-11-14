@@ -161,6 +161,8 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
     private void createPaper(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
+        if (cards.size() != 4) return;
+
         var position = settings.getPosition();
         int totalMaterialsNeeded = 0;
         Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
@@ -171,10 +173,6 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         }
         var materials = getMaterialsToBuild(materialsNeeded, cards);
 
-        if (cards.size() != 4) return;
-        if (materials.size() != totalMaterialsNeeded) {
-            return;
-        }
         cardFactory.makeCards(1, new CardFactorySettings("Paper").withPosition(position));
         cardService.discardCards(materials);
     }
