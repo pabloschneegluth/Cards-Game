@@ -1,6 +1,7 @@
 ---
 writer: PFernandezTorres
 package: idea
+coder: marcserranog
 ---
 
 # Lake Stroll idea
@@ -14,4 +15,4 @@ and depending on the luck, obtain material or the death.
  * Given a new game with a stack of 1 "Lake" cards and 1 "Villager" card.
  * End the current moon.
  * There should be the "Lake Stroll Idea" idea.
- * The "Lake Stroll Idea" should have level 1 and 0 XP.
+ * The "Lake Stroll Idea" should have level 1 and 0 XP.
