@@ -9,7 +9,7 @@ import { Post_20220725_IdeasHaveLevels_Context } from "./Post_20220725_IdeasHave
 
 test("2022-07-25_ideas_have_levels.md", async () => {
   await runBeforeTestStarts(
-    "2022-07-25_ideas_have_levels",
+    "idea/2022-07-25_ideas_have_levels",
     "7f62b87a9601111aa1d1b08fc4007936"
   );
 
