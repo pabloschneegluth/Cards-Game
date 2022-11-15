@@ -7,6 +7,7 @@ error() {
 
 rm -fr $(find src -name 'Post_*_Test.*')
 rm -fr target
+rm -fr eval
 yarn                                          || error "yarn"
 CI=1 yarn create-tests                        || error "yarn create-tests"
 ./mvnw test                                   || error "./mvwn test"

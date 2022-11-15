@@ -32,7 +32,7 @@ async function makeTestContent(post) {
 }
 
 function makeTestHeader(post) {
-  const idValue = JSON.stringify(post.id);
+  const fullPostNameValue = JSON.stringify(post.fullPostName);
   const md5Value = JSON.stringify(post.md5);
 
   return join(
@@ -46,7 +46,7 @@ function makeTestHeader(post) {
     `// while editing your posts.`,
     ``,
     `test('${post.id}.md', async () => {`,
-    `  await runBeforeTestStarts(${idValue}, ${md5Value});`,
+    `  await runBeforeTestStarts(${fullPostNameValue}, ${md5Value});`,
     ``,
     `  const context = new ${post.contextName}();`,
     `  await context.beforeTest();`,

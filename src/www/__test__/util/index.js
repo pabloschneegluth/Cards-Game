@@ -8,12 +8,12 @@ import { verifyPostMd5 } from "./verifyPostMd5";
 
 const realLog = console.log;
 
-export async function runBeforeTestStarts(postId, expectedMd5) {
-  await verifyPostMd5(postId, expectedMd5);
+export async function runBeforeTestStarts(postFullName, expectedMd5) {
+  await verifyPostMd5(postFullName, expectedMd5);
 
   console.log = logWithTest;
 
-  prepareBackendResponses(postId);
+  prepareBackendResponses(postFullName.split("/").pop());
   renderApp();
 }
 

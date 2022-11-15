@@ -19,7 +19,7 @@ public class IdeaEndMoonStepExecutor {
 
     public void execute(EndMoonSettings moonSettings, String ideaName, Consumer<IdeaEndMoonSettings> consumer) {
         var optionalIdea = ideaService.findByName(ideaName);
-        if (!optionalIdea.isPresent()) return;
+        if (optionalIdea.isEmpty()) return;
 
         var idea = optionalIdea.get();
         var ideaSettings = new IdeaEndMoonSettings(moonSettings, idea);

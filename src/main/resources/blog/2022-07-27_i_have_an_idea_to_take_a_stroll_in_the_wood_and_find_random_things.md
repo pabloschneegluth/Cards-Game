@@ -14,6 +14,7 @@ So, what about do a nice walk in the woods and find random things?
 
 So, why not get the idea to make a random walk through the woods?
 
+ * Given a new example.
  * Enter the game.
  * There should be the "Harvest Idea" idea.
  * The "Woods Stroll Idea" should have level 1 and 0 XP.
@@ -21,6 +22,8 @@ So, why not get the idea to make a random walk through the woods?
 But when you start using them, the XP in the "Harvest Idea" idea should increase.
 If we look to the idea,we can see some more information:
 
+ * Given a new example.
+ * Given there is the "Woods Stroll Idea" idea at level 1 and 0 XP.
  * The "Woods Stroll Idea" may create a "Berry" card.
  * The "Woods Stroll Idea" may create a "Apple" card.
  * The "Woods Stroll Idea" idea should require 1 card with at least 1 in "Worker" tag.
@@ -38,6 +41,7 @@ We can find any of the following things in the woods:
 | Berry     |
 | Apple     |
 
+ * Given a new example.
  * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
  * Given that the odds are that we will get a "$CardName" from the "Woods Stroll Idea" card.
  * End the current moon. 
@@ -48,9 +52,10 @@ We can find any of the following things in the woods:
 That was because we were in the level one, but what if we go to the level 2?
 Before that, we knew that we had no reward with of a Villager card:
 
-* Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
-* Given there is the "Harvest Idea" idea at level 1 and 0 XP.
-* The "Woods Stroll Idea" may not create a "Villager" card.
+ * Given a new example.
+ * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+ * Given there is the "Harvest Idea" idea at level 1 and 0 XP.
+ * The "Woods Stroll Idea" may not create a "Villager" card.
 
 ### In a higher level
 
@@ -64,12 +69,16 @@ But at level 2, you may also find Villagers in the woods:
 
 We should see the $CardName as possible reward:
 
+ * Given a new example.
  * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
  * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
  * The "Woods Stroll Idea" may create a "$CardName" card.
 
-But it should also possible to receive it as a reward:
+But it should also be possible to receive it as a reward:
 
+ * Given a new example.
+ * Given a new game with a stack of 1 "Woods Stroll Idea" cards and 1 "Villager" cards.
+ * Given there is the "Woods Stroll Idea" idea at level 2 and 0 XP.
  * Given that the odds are that we will get a "$CardName" from the "Woods Stroll Idea" card.
  * End the current moon.
  * There should be 1 stacks of 1 "Woods Stroll Idea", 1 "Villager", and 1 "$CardName" cards.

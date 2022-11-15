@@ -9,7 +9,7 @@ import { Post_20221013_WoodHouse_Context } from "./Post_20221013_WoodHouse_Conte
 
 test("2022-10-13_wood_house.md", async () => {
   await runBeforeTestStarts(
-    "2022-10-13_wood_house",
+    "building/2022-10-13_wood_house",
     "72f502681469f905ca2388c948d55905"
   );
 

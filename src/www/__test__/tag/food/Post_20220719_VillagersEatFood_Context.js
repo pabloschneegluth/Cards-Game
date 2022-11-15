@@ -1,19 +1,20 @@
 import { screen } from "@testing-library/react";
 import { mainView } from "../../main";
-import {
-  getAllCardDigestByName,
-  queryAllCardByName,
-  queryCardByName,
-} from "../../card/queries";
-import { waitForEnterTheGame } from "../../game/actions";
+import { getAllCardDigestByName, queryAllCardByName } from "../../card/queries";
+import { waitForEnterTheGame, waitForReloadGame } from "../../game/actions";
 import { waitForEndMoon } from "../../moon/actions";
 
 export class Post_20220719_VillagersEatFood_Context {
-  async beforeTest() {}
-
-  async givenWeHaveEnteredIntoANewGame() {
-    // example:  * Given we have entered into a new game.
+  async beforeTest() {
     await waitForEnterTheGame();
+  }
+
+  async givenANewExample() {
+    await waitForReloadGame();
+  }
+
+  async givenThereAreNSCards() {
+    await waitForReloadGame();
   }
 
   async theSCardShouldHaveNInSTag(cardName, count, tagName) {
@@ -29,14 +30,6 @@ export class Post_20220719_VillagersEatFood_Context {
   async endTheCurrentMoon() {
     // example:  * End the current moon.
     await waitForEndMoon();
-  }
-
-  async thereShouldBeNoSCard(cardName) {
-    // example:  * There is no "berry" card.
-    // no = "berry"
-
-    const card = queryCardByName(mainView, cardName);
-    expect(card).not.toBeInTheDocument();
   }
 
   async thereShouldBeNSCards(count, cardName) {

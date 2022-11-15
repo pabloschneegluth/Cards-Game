@@ -117,7 +117,6 @@ public class Post_20221030_Cow_Context {
         // code: this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Woods Stroll Idea", 1, "Villager", 1, "Cow")
         // hint: Post_20221024_Diamond_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
-        var stack = stackService.findAllStack();
 
         var stacks = StackListDTO.findAllStack(gameDTO,
             byNames(count1, name1).and(count2, name2).and(count3, name3)

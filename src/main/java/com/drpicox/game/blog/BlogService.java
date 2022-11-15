@@ -33,12 +33,18 @@ public class BlogService {
         var result = new LinkedList<Post>();
 
         var files = getResourceBlogFiles();
-        for (File f : files) {
-            var id = f.getName().split("\\.")[0];
-            result.add(loadPost(id, f));
-        }
+        loadDirectory(result, files);
         Collections.sort(result);
         return result;
+    }
+
+    private void loadDirectory(List<Post> result, File files[]) throws Exception {
+        for (File f : files) {
+            var parts = f.getName().split("(/|\\\\)");
+            var id = parts[parts.length - 1].split("\\.")[0];
+            if (f.isFile()) result.add(loadPost(id, f));
+            if (f.isDirectory()) loadDirectory(result, f.listFiles());
+        }
     }
 
     private Post loadPost(String postId, File file) throws Exception {
