@@ -46,7 +46,6 @@ public class EndMoonStep_200_OldVillageCreateOldVillageStrollIdea implements End
           if(oldVillage.isEmpty()==false){
               ideaFactory.makeIdea(new IdeaFactorySettings("Old Village Stroll Idea"));
           }
-
       }
 
 
