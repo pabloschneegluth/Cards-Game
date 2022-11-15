@@ -9,7 +9,7 @@ import { Post_20221020_Bone_Context } from "./Post_20221020_Bone_Context";
 
 test("2022-10-20_bone.md", async () => {
   await runBeforeTestStarts(
-    "2022-10-20_bone",
+    "material/2022-10-20_bone",
     "3e2dc4940fcc98d8162b4e8b757253bb"
   );
 

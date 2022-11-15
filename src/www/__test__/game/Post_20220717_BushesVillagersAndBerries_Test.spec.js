@@ -9,7 +9,7 @@ import { Post_20220717_BushesVillagersAndBerries_Context } from "./Post_20220717
 
 test("2022-07-17_bushes_villagers_and_berries.md", async () => {
   await runBeforeTestStarts(
-    "2022-07-17_bushes_villagers_and_berries",
+    "game/2022-07-17_bushes_villagers_and_berries",
     "187c6ace9199129be617f29fe9a5cfe4"
   );
 

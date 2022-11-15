@@ -9,7 +9,7 @@ import { Post_20221013_Iron_Context } from "./Post_20221013_Iron_Context";
 
 test("2022-10-13_iron.md", async () => {
   await runBeforeTestStarts(
-    "2022-10-13_iron",
+    "mineral/2022-10-13_iron",
     "6516380e53f712f6df2d63f1393774c2"
   );
 
