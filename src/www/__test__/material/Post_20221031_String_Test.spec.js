@@ -9,7 +9,7 @@ import { Post_20221031_String_Context } from "./Post_20221031_String_Context";
 
 test("2022-10-31_string.md", async () => {
   await runBeforeTestStarts(
-    "2022-10-31_string",
+    "material/2022-10-31_string",
     "00717932abd097a33314b80906a08abd"
   );
 

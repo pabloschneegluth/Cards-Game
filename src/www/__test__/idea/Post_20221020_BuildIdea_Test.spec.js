@@ -9,7 +9,7 @@ import { Post_20221020_BuildIdea_Context } from "./Post_20221020_BuildIdea_Conte
 
 test("2022-10-20_build_idea.md", async () => {
   await runBeforeTestStarts(
-    "2022-10-20_build_idea",
+    "idea/2022-10-20_build_idea",
     "5c6e1a585916f721b96d2ff101aa92ab"
   );
 

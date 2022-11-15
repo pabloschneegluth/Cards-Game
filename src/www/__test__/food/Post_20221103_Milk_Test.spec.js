@@ -9,7 +9,7 @@ import { Post_20221103_Milk_Context } from "./Post_20221103_Milk_Context";
 
 test("2022-11-03_milk.md", async () => {
   await runBeforeTestStarts(
-    "2022-11-03_milk",
+    "food/2022-11-03_milk",
     "8b1794634ecfcc793ab1f19cd9f3c731"
   );
 
