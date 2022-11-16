@@ -9,8 +9,8 @@ import { Post_20221027_Sword_Context } from "./Post_20221027_Sword_Context";
 
 test("2022-10-27_sword.md", async () => {
   await runBeforeTestStarts(
-    "tool/2022-10-27_sword",
-    "e7d4b0c8ba98ff02c287117680ccd115"
+    "weapon/2022-10-27_sword",
+    "0d98beb4a9d1d0e2c862793ccb765a1d"
   );
 
   const context = new Post_20221027_Sword_Context();

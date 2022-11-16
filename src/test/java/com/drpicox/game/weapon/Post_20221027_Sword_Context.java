@@ -1,4 +1,4 @@
-package com.drpicox.game.tool;
+package com.drpicox.game.weapon;
 
 import com.drpicox.game.card.GivenStackService;
 import com.drpicox.game.card.StackService;

@@ -1,4 +1,4 @@
-package com.drpicox.game.tool;
+package com.drpicox.game.weapon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class Post_20221027_Sword_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-10-27_sword", "e7d4b0c8ba98ff02c287117680ccd115");
+        testUtils.runBeforeTestStarts("2022-10-27_sword", "0d98beb4a9d1d0e2c862793ccb765a1d");
         context.beforeTest();
 
         // # Sword                                                                                               // # Sword
