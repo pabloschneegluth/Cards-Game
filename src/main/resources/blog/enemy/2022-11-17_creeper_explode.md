@@ -12,6 +12,9 @@ the creeper can explode and wipe out whatever you have.
 
  * Given a new game with a stack of 1 "Creeper" card.
  * End the current moon.
+ * There should be 1 "Creeper" card.
  * End the current moon.
+ * There should be 1 "Creeper" card.
  * End the current moon.
+ * There should be 1 "Creeper" card.
  * There should be 0 cards on the stack. 
