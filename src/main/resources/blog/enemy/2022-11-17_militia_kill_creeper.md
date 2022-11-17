@@ -2,6 +2,11 @@
 writer: marcserranog
 package: enemy
 ---
+# Militia Kill creeper
+
+The creeper is a godforsaken enemy, 
+but you have to be very careful with them so that 
+they don't wipe out everything you have.
 
 ## How to kill a creeper?
 
