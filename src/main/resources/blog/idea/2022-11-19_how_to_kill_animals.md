@@ -13,4 +13,4 @@ meat when killed.
 
  * Given a new game with a stack of 1 "Militia" and 1 "Cow" cards.
  * End the current moon.
- * There should be a stack with 1 "Milita" and 3 "Meat" cards.
+ * There should be a stack with 1 "Militia" and 3 "Meat" cards.
