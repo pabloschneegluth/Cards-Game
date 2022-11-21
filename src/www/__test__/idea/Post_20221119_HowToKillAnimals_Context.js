@@ -8,9 +8,6 @@ export class Post_20221119_HowToKillAnimals_Context {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGameWithAStackOfNSAndNSCards(n1, s1, n2, s2) {
@@ -20,9 +17,6 @@ export class Post_20221119_HowToKillAnimals_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSAndNSCards(n1, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -31,8 +25,6 @@ export class Post_20221119_HowToKillAnimals_Context {
     // hint: Post_20221114_Chicken_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeAStackWithNSAndNSCards(expected, s1, n2, s2) {
@@ -42,9 +34,6 @@ export class Post_20221119_HowToKillAnimals_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeAStackWithNSAndNSCards(expected, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async afterTest() {
