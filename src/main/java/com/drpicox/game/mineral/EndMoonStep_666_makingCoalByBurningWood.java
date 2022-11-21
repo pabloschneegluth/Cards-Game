@@ -21,22 +21,23 @@ public class EndMoonStep_666_makingCoalByBurningWood implements EndMoonStep {
     }
 
     public void execute(EndMoonSettings settings) {
-        var stacks = stackService.findAllStack();
-
-        for (var stack : stacks) {
-            burningWood(stack.getCards());
-        }
+            burningWood();
     }
 
-    private void burningWood(List<Card> cards) {
-        var flint = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Flint")).findFirst();
-        var wood = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Wood")).findFirst();
-        var Villager = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Villager")).findFirst();
+    private void burningWood() {
+        var Wood = cardService.findAllByName("Wood");
+        var flint = cardService.findAllByName("Flint");
+        if((
+            (flint.size()==1)
+            &&
+            (Wood.size()==1)
 
-        if (flint.isEmpty()&& Villager.isEmpty()) return;
-
-        cardFactory.makeCard(new CardFactorySettings("Coal").withPosition(flint.get().getPosition()));
-        cardFactory.makeCard(new CardFactorySettings("Coal"));
-        cardService.discardCard(wood.get());
+        )){
+                        var flintpos = flint.get(0);
+                        cardFactory.makeCards(2,new CardFactorySettings("Coal").withPosition(flintpos.getPosition()));
+                        cardService.discardCards(Wood);
+        }else{
+            return;
+        }
     }
 }
