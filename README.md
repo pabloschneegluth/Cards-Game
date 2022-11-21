@@ -1,4 +1,4 @@
-## What to do After Clone or Pull
+º## What to do After Clone or Pull
 
 - `yarn`
 - `yarn create-tests`
