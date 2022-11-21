@@ -1,0 +1,81 @@
+package com.drpicox.game.idea;
+
+import com.drpicox.game.card.GivenStackService;
+import org.springframework.stereotype.Component;
+
+import static com.drpicox.game.util.Names.byNames;
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth8.assertThat;
+import com.drpicox.game.util.FrontendSimulator;
+import com.drpicox.game.game.GivenGameService;
+import com.drpicox.game.card.GivenCardService;
+import com.drpicox.game.game.api.GameDTO;
+
+@Component
+public class Post_20221119_HowToKillAnimals_Context {
+
+    private final FrontendSimulator frontendSimulator;
+    private final GivenGameService givenGameService;
+    private final GivenCardService givenCardService;
+    private GameDTO gameDTO;
+
+    private GivenStackService givenStackService;
+
+    Post_20221119_HowToKillAnimals_Context(FrontendSimulator frontendSimulator,
+                                           GivenGameService givenGameService,
+                                           GivenCardService givenCardService,
+                                           GivenStackService givenStackService) {
+        this.frontendSimulator = frontendSimulator;
+        this.givenGameService = givenGameService;
+        this.givenCardService = givenCardService;
+        this.givenStackService = givenStackService;
+
+    }
+
+    public void beforeTest() throws Throwable {
+        // Do your setup here
+        givenGameService.givenGame("empty");
+        givenCardService.givenCards(1, "Berry");
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+
+        // Please, verify that:
+        // [ ] there are villagers, militia, ... that need berries? How many? How many moons?
+        // [ ] is the empty game right for this post?
+    }
+
+    public void givenANewGameWithAStackOfNSAndNSCards(int n1, String s1, int n2, String s2) {
+        // text:  * Given a new game with a stack of 1 "Militia" and 1 "Cow" cards.
+        // code: this.givenANewGameWithAStackOfNSAndNSCards(1, "Militia", 1, "Cow")
+        // hint: Post_20221105_Flint_Context.givenANewGameWithAStackOfNSNSAndNSCards
+
+        // Add here what is given
+        givenCardService.givenCards(1,"Militia");
+        givenCardService.givenCards(1,"Cow");
+
+        givenStackService.givenStacks(1, byNames(n1,s1).and(n2,s2));
+        // And make sure that the game is in the right state (also for the frontend)
+        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
+
+    }
+
+    public void endTheCurrentMoon() {
+        // text:  * End the current moon.
+        // code: this.endTheCurrentMoon()
+        // hint: Post_20220913_Wolf_Context.endTheCurrentMoon
+
+        gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
+    }
+
+    public void thereShouldBeAStackWithNSAndNSCards(int expected, String s1, int n2, String s2) {
+        // text:  * There should be a stack with 1 "Militia" and 3 "Meat" cards.
+        // code: this.thereShouldBeAStackWithNSAndNSCards(1, "Militia", 3, "Meat")
+
+        var actual = expected; // FIXME
+        assertThat(actual).isEqualTo(expected);
+
+    }
+
+    public void afterTest() {
+        // Do your teardown here, if necessary
+    }
+}

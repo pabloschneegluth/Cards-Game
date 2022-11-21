@@ -1,0 +1,53 @@
+import { getByTestId, screen } from "@testing-library/react";
+import { mainView } from "../main";
+import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
+import { waitForEndMoon } from "../moon/actions";
+
+export class Post_20221119_HowToKillAnimals_Context {
+  async beforeTest() {
+    // Do your setup here
+    await waitForEnterTheGame();
+
+    throw new Error(
+      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
+    );
+  }
+
+  async givenANewGameWithAStackOfNSAndNSCards(n1, s1, n2, s2) {
+    // text:  * Given a new game with a stack of 1 "Militia" and 1 "Cow" cards.
+    // code: await this.givenANewGameWithAStackOfNSAndNSCards(1, "Militia", 1, "Cow")
+    // hint: Post_20221105_Flint_Context.givenANewGameWithAStackOfNSNSAndNSCards
+
+    await waitForReloadGame();
+
+    throw new Error(
+      "The method givenANewGameWithAStackOfNSAndNSCards(n1, s1, n2, s2) is not implemented yet."
+    );
+  }
+
+  async endTheCurrentMoon() {
+    // text:  * End the current moon.
+    // code: await this.endTheCurrentMoon()
+    // hint: Post_20221114_Chicken_Context.endTheCurrentMoon
+
+    await waitForEndMoon();
+
+    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
+  }
+
+  async thereShouldBeAStackWithNSAndNSCards(expected, s1, n2, s2) {
+    // text:  * There should be a stack with 1 "Militia" and 3 "Meat" cards.
+    // code: await this.thereShouldBeAStackWithNSAndNSCards(1, "Militia", 3, "Meat")
+
+    var actual = expected; // FIXME
+    expect(actual).toEqual(expected);
+
+    throw new Error(
+      "The method thereShouldBeAStackWithNSAndNSCards(expected, s1, n2, s2) is not implemented yet."
+    );
+  }
+
+  async afterTest() {
+    // Do your teardown here, if necessary
+  }
+}
