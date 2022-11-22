@@ -10,13 +10,13 @@ import com.drpicox.game.moon.EndMoonSettings;
 import com.drpicox.game.moon.EndMoonStep;
 
 @Component
-public class EndMoonStep_667_miningCoalInMine implements EndMoonStep {
+public class EndMoonStep_901_miningCoalInMine implements EndMoonStep {
 
     private final StackService stackService;
     private final CardFactory cardFactory;
     private final CardService cardService;
 
-    public EndMoonStep_667_miningCoalInMine(StackService stackService, CardFactory cardFactory, CardService cardService) {
+    public EndMoonStep_901_miningCoalInMine(StackService stackService, CardFactory cardFactory, CardService cardService) {
         super();
         this.stackService = stackService;
         this.cardFactory = cardFactory;
@@ -28,22 +28,21 @@ public class EndMoonStep_667_miningCoalInMine implements EndMoonStep {
     }
 
     private void miningInMine() {
-        //There should be 1 stacks of 1 "Mine Stroll Idea", 1 "Mine", 1 "Villager", 1 "Pickaxe" and 1 "Coal" cards
         var mine = cardService.findAllByName("Mine");
         var villager = cardService.findAllByName("Villager");
         var pickaxe = cardService.findAllByName("Pickaxe");
         var idea = cardService.findAllByName("Mine Stroll Idea");
         var coal = cardService.findAllByName("Coal");
         if((
-            (coal.size()==1)
+            (!coal.isEmpty())
             &&
-            (mine.size()==1)
+            (!mine.isEmpty())
             &&
-            (villager.size()==1)
+            (!villager.isEmpty())
             &&
-            (pickaxe.size()==1)
+            (!pickaxe.isEmpty())
             &&
-            (idea.size()==1)
+            (!idea.isEmpty())
 
         )){
                         var pickaxepos = pickaxe.get(0);
