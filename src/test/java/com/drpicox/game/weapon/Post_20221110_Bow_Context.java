@@ -1,6 +1,8 @@
 package com.drpicox.game.weapon;
 
 import com.drpicox.game.card.GivenStackService;
+import com.drpicox.game.card.StackService;
+import com.drpicox.game.card.api.DerivedStackDTO;
 import com.drpicox.game.card.api.StackListDTO;
 import com.drpicox.game.idea.GivenIdeaService;
 import org.springframework.stereotype.Component;
@@ -21,14 +23,16 @@ public class Post_20221110_Bow_Context {
     private final GivenCardService givenCardService;
     private final GivenStackService givenStackService;
     private final GivenIdeaService givenIdeaService;
+    private StackService stackService;
     private GameDTO gameDTO;
 
-    Post_20221110_Bow_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService, GivenStackService givenStackService, GivenIdeaService givenIdeaService) {
+    Post_20221110_Bow_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService, GivenStackService givenStackService, GivenIdeaService givenIdeaService, StackService stackService) {
         this.frontendSimulator = frontendSimulator;
         this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
         this.givenStackService = givenStackService;
         this.givenIdeaService = givenIdeaService;
+        this.stackService = stackService;
     }
 
     public void beforeTest() throws Throwable {
@@ -63,6 +67,7 @@ public class Post_20221110_Bow_Context {
         // code: this.thereShouldBeNStacksOfNSNSNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Bow")
         // hint: Post_20221031_FishingRod_Context.thereShouldBeNStacksOfNSNSNSCards
 
+        var stack = stackService.findAllStack();
         var stacks = StackListDTO.findAllStack(gameDTO,
             byNames(n2, s1).and(n3, s2).and(n4, s3)
         );
