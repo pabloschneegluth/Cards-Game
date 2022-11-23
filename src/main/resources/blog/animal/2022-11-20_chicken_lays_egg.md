@@ -1,6 +1,7 @@
 ---
 writer: Pabloooo6
 package: animal
+coder: 6Q
 ---
 
 # Chicken lays egg
