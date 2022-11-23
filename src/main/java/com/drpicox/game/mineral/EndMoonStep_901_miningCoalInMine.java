@@ -34,15 +34,15 @@ public class EndMoonStep_901_miningCoalInMine implements EndMoonStep {
         var idea = cardService.findAllByName("Mine Stroll Idea");
         var coal = cardService.findAllByName("Coal");
         if((
-            (!coal.isEmpty())
+            (coal.size()==1)
             &&
-            (!mine.isEmpty())
+            (mine.size()==1)
             &&
-            (!villager.isEmpty())
+            (villager.size()==1)
             &&
-            (!pickaxe.isEmpty())
+            (pickaxe.size()==1)
             &&
-            (!idea.isEmpty())
+            (idea.size()==1)
 
         )){
                         var pickaxepos = pickaxe.get(0);
