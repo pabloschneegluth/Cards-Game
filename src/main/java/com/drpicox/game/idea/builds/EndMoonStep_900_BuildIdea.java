@@ -42,6 +42,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         createPaper(settings);
         createFishingRod(settings);
         createBook(settings);
+        createBow(settings);
         createArrow(settings);
     }
 
@@ -136,11 +137,16 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
                 countMaterials++;
             }
         }
-        if (countMaterials == 3) {
-            cardFactory.makeCards(1,new CardFactorySettings("Sword").withPosition(position));
-            cardService.discardCards(wood);
-            cardService.discardCards(iron);
+
+        int woodcounter=0, ironcounter=0;
+        for(Card card : cards){
+            if(card.getName().equalsIgnoreCase("wood")) woodcounter++;
+            if(card.getName().equalsIgnoreCase("iron")) ironcounter++;
         }
+        if(woodcounter!=1)return;
+        cardFactory.makeCards(1,new CardFactorySettings("Sword").withPosition(position));
+        cardService.discardCards(wood);
+        cardService.discardCards(iron);
     }
 
     private List<Card> getMaterialsToBuild(Map<String, Integer> materialsNeeded, List<Card> cards) {
@@ -194,9 +200,14 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
         var materials = getMaterialsToBuild(materialsNeeded, cards);
 
-        if (materials.size() != totalMaterialsNeeded) {
-            return;
+        int woodcounter=0, stringcounter=0;
+        for(Card card : materials){
+            if(card.getName().equalsIgnoreCase("wood")) woodcounter++;
+            if(card.getName().equalsIgnoreCase("string")) stringcounter++;
         }
+        if(woodcounter!=2)return;
+        if(stringcounter!=1)return;
+
         cardFactory.makeCards(1, new CardFactorySettings("Fishing Rod").withPosition(position));
         cardService.discardCards(materials);
     }
@@ -219,6 +230,30 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         cardFactory.makeCards(1, new CardFactorySettings("Book").withPosition(position));
         cardService.discardCards(materials);
     }
+
+    private void createBow(IdeaEndMoonSettings settings) {
+        var cards = settings.getStack().getCards();
+        if (cards.size() != 7) return;
+
+        var position = settings.getPosition();
+        int totalMaterialsNeeded = 0;
+        Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
+            put("wood", 3);
+            put("string", 2);
+        }};
+        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
+            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
+        }
+        var materials = getMaterialsToBuild(materialsNeeded, cards);
+        if(materials.size()!=5) return;
+
+        cardFactory.makeCards(1, new CardFactorySettings("Bow").withPosition(position));
+        cardService.discardCards(materials);
+
+        var fishing_rod =  cardService.findAllByName("Fishing Rod");
+        cardService.discardCards(fishing_rod);
+    }
+
     private void createArrow(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
         if (cards.size() != 4) return;
@@ -239,8 +274,8 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         cardService.discardCards(materials);
 
         var paper =  cardService.findAllByName("Paper");
-
         cardService.discardCards(paper);
-
+        var sword =  cardService.findAllByName("Sword");
+        cardService.discardCards(sword);
     }
 }
