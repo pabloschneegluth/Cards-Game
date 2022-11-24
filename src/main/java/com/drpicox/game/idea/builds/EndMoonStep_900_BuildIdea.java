@@ -234,7 +234,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
     private void createBow(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
         if (cards.size() != 7) return;
-        
+
         var position = settings.getPosition();
         int totalMaterialsNeeded = 0;
         Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
@@ -252,8 +252,8 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
         var fishing_rod =  cardService.findAllByName("Fishing Rod");
         cardService.discardCards(fishing_rod);
-    }        
-        
+    }
+
     private void createArrow(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
         if (cards.size() != 4) return;
@@ -275,5 +275,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
         var paper =  cardService.findAllByName("Paper");
         cardService.discardCards(paper);
+        var sword =  cardService.findAllByName("Sword");
+        cardService.discardCards(sword);
     }
 }
