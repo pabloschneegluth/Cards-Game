@@ -260,5 +260,8 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
 
         cardFactory.makeCards(1, new CardFactorySettings("Bow").withPosition(position));
         cardService.discardCards(materials);
+
+        var fishing_rod =  cardService.findAllByName("Fishing Rod");
+        cardService.discardCards(fishing_rod);
     }
 }
