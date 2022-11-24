@@ -2,15 +2,15 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { Names } from "../util/Names";
+import { queryAllStackDigestByCardNames } from "../stack/queries";
 
 export class Post_20221122_Arrow_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
+
   }
 
   async givenANewGameWithAStackOfNSNSCardsNSCardsAndNSCards(
@@ -28,9 +28,6 @@ export class Post_20221122_Arrow_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSNSCardsNSCardsAndNSCards(n1, s1, n2, s2, n3, s3, n4, s4) is not implemented yet."
-    );
   }
 
   async givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) {
@@ -40,9 +37,6 @@ export class Post_20221122_Arrow_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereIsTheSIdeaAtLevelNAndNXp(s1, n1, n2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -52,20 +46,27 @@ export class Post_20221122_Arrow_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
-  async thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
+  async thereShouldBeNStacksOfNSNSAndNSCards(expected,
+    count1,
+    name1,
+    count2,
+    name2,
+    count3,
+    name3,) {
     // text:  * There should be 1 stacks of 1 "Build Idea", 1 "Villager" and 1 "Arrow" cards.
     // code: await this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Arrow")
     // hint: Post_20221103_Milk_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(count1, name1)
+      .and(count2, name2)
+      .and(count3, name3)
+      .get();
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
+
   }
 
   async afterTest() {
