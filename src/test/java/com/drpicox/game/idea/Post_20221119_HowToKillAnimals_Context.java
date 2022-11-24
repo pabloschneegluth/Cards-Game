@@ -1,6 +1,7 @@
 package com.drpicox.game.idea;
 
 import com.drpicox.game.card.GivenStackService;
+import com.drpicox.game.card.api.StackListDTO;
 import org.springframework.stereotype.Component;
 
 import static com.drpicox.game.util.Names.byNames;
@@ -35,7 +36,7 @@ public class Post_20221119_HowToKillAnimals_Context {
     public void beforeTest() throws Throwable {
         // Do your setup here
         givenGameService.givenGame("empty");
-        givenCardService.givenCards(1, "Berry");
+        givenCardService.givenCards(2, "Berry");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
 
         // Please, verify that:
@@ -49,8 +50,6 @@ public class Post_20221119_HowToKillAnimals_Context {
         // hint: Post_20221105_Flint_Context.givenANewGameWithAStackOfNSNSAndNSCards
 
         // Add here what is given
-        givenCardService.givenCards(1,"Militia");
-        givenCardService.givenCards(1,"Cow");
 
         givenStackService.givenStacks(1, byNames(n1,s1).and(n2,s2));
         // And make sure that the game is in the right state (also for the frontend)
@@ -66,13 +65,14 @@ public class Post_20221119_HowToKillAnimals_Context {
         gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
     }
 
-    public void thereShouldBeAStackWithNSAndNSCards(int expected, String s1, int n2, String s2) {
+    public void thereShouldBeAStackWithNSAndNSCards(int expected, String name1, int count2, String name2) {
         // text:  * There should be a stack with 1 "Militia" and 3 "Meat" cards.
         // code: this.thereShouldBeAStackWithNSAndNSCards(1, "Militia", 3, "Meat")
 
-        var actual = expected; // FIXME
-        assertThat(actual).isEqualTo(expected);
-
+        var stacks = StackListDTO.findAllStack(gameDTO,
+            byNames(expected,name1).and(count2, name2)
+        );
+        assertThat(stacks).hasSize(expected);
     }
 
     public void afterTest() {
