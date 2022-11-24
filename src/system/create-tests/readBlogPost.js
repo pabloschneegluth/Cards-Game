@@ -8,8 +8,8 @@ const { isLineStep, isLineHeading } = require("./postLineQueries");
 
 async function readBlogPost(path) {
   const baseName = path.slice(watchPath.length + 1);
-  const wpkg = baseName.split("/").slice(0, -1).join(".");
-  const name = baseName.split("/").slice(-1)[0].slice(0, -3);
+  const wpkg = baseName.split(/\/|\\/).slice(0, -1).join(".");
+  const name = baseName.split(/\/|\\/).slice(-1)[0].slice(0, -3);
   const fullPostName = baseName.split(".")[0];
   const id = name.split(".")[0];
   const javaName = makeJavaName(id);
