@@ -10,7 +10,7 @@ import { Post_20221105_FindingThingsInOldVillage_Context } from "./Post_20221105
 test("2022-11-05_finding_things_in_old_village.md", async () => {
   await runBeforeTestStarts(
     "location/2022-11-05_finding_things_in_old_village",
-    "11484a24a3cdddd387fca596740fa193"
+    "cbd46221101e1a47d7f48d11f866ef70"
   );
 
   const context = new Post_20221105_FindingThingsInOldVillage_Context();
@@ -40,14 +40,14 @@ test("2022-11-05_finding_things_in_old_village.md", async () => {
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
+    1,
+    "Old Village",
     1,
     "Villager",
     1,
     "Berry"
-  ); // // * There should be 1 stacks of 1 "Old Village", 1 "Old Village Stroll Idea", 1 "Villager" and 1 "Berry" cards.
+  ); // // * There should be 1 stacks of 1 "Old Village Stroll Idea", 1 "Old Village", 1 "Villager" and 1 "Berry" cards.
 
   await context.afterTest();
   await runWhenTestSuccessful();

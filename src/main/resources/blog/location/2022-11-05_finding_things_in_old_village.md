@@ -16,4 +16,4 @@ We can find any of the following things in the Old Village:
  * The "Old Village Stroll Idea" may create a "$CardName" card.
  * Given that the odds are that we will get a "$CardName" from the "Old Village" card.
  * End the current moon.
- * There should be 1 stacks of 1 "Old Village", 1 "Old Village Stroll Idea", 1 "Villager" and 1 "$CardName" cards.
+ * There should be 1 stacks of 1 "Old Village Stroll Idea", 1 "Old Village", 1 "Villager" and 1 "$CardName" cards.

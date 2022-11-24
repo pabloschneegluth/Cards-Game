@@ -23,7 +23,7 @@ public class Post_20221105_FindingThingsInOldVillage_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-11-05_finding_things_in_old_village", "11484a24a3cdddd387fca596740fa193");
+        testUtils.runBeforeTestStarts("2022-11-05_finding_things_in_old_village", "cbd46221101e1a47d7f48d11f866ef70");
         context.beforeTest();
 
         // # Finding things in Old Village                                                                                            // # Finding things in Old Village
@@ -37,7 +37,7 @@ public class Post_20221105_FindingThingsInOldVillage_Test {
         context.theSMayCreateASCard("Old Village Stroll Idea", "Berry");                                                              // * The "Old Village Stroll Idea" may create a "Berry" card.
         context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Berry", "Old Village");                                               // * Given that the odds are that we will get a "Berry" from the "Old Village" card.
         context.endTheCurrentMoon();                                                                                                  // * End the current moon.
-        context.thereShouldBeNStacksOfNSNSNSAndNSCards(1, 1, "Old Village", 1, "Old Village Stroll Idea", 1, "Villager", 1, "Berry"); // * There should be 1 stacks of 1 "Old Village", 1 "Old Village Stroll Idea", 1 "Villager" and 1 "Berry" cards.
+        context.thereShouldBeNStacksOfNSNSNSAndNSCards(1, 1, "Old Village Stroll Idea", 1, "Old Village", 1, "Villager", 1, "Berry"); // * There should be 1 stacks of 1 "Old Village Stroll Idea", 1 "Old Village", 1 "Villager" and 1 "Berry" cards.
 
         context.afterTest();
         testUtils.runWhenTestSuccessful();
