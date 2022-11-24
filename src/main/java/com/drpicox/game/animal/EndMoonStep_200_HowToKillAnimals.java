@@ -31,7 +31,7 @@ public class EndMoonStep_200_HowToKillAnimals implements EndMoonStep {
                     for (var animal : animals) {
                         cardService.discardCards(milk);
                         cardService.discardCard(animal);
-                        cardFactory.makeCards(3, new CardFactorySettings("Meat"));
+                        cardFactory.makeCards(3, new CardFactorySettings("Meat").withPosition(militia.getPosition()));
                     }
                 }
             }
