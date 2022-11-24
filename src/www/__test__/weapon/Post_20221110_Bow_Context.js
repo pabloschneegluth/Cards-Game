@@ -2,15 +2,13 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { Names } from "../util/Names";
+import { queryAllStackDigestByCardNames } from "../stack/queries";
 
 export class Post_20221110_Bow_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGameWithAStackOfNSNSNSAndNSCards(
@@ -28,10 +26,6 @@ export class Post_20221110_Bow_Context {
     // hint: Post_20221031_FishingRod_Context.givenANewGameWithAStackOfNSNSNSAndNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSNSNSAndNSCards(n1, s1, n2, s2, n3, s3, n4, s4) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -40,8 +34,6 @@ export class Post_20221110_Bow_Context {
     // hint: Post_20221120_Egg_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSNSNSCards(expected, n2, s1, n3, s2, n4, s3) {
@@ -49,12 +41,13 @@ export class Post_20221110_Bow_Context {
     // code: await this.thereShouldBeNStacksOfNSNSNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Bow")
     // hint: Post_20221031_FishingRod_Context.thereShouldBeNStacksOfNSNSNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(n2, s1)
+      .and(n3, s2)
+      .and(n4, s3)
+      .get();
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSNSCards(expected, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
   }
 
   async afterTest() {

@@ -144,13 +144,9 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
             if(card.getName().equalsIgnoreCase("iron")) ironcounter++;
         }
         if(woodcounter!=1)return;
-        if(ironcounter!=2)return;
-
-        if (countMaterials == 3) {
-            cardFactory.makeCards(1,new CardFactorySettings("Sword").withPosition(position));
-            cardService.discardCards(wood);
-            cardService.discardCards(iron);
-        }
+        cardFactory.makeCards(1,new CardFactorySettings("Sword").withPosition(position));
+        cardService.discardCards(wood);
+        cardService.discardCards(iron);
     }
 
     private List<Card> getMaterialsToBuild(Map<String, Integer> materialsNeeded, List<Card> cards) {
@@ -250,14 +246,6 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         }
         var materials = getMaterialsToBuild(materialsNeeded, cards);
         if(materials.size()!=5) return;
-
-        int woodcounter=0, stringcounter=0;
-        for(Card card : materials){
-            if(card.getName().equalsIgnoreCase("wood")) woodcounter++;
-            if(card.getName().equalsIgnoreCase("string")) stringcounter++;
-        }
-        if(woodcounter!=3)return;
-        if(stringcounter!=2)return;
 
         cardFactory.makeCards(1, new CardFactorySettings("Bow").withPosition(position));
         cardService.discardCards(materials);
