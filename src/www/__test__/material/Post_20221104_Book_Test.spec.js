@@ -27,6 +27,14 @@ test("2022-11-04_book.md", async () => {
     1,
     "Villager"
   ); // // * Given a new game with a stack of 5 "Paper" cards, 1 "Build Idea" and 1 "Villager" cards.
+  await context.givenANewGameWithAStackOfNSNSCardsAndNSCards(
+    1,
+    "Build Idea",
+    1,
+    "Villager",
+    5,
+    "Paper"
+  ); // // * Given a new game with a stack of 1 "Build Idea", 1 "Villager" cards and 5 "Paper" cards.
   await context.givenThereIsTheSIdeaAtLevelNAndNXp("Build Idea", 3, 0); //                                   // * Given there is the "Build Idea" idea at level 3 and 0 XP.
   await context.endTheCurrentMoon(); //                                                                      // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSAndNSCards(

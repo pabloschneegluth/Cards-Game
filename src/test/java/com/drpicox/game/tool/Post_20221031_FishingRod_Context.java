@@ -1,5 +1,6 @@
 package com.drpicox.game.tool;
 
+import com.drpicox.game.card.StackService;
 import org.springframework.stereotype.Component;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth8.assertThat;
@@ -20,14 +21,16 @@ public class Post_20221031_FishingRod_Context {
     private final GivenCardService givenCardService;
     private final GivenStackService givenStackService;
     private final GivenIdeaService givenIdeaService;
+    private StackService stackService;
     private GameDTO gameDTO;
 
-    Post_20221031_FishingRod_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService,GivenStackService givenStackService,GivenIdeaService givenIdeaService) {
+    Post_20221031_FishingRod_Context(FrontendSimulator frontendSimulator, GivenGameService givenGameService, GivenCardService givenCardService,GivenStackService givenStackService,GivenIdeaService givenIdeaService, StackService stackService) {
         this.frontendSimulator = frontendSimulator;
         this.givenGameService = givenGameService;
         this.givenCardService = givenCardService;
         this.givenIdeaService=givenIdeaService;
         this.givenStackService=givenStackService;
+        this.stackService=stackService;
     }
 
     public void beforeTest() throws Throwable {
@@ -67,6 +70,7 @@ public class Post_20221031_FishingRod_Context {
         // text:  * There should be 1 stacks of 1 "Build Idea", 1 "Villager", 1 "Fishing Rod" cards.
         // code: this.thereShouldBeNStacksOfNSNSNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Fishing Rod")
         // hint: Post_20221027_Sword_Context.thereShouldBeNStacksOfNSNSNSCards
+        var stack = stackService.findAllStack();
         var stacks = StackListDTO.findAllStack(gameDTO,
             byNames(n2, s1).and(n3, s2).and(n4, s3)
         );
