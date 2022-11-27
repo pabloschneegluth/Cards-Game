@@ -1,5 +1,6 @@
 ---
 writer: marcserranog
+coder: 99riospol
 package: animal
 ---
 
@@ -11,6 +12,8 @@ they will show no mercy to the villagers, they will kill them!
 Wolves like meat and when it comes to a weak villager, 
 they love this prey.
 
- * Given a new game with a stack of 1 "Wolf" cards and 1 "Villager" cards.
+ * Given there are 1 "Wolf" cards.
+ * Given there are 1 "Villager" cards.
  * End the current moon.
- * There should be 1 stacks of 1 "Wolf" cards.
+ * There should be 0 "Villager" cards.
+ * There should be 2 "Wolf" cards.
