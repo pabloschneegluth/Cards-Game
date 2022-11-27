@@ -1,6 +1,7 @@
 ---
 writer: PFernandezTorres
 package: idea
+coder: marcserranog
 ---
 
 # How To Kill Animals
