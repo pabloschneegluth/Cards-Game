@@ -1,6 +1,9 @@
 package com.drpicox.game.enemy;
 
 import org.springframework.stereotype.Component;
+
+import static com.drpicox.game.card.api.CardListDTO.findAllCard;
+import static com.drpicox.game.util.Names.byName;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth8.assertThat;
 import com.drpicox.game.util.FrontendSimulator;
@@ -25,26 +28,23 @@ public class Post_20221117_MilitiaKillCreeper_Context {
     public void beforeTest() throws Throwable {
         // Do your setup here
         givenGameService.givenGame("empty");
-        givenCardService.givenCards(1, "Berry");
+        givenCardService.givenCards(2, "Berry");
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
-        
+
         // Please, verify that:
         // [ ] there are villagers, militia, ... that need berries? How many? How many moons?
         // [ ] is the empty game right for this post?
-        throw new UnsupportedOperationException("Please, review the implementation of beforeTest() and remove this exception when it is correct.");
     }
 
-    public void givenThereAreNSCards(int n1, String s1) {
+    public void givenThereAreNSCards(int count, String cardName) {
         // text:  * Given there are 1 "Militia" cards.
         // code: this.givenThereAreNSCards(1, "Militia")
         // hint: Post_20220725_IdeasHaveLevels_Context.givenThereAreNSCards
 
         // Add here what is given
-
+        givenCardService.givenCards(count, cardName);
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
-
-        throw new UnsupportedOperationException("The method givenThereAreNSCards(int n1, String s1) is not implemented yet.");
     }
 
     public void endTheCurrentMoon() {
@@ -53,20 +53,15 @@ public class Post_20221117_MilitiaKillCreeper_Context {
         // hint: Post_20221106_Archer_Context.endTheCurrentMoon
 
         gameDTO = frontendSimulator.post("/api/v1/game/moon", null, GameDTO.class);
-
-        throw new UnsupportedOperationException("The method endTheCurrentMoon() is not implemented yet.");
     }
 
-    public void thereShouldBeNSCards(int expected, String s1) {
+    public void thereShouldBeNSCards(int expected, String cardName) {
         // text:  * There should be 0 "Creeper" cards.
         // code: this.thereShouldBeNSCards(0, "Creeper")
         // hint: Post_20220725_IdeasHaveLevels_Context.thereShouldBeNSCards
 
-        var actual = expected; // FIXME
-        assertThat(actual).isEqualTo(expected);
-
-
-        throw new UnsupportedOperationException("The method thereShouldBeNSCards(int expected, String s1) is not implemented yet.");
+        var cards = findAllCard(gameDTO, byName(cardName));
+        assertThat(cards).hasSize(expected);
     }
 
     public void afterTest() {
