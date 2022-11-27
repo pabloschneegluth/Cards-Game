@@ -45,6 +45,28 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         createBow(settings);
         createArrow(settings);
         createHammer(settings);
+        createBone(settings);
+    }
+
+    private void createBone(IdeaEndMoonSettings settings) {
+        var cards = settings.getStack().getCards();
+        int position = settings.getPosition();
+        int totalMaterialsNeeded = 0;
+        Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
+            put("bone fragment", 3);
+        }};
+        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
+            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
+        }
+
+        var materials = getMaterialsToBuild(materialsNeeded, cards);
+
+        if (materials.size() != totalMaterialsNeeded) {
+            return;
+        }
+        cardFactory.makeCards(1, new CardFactorySettings("Farm").withPosition(position));
+        cardService.discardCards(materials);
+
     }
 
     private void createFarm(IdeaEndMoonSettings settings) {

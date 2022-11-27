@@ -23,21 +23,13 @@ public class Post_20221104_Book_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-<<<<<<< HEAD
-        testUtils.runBeforeTestStarts("2022-11-04_book", "5316444960d038809ac7237fdeb533e5");
-=======
         testUtils.runBeforeTestStarts("2022-11-04_book", "cd75ff7e4b1735cbf4c3e05d24d027c4");
->>>>>>> 89acb3054a3ae6b8f5a126c985b1dc4561c54c51
         context.beforeTest();
 
         // # Book                                                                                         // # Book
 
         // ## How to obtain Book?                                                                         // ## How to obtain Book?
-<<<<<<< HEAD
-        context.givenANewGameWithAStackOfNSCardsNSAndNSCards(5, "Paper", 1, "Build Idea", 1, "Villager"); // * Given a new game with a stack of 5 "Paper" cards, 1 "Build Idea" and 1 "Villager" cards.
-=======
         context.givenANewGameWithAStackOfNSNSCardsAndNSCards(1, "Build Idea", 1, "Villager", 5, "Paper"); // * Given a new game with a stack of 1 "Build Idea", 1 "Villager" cards and 5 "Paper" cards.
->>>>>>> 89acb3054a3ae6b8f5a126c985b1dc4561c54c51
         context.givenThereIsTheSIdeaAtLevelNAndNXp("Build Idea", 3, 0);                                   // * Given there is the "Build Idea" idea at level 3 and 0 XP.
         context.endTheCurrentMoon();                                                                      // * End the current moon.
         context.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Book");       // * There should be 1 stacks of 1 "Build Idea", 1 "Villager" and 1 "Book" cards.
