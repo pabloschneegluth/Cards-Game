@@ -9,7 +9,7 @@ import { Post_20221020_FriendlyWolf_Context } from "./Post_20221020_FriendlyWolf
 
 test("2022-10-20_friendly_wolf.md", async () => {
   await runBeforeTestStarts(
-    "animal/2022-10-20_friendly_wolf",
+    "animal\\2022-10-20_friendly_wolf",
     "f7d4eb1fc14cfc30caf8c87cb1e9dc81"
   );
 
