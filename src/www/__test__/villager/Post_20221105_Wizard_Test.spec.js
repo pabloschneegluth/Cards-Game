@@ -9,7 +9,7 @@ import { Post_20221105_Wizard_Context } from "./Post_20221105_Wizard_Context";
 
 test("2022-11-05_wizard.md", async () => {
   await runBeforeTestStarts(
-    "villager/2022-11-05_wizard",
+    "villager\\2022-11-05_wizard",
     "d915933ad00253d9d2103d1dcd35deed"
   );
 

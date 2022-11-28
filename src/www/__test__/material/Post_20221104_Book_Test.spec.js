@@ -9,8 +9,8 @@ import { Post_20221104_Book_Context } from "./Post_20221104_Book_Context";
 
 test("2022-11-04_book.md", async () => {
   await runBeforeTestStarts(
-    "material/2022-11-04_book",
-    "5316444960d038809ac7237fdeb533e5"
+    "material\\2022-11-04_book",
+    "cd75ff7e4b1735cbf4c3e05d24d027c4"
   );
 
   const context = new Post_20221104_Book_Context();
@@ -19,14 +19,6 @@ test("2022-11-04_book.md", async () => {
   // # Book                                                                                                  // # Book
 
   // ## How to obtain Book?                                                                                  // ## How to obtain Book?
-  await context.givenANewGameWithAStackOfNSCardsNSAndNSCards(
-    5,
-    "Paper",
-    1,
-    "Build Idea",
-    1,
-    "Villager"
-  ); // // * Given a new game with a stack of 5 "Paper" cards, 1 "Build Idea" and 1 "Villager" cards.
   await context.givenANewGameWithAStackOfNSNSCardsAndNSCards(
     1,
     "Build Idea",
