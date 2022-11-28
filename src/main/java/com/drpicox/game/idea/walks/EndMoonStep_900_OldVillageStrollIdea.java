@@ -2,9 +2,8 @@ package com.drpicox.game.idea.walks;
 
 import com.drpicox.game.card.CardFactory;
 import com.drpicox.game.card.CardFactorySettings;
-import com.drpicox.game.idea.IdeaEndMoonSettings;
-import com.drpicox.game.idea.IdeaEndMoonStepExecutor;
-import com.drpicox.game.idea.IdeaProgressService;
+import com.drpicox.game.card.CardService;
+import com.drpicox.game.idea.*;
 import com.drpicox.game.moon.EndMoonSettings;
 import com.drpicox.game.moon.EndMoonStep;
 import com.drpicox.game.util.RandomPickerService;
@@ -19,13 +18,17 @@ public class EndMoonStep_900_OldVillageStrollIdea implements EndMoonStep{
         private final IdeaEndMoonStepExecutor ideaEndMoonStepExecutor;
         private final IdeaProgressService ideaProgressService;
         private final RandomPickerService randomPickerService;
+        private final CardService cardService;
+        private final IdeaFactory ideaFactory;
 
         public EndMoonStep_900_OldVillageStrollIdea(CardFactory cardFactory, IdeaEndMoonStepExecutor ideaEndMoonStepExecutor,
-                                                    IdeaProgressService ideaProgressService, RandomPickerService randomPickerService) {
+                                                    IdeaProgressService ideaProgressService, RandomPickerService randomPickerService, CardService cardService, IdeaFactory ideaFactory) {
             this.cardFactory = cardFactory;
             this.ideaEndMoonStepExecutor = ideaEndMoonStepExecutor;
             this.ideaProgressService = ideaProgressService;
             this.randomPickerService = randomPickerService;
+            this.cardService = cardService;
+            this.ideaFactory = ideaFactory;
         }
 
         public void execute(EndMoonSettings settings) {

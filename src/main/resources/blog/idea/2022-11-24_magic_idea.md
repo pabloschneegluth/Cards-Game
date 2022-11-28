@@ -1,6 +1,7 @@
 ---
 writer: marcserranog
 package: idea
+coder: PFernandezTorres
 ---
 
 # Magic idea
