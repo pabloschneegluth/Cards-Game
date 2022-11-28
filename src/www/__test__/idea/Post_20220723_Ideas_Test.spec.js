@@ -9,7 +9,7 @@ import { Post_20220723_Ideas_Context } from "./Post_20220723_Ideas_Context";
 
 test("2022-07-23_ideas.md", async () => {
   await runBeforeTestStarts(
-    "idea/2022-07-23_ideas",
+    "idea\\2022-07-23_ideas",
     "cc1a8977a87dd9184c43d9e6880ba62f"
   );
 
