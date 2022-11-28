@@ -9,7 +9,7 @@ import { Post_20220913_KillingWolf_Context } from "./Post_20220913_KillingWolf_C
 
 test("2022-09-13_killing_wolf.md", async () => {
   await runBeforeTestStarts(
-    "animal/2022-09-13_killing_wolf",
+    "animal\\2022-09-13_killing_wolf",
     "5f4f5d4cc2b02c6322954ac2c919528b"
   );
 
