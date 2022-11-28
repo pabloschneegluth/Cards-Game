@@ -3,7 +3,9 @@ package com.drpicox.game.animal;
 import com.drpicox.game.card.CardService;
 import com.drpicox.game.moon.EndMoonSettings;
 import com.drpicox.game.moon.EndMoonStep;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EndMoonStep_200_ArcherKillsWolf implements EndMoonStep{
     private final CardService cardService;
 
