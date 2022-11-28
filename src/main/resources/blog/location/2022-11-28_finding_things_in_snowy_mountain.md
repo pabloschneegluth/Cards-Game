@@ -20,8 +20,8 @@ When he comes back from the mountain, he loses it.
 | Frozen Skeleton  |
 
 
-* Given a new game with a stack of 1 "Mountain Stroll Idea", 1 "Mountain" and 1 "Mountaineer" cards.
-* The "Mountain Stroll Idea" may create a "$CardName" card.
-* Given that the odds are that we will get a "$CardName" from the "Mountain" card.
-* End the current moon.
-* There should be 1 stacks of 1 "Mountain Stroll Idea", 1 "Mountain", 1 "Villager" and 1 "$CardName" cards.
+ * Given a new game with a stack of 1 "Snowy Mountain Stroll Idea", 1 "Snowy Mountain" and 1 "Mountaineer" cards.
+ * The "Snowy Mountain Stroll Idea" may create a "$CardName" card.
+ * Given that the odds are that we will get a "$CardName" from the "Snowy Mountain" card.
+ * End the current moon.
+ * There should be 1 stacks of 1 "Snowy Mountain Stroll Idea", 1 "Snowy Mountain", 1 "Villager" and 1 "$CardName" cards.
