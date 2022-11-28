@@ -2,6 +2,8 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import {Names} from "../util/Names";
+import {queryAllStackDigestByCardNames} from "../stack/queries";
 
 export class Post_20221104_Book_Context {
   async beforeTest() {
