@@ -2,15 +2,12 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import {queryAllCardByName, queryAllCardDigest} from "../card/queries";
 
 export class Post_20221119_Meat_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGameWithAStackOfNSAndNSCards(n1, s1, n2, s2) {
@@ -19,10 +16,6 @@ export class Post_20221119_Meat_Context {
     // hint: Post_20221119_HowToKillAnimals_Context.givenANewGameWithAStackOfNSAndNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSAndNSCards(n1, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async theSumOfAllSTagsValueShouldBeN(s1, expected) {
@@ -30,12 +23,9 @@ export class Post_20221119_Meat_Context {
     // code: await this.theSumOfAllSTagsValueShouldBeN("Eats", 4)
     // hint: Post_20221120_Egg_Context.theSumOfAllSTagsValueShouldBeN
 
-    var actual = expected; // FIXME
+    var cards = queryAllCardDigest(mainView);
+    var actual = cards.reduce((acc, c) => acc + c.getTag(s1), 0);
     expect(actual).toEqual(expected);
-
-    throw new Error(
-      "The method theSumOfAllSTagsValueShouldBeN(s1, expected) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -44,8 +34,6 @@ export class Post_20221119_Meat_Context {
     // hint: Post_20221114_WolfKillVillager_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNSCards(expected, s1) {
@@ -53,12 +41,8 @@ export class Post_20221119_Meat_Context {
     // code: await this.thereShouldBeNSCards(4, "Villager")
     // hint: Post_20221114_WolfKillVillager_Context.thereShouldBeNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
-
-    throw new Error(
-      "The method thereShouldBeNSCards(expected, s1) is not implemented yet."
-    );
+    var actual = queryAllCardByName(mainView, s1);
+    expect(actual).toHaveLength(expected);
   }
 
   async afterTest() {
