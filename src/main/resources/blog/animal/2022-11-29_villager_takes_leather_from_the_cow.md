@@ -3,7 +3,7 @@ writer: marcserranog
 package: animal
 ---
 
-# Villager Tales Leather From The Cow
+# Villager TaKes Leather From The Cow
 
 To get leather the villager has to take it from the cow.
 He needs the right tool to do the job.
