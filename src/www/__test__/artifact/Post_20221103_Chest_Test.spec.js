@@ -9,7 +9,7 @@ import { Post_20221103_Chest_Context } from "./Post_20221103_Chest_Context";
 
 test("2022-11-03_chest.md", async () => {
   await runBeforeTestStarts(
-    "artifact\\2022-11-03_chest",
+    "artifact/2022-11-03_chest",
     "53e9dea61490f638825560a822193892"
   );
 
