@@ -9,7 +9,7 @@ import { Post_20221119_HowToKillAnimals_Context } from "./Post_20221119_HowToKil
 
 test("2022-11-19_how_to_kill_animals.md", async () => {
   await runBeforeTestStarts(
-    "idea/2022-11-19_how_to_kill_animals",
+    "idea\\2022-11-19_how_to_kill_animals",
     "f73ab7a7438b6619dc5c8472207674ff"
   );
 

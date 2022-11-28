@@ -9,7 +9,7 @@ import { Post_20221120_Egg_Context } from "./Post_20221120_Egg_Context";
 
 test("2022-11-20_egg.md", async () => {
   await runBeforeTestStarts(
-    "food/2022-11-20_egg",
+    "food\\2022-11-20_egg",
     "0ca6b31378734fdb924b6d7fed04ec24"
   );
 

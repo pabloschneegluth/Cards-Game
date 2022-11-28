@@ -9,7 +9,7 @@ import { Post_20221117_MilitiaKillCreeper_Context } from "./Post_20221117_Militi
 
 test("2022-11-17_militia_kill_creeper.md", async () => {
   await runBeforeTestStarts(
-    "enemy/2022-11-17_militia_kill_creeper",
+    "enemy\\2022-11-17_militia_kill_creeper",
     "a4929e8c0f27886913e7c8fa046331aa"
   );
 
