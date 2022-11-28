@@ -1,6 +1,7 @@
 ---
 writer: 99riospol
 package: enemy
+coder: marcserranog
 ---
 # Militia Kill Zombie
 
