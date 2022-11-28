@@ -9,7 +9,7 @@ import { Post_20221019_Farm_Context } from "./Post_20221019_Farm_Context";
 
 test("2022-10-19_farm.md", async () => {
   await runBeforeTestStarts(
-    "building\\2022-10-19_farm",
+    "building/2022-10-19_farm",
     "ce6fee9e765b7ccb95f3a8a5f56b27de"
   );
 
