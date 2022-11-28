@@ -1,6 +1,6 @@
 ---
 writer: marcserranog
-package: material
+package: animal
 ---
 
 # Villager Tales Leather From The Cow
