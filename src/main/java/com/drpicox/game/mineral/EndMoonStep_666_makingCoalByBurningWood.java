@@ -29,8 +29,8 @@ public class EndMoonStep_666_makingCoalByBurningWood implements EndMoonStep {
         var flint = cardService.findAllByName("Flint");
         if((
             (flint.size()==1)
-            &&
-            (Wood.size()==1)
+           // &&
+           // (Wood.size()==1)
 
         )){
                         var flintpos = flint.get(0);
