@@ -9,20 +9,20 @@ import { Post_20221124_MagicIdea_Context } from "./Post_20221124_MagicIdea_Conte
 
 test("2022-11-24_magic_idea.md", async () => {
   await runBeforeTestStarts(
-    "idea\\2022-11-24_magic_idea",
-    "1d93dc8a67697bd54175273d1c25482c"
+    "idea/2022-11-24_magic_idea",
+    "fd40e164beb8f8ba9a43675b27826aad"
   );
 
   const context = new Post_20221124_MagicIdea_Context();
   await context.beforeTest();
 
-  // # Magic idea                                                    // # Magic idea
+  // # Magic idea                                                  // # Magic idea
 
-  // ## How to acquire Magic Idea?                                   // ## How to acquire Magic Idea?
-  await context.givenANewGameWithAStackOfNSCard(1, "Wizard"); //     // * Given a new game with a stack of 1 "Wizard" card.
-  await context.endTheCurrentMoon(); //                              // * End the current moon.
-  await context.thereShouldBeTheSIdea("Old Village Stroll Idea"); // // * There should be the "Old Village Stroll Idea" idea.
-  await context.theSShouldHaveLevelNAndNXp("Magic Idea", 1, 0); //   // * The "Magic Idea" should have level 1 and 0 XP.
+  // ## How to acquire Magic Idea?                                 // ## How to acquire Magic Idea?
+  await context.givenANewGameWithAStackOfNSCard(1, "Wizard"); //   // * Given a new game with a stack of 1 "Wizard" card.
+  await context.endTheCurrentMoon(); //                            // * End the current moon.
+  await context.thereShouldBeTheSIdea("Magic Idea"); //            // * There should be the "Magic Idea" idea.
+  await context.theSShouldHaveLevelNAndNXp("Magic Idea", 1, 0); // // * The "Magic Idea" should have level 1 and 0 XP.
 
   await context.afterTest();
   await runWhenTestSuccessful();

@@ -49,9 +49,8 @@ public class Post_20221124_MagicIdea_Context {
         // text:  * Given a new game with a stack of 1 "Wizard" card.
         // code: this.givenANewGameWithAStackOfNSCard(1, "Wizard")
         // hint: Post_20221106_Archer_Context.givenANewGameWithAStackOfNSNSCards
-        givenIdeaService.givenIdea("Old Village Stroll Idea");
         // Add here what is given
-        givenStackService.givenStacks(1, Names.byNames(1,"Old Village Stroll Idea").and(n1,s1));
+        givenStackService.givenStacks(1, Names.byNames(n1,s1));
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
     }
@@ -70,7 +69,7 @@ public class Post_20221124_MagicIdea_Context {
         // hint: Post_20221115_LakeStrollIdea_Context.thereShouldBeTheSIdea
 
         var stacks = IdeaListDTO.getIdea(gameDTO,
-            name -> name.getName().equalsIgnoreCase("Old Village Stroll Idea")
+            name -> name.getName().equalsIgnoreCase(expected)
         );
         assertThat(stacks.getName()).isEqualTo(expected);
 
@@ -80,8 +79,11 @@ public class Post_20221124_MagicIdea_Context {
         // text:  * The "Old Village Stroll Idea" should have level 1 and 0 XP.
         // code: this.theSShouldHaveLevelNAndNXp("Old Village Stroll Idea", 1, 0)
         // hint: Post_20221115_LakeStrollIdea_Context.theSShouldHaveLevelNAndNXp
-        var actual = getIdea(gameDTO, byName(s1));
-        assertThat(actual.getName()).isEqualTo(s1);
+        var idea = getIdea(gameDTO, byName(s1));
+
+        assertThat(idea.getName()).isEqualTo(s1);
+        assertThat(idea.getLevel()).isEqualTo(n1);
+        assertThat(idea.getXp()).isEqualTo(n2);
     }
 
     public void afterTest() {

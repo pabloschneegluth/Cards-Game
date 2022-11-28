@@ -77,15 +77,7 @@ public class Post_20221104_Book_Context {
         // text:  * Given there is the "Build Idea" idea at level 3 and 0 XP.
         // code: this.givenThereIsTheSIdeaAtLevelNAndNXp("Build Idea", 3, 0)
         // hint: Post_20221106_Lake_Context.givenThereIsTheSIdeaAtLevelNAndNXp
-
-        // Add here what is given
-        givenIdeaService.givenIdea(s1, n1, n2);
-        // And make sure that the game is in the right state (also for the frontend)
-        gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);
-
-        // hint: Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context.givenThereIsTheSIdeaAtLevelNAndNXp
-
-        // Add here what is given
+       // Add here what is given
         givenIdeaService.givenIdea("Build Idea", n1, n2);
         // And make sure that the game is in the right state (also for the frontend)
         gameDTO = frontendSimulator.get("/api/v1/game", GameDTO.class);

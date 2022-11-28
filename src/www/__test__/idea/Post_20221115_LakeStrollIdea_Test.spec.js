@@ -9,7 +9,7 @@ import { Post_20221115_LakeStrollIdea_Context } from "./Post_20221115_LakeStroll
 
 test("2022-11-15_lake_stroll_idea.md", async () => {
   await runBeforeTestStarts(
-    "idea\\2022-11-15_lake_stroll_idea",
+    "idea/2022-11-15_lake_stroll_idea",
     "41d1f8790147c0abd4aa5758358743aa"
   );
 

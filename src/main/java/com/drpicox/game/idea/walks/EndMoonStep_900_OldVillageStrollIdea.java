@@ -36,12 +36,7 @@ public class EndMoonStep_900_OldVillageStrollIdea implements EndMoonStep{
         }
 
         private void executeIdea(IdeaEndMoonSettings settings) {
-            var wizard = cardService.findAllByName("Wizard");
             var progress = ideaProgressService.progress(settings, 1);
-
-            if (wizard.size() != 0) {
-                ideaFactory.makeIdea(new IdeaFactorySettings("Magic Idea"));
-            }
 
             var idea = settings.getIdea();
             var cardRewards = idea.getCardRewards();

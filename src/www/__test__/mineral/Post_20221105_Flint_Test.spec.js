@@ -9,7 +9,7 @@ import { Post_20221105_Flint_Context } from "./Post_20221105_Flint_Context";
 
 test("2022-11-05_flint.md", async () => {
   await runBeforeTestStarts(
-    "mineral\\2022-11-05_flint",
+    "mineral/2022-11-05_flint",
     "25e18333dbff37a9b7408a67795eb2c5"
   );
 

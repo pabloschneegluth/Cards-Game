@@ -23,16 +23,16 @@ public class Post_20221124_MagicIdea_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-11-24_magic_idea", "1d93dc8a67697bd54175273d1c25482c");
+        testUtils.runBeforeTestStarts("2022-11-24_magic_idea", "fd40e164beb8f8ba9a43675b27826aad");
         context.beforeTest();
 
-        // # Magic idea                                           // # Magic idea
+        // # Magic idea                                         // # Magic idea
 
-        // ## How to acquire Magic Idea?                          // ## How to acquire Magic Idea?
-        context.givenANewGameWithAStackOfNSCard(1, "Wizard");     // * Given a new game with a stack of 1 "Wizard" card.
-        context.endTheCurrentMoon();                              // * End the current moon.
-        context.thereShouldBeTheSIdea("Old Village Stroll Idea"); // * There should be the "Old Village Stroll Idea" idea.
-        context.theSShouldHaveLevelNAndNXp("Magic Idea", 1, 0);   // * The "Magic Idea" should have level 1 and 0 XP.
+        // ## How to acquire Magic Idea?                        // ## How to acquire Magic Idea?
+        context.givenANewGameWithAStackOfNSCard(1, "Wizard");   // * Given a new game with a stack of 1 "Wizard" card.
+        context.endTheCurrentMoon();                            // * End the current moon.
+        context.thereShouldBeTheSIdea("Magic Idea");            // * There should be the "Magic Idea" idea.
+        context.theSShouldHaveLevelNAndNXp("Magic Idea", 1, 0); // * The "Magic Idea" should have level 1 and 0 XP.
 
         context.afterTest();
         testUtils.runWhenTestSuccessful();
