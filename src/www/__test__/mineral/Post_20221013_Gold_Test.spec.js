@@ -9,7 +9,7 @@ import { Post_20221013_Gold_Context } from "./Post_20221013_Gold_Context";
 
 test("2022-10-13_gold.md", async () => {
   await runBeforeTestStarts(
-    "mineral/2022-10-13_gold",
+    "mineral\\2022-10-13_gold",
     "dee3ad910fe15b0384de3069bd054813"
   );
 

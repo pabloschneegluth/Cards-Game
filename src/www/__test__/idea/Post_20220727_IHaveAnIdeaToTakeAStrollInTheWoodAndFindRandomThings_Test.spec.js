@@ -9,7 +9,7 @@ import { Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Cont
 
 test("2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things.md", async () => {
   await runBeforeTestStarts(
-    "idea/2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things",
+    "idea\\2022-07-27_i_have_an_idea_to_take_a_stroll_in_the_wood_and_find_random_things",
     "4e6cbcdcee02cb846cbbbb62aec5041f"
   );
 
