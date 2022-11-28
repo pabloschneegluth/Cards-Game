@@ -3,11 +3,11 @@ writer: marcserranog
 package: location
 ---
 
-# Finding things in Mountain
+# Finding things in Snowy Mountain
 
 In order to be able to be in the mountains and find things you need a mountaineer, 
 which consists of a villager with a mountain kit. 
-When he comes back from the mountain, he loses it.
+When he comes back from the Snowy Mountain, he loses it.
 
 | $CardName        |
 |------------------|
