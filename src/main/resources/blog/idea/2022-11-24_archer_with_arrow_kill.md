@@ -1,6 +1,7 @@
 ---
 writer: Pabloooo6
 package: idea
+coder: 6Q
 ---
 
 # Archer with arrow kill
