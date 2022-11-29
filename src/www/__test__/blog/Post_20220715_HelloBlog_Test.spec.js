@@ -9,7 +9,7 @@ import { Post_20220715_HelloBlog_Context } from "./Post_20220715_HelloBlog_Conte
 
 test("2022-07-15_hello_blog.md", async () => {
   await runBeforeTestStarts(
-    "blog/2022-07-15_hello_blog",
+    "blog\\2022-07-15_hello_blog",
     "ee5216b03b56d4c41fe753c274af3c88"
   );
 
