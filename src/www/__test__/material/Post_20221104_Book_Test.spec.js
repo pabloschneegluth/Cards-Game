@@ -9,7 +9,7 @@ import { Post_20221104_Book_Context } from "./Post_20221104_Book_Context";
 
 test("2022-11-04_book.md", async () => {
   await runBeforeTestStarts(
-    "material\\2022-11-04_book",
+    "material/2022-11-04_book",
     "cd75ff7e4b1735cbf4c3e05d24d027c4"
   );
 

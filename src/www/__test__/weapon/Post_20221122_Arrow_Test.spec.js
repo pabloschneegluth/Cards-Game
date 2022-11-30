@@ -9,7 +9,7 @@ import { Post_20221122_Arrow_Context } from "./Post_20221122_Arrow_Context";
 
 test("2022-11-22_arrow.md", async () => {
   await runBeforeTestStarts(
-    "weapon\\2022-11-22_arrow",
+    "weapon/2022-11-22_arrow",
     "6e5aa29549c993722951d32897a8b5af"
   );
 
