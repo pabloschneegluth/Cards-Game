@@ -9,7 +9,7 @@ import { Post_20221106_Archer_Context } from "./Post_20221106_Archer_Context";
 
 test("2022-11-06_archer.md", async () => {
   await runBeforeTestStarts(
-    "villager\\2022-11-06_archer",
+    "villager/2022-11-06_archer",
     "84f7c8c409f4ab06efecc9fecf9867ef"
   );
 

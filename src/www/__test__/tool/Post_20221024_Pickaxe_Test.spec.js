@@ -9,7 +9,7 @@ import { Post_20221024_Pickaxe_Context } from "./Post_20221024_Pickaxe_Context";
 
 test("2022-10-24_pickaxe.md", async () => {
   await runBeforeTestStarts(
-    "tool\\2022-10-24_pickaxe",
+    "tool/2022-10-24_pickaxe",
     "d94c94d8247de08d3fb2c14a40b9691d"
   );
 

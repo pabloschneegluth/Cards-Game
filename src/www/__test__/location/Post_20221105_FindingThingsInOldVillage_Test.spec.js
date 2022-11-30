@@ -9,7 +9,7 @@ import { Post_20221105_FindingThingsInOldVillage_Context } from "./Post_20221105
 
 test("2022-11-05_finding_things_in_old_village.md", async () => {
   await runBeforeTestStarts(
-    "location\\2022-11-05_finding_things_in_old_village",
+    "location/2022-11-05_finding_things_in_old_village",
     "cbd46221101e1a47d7f48d11f866ef70"
   );
 
