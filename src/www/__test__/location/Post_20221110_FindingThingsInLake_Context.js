@@ -2,15 +2,16 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { getIdeaDigestByName } from "../idea/queries";
+import { Names } from "../util/Names";
+import { queryAllStackDigestByCardNames } from "../stack/queries";
 
 export class Post_20221110_FindingThingsInLake_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
+
   }
 
   async givenANewGameWithAStackOfNSNSNSAndNSCards(
@@ -29,19 +30,15 @@ export class Post_20221110_FindingThingsInLake_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSNSNSAndNSCards(n1, s1, n2, s2, n3, s3, n4, s4) is not implemented yet."
-    );
   }
 
-  async theSMayCreateASCard(s1, s2) {
+  async theSMayCreateASCard(ideaName, cardName) {
     // text:  * The "Lake Stroll Idea" may create a "Fish" card.
     // code: await this.theSMayCreateASCard("Lake Stroll Idea", "Fish")
     // hint: Post_20221114_Chicken_Context.theSMayCreateASCard
 
-    throw new Error(
-      "The method theSMayCreateASCard(s1, s2) is not implemented yet."
-    );
+    var idea = getIdeaDigestByName(mainView, ideaName);
+    expect(idea.mayCreateCards).toContain(cardName);
   }
 
   async givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) {
@@ -51,9 +48,6 @@ export class Post_20221110_FindingThingsInLake_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThatTheOddsAreThatWeWillGetASFromTheSCard(s1, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -63,32 +57,35 @@ export class Post_20221110_FindingThingsInLake_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSNSNSNSAndNSCards(
     expected,
-    n2,
-    s1,
-    n3,
-    s2,
-    n4,
-    s3,
-    n5,
-    s4,
-    n6,
-    s5
+    count1,
+    name1,
+    count2,
+    name2,
+    count3,
+    name3,
+    count4,
+    name4,
+    count5,
+    name5,
   ) {
     // text:  * There should be 1 stacks of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager", 1 "Fishing Rod" and 1 "Fish" cards.
     // code: await this.thereShouldBeNStacksOfNSNSNSNSAndNSCards(1, 1, "Lake Stroll Idea", 1, "Lake", 1, "Villager", 1, "Fishing Rod", 1, "Fish")
     // hint: Post_20221105_Coal_Context.thereShouldBeNStacksOfNSNSNSNSAndNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(count1, name1)
+      .and(count2, name2)
+      .and(count3, name3)
+      .and(count4, name4)
+      .and(count5, name5)
+      .get();
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3, n5, s4, n6, s5) is not implemented yet."
-    );
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
+
   }
 
   async afterTest() {
