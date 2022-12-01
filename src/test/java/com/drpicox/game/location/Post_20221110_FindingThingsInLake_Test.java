@@ -23,7 +23,7 @@ public class Post_20221110_FindingThingsInLake_Test {
     @Autowired TestUtils testUtils;
 
     @Test public void testPost() throws Throwable {
-        testUtils.runBeforeTestStarts("2022-11-10_finding_things_in_lake", "99d291a160b102dfbfdaa75000c8618f");
+        testUtils.runBeforeTestStarts("2022-11-10_finding_things_in_lake", "fe8dec1b3beeb501b1531ccd5e2a52c9");
         context.beforeTest();
 
         // # Finding things in Lake                                                                                                         // # Finding things in Lake
@@ -35,7 +35,7 @@ public class Post_20221110_FindingThingsInLake_Test {
         // ## | Fish      |                                                                                                                 // ## | Fish      |
         context.givenANewGameWithAStackOfNSNSNSAndNSCards(1, "Lake Stroll Idea", 1, "Lake", 1, "Villager", 1, "Fishing Rod");               // * Given a new game with a stack of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager" and 1 "Fishing Rod" cards.
         context.theSMayCreateASCard("Lake Stroll Idea", "Fish");                                                                            // * The "Lake Stroll Idea" may create a "Fish" card.
-        context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Fish", "Lake");                                                             // * Given that the odds are that we will get a "Fish" from the "Lake" card.
+        context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Fish", "Lake Stroll Idea");                                                 // * Given that the odds are that we will get a "Fish" from the "Lake Stroll Idea" card.
         context.endTheCurrentMoon();                                                                                                        // * End the current moon.
         context.thereShouldBeNStacksOfNSNSNSNSAndNSCards(1, 1, "Lake Stroll Idea", 1, "Lake", 1, "Villager", 1, "Fishing Rod", 1, "Fish");  // * There should be 1 stacks of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager", 1 "Fishing Rod" and 1 "Fish" cards.
         // # Finding things in Lake                                                                                                         // # Finding things in Lake
@@ -47,7 +47,7 @@ public class Post_20221110_FindingThingsInLake_Test {
         // ## | Shark     |                                                                                                                 // ## | Shark     |
         context.givenANewGameWithAStackOfNSNSNSAndNSCards(1, "Lake Stroll Idea", 1, "Lake", 1, "Villager", 1, "Fishing Rod");               // * Given a new game with a stack of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager" and 1 "Fishing Rod" cards.
         context.theSMayCreateASCard("Lake Stroll Idea", "Shark");                                                                           // * The "Lake Stroll Idea" may create a "Shark" card.
-        context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Shark", "Lake");                                                            // * Given that the odds are that we will get a "Shark" from the "Lake" card.
+        context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Shark", "Lake Stroll Idea");                                                // * Given that the odds are that we will get a "Shark" from the "Lake Stroll Idea" card.
         context.endTheCurrentMoon();                                                                                                        // * End the current moon.
         context.thereShouldBeNStacksOfNSNSNSNSAndNSCards(1, 1, "Lake Stroll Idea", 1, "Lake", 1, "Villager", 1, "Fishing Rod", 1, "Shark"); // * There should be 1 stacks of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager", 1 "Fishing Rod" and 1 "Shark" cards.
 

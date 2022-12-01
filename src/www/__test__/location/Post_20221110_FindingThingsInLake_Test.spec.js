@@ -10,7 +10,7 @@ import { Post_20221110_FindingThingsInLake_Context } from "./Post_20221110_Findi
 test("2022-11-10_finding_things_in_lake.md", async () => {
   await runBeforeTestStarts(
     "location/2022-11-10_finding_things_in_lake",
-    "99d291a160b102dfbfdaa75000c8618f"
+    "fe8dec1b3beeb501b1531ccd5e2a52c9"
   );
 
   const context = new Post_20221110_FindingThingsInLake_Context();
@@ -34,7 +34,10 @@ test("2022-11-10_finding_things_in_lake.md", async () => {
     "Fishing Rod"
   ); //               // * Given a new game with a stack of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager" and 1 "Fishing Rod" cards.
   await context.theSMayCreateASCard("Lake Stroll Idea", "Fish"); //                                                                            // * The "Lake Stroll Idea" may create a "Fish" card.
-  await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Fish", "Lake"); //                                                             // * Given that the odds are that we will get a "Fish" from the "Lake" card.
+  await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
+    "Fish",
+    "Lake Stroll Idea"
+  ); //                                                 // * Given that the odds are that we will get a "Fish" from the "Lake Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                        // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSNSAndNSCards(
     1,
@@ -67,7 +70,10 @@ test("2022-11-10_finding_things_in_lake.md", async () => {
     "Fishing Rod"
   ); //               // * Given a new game with a stack of 1 "Lake Stroll Idea", 1 "Lake", 1 "Villager" and 1 "Fishing Rod" cards.
   await context.theSMayCreateASCard("Lake Stroll Idea", "Shark"); //                                                                           // * The "Lake Stroll Idea" may create a "Shark" card.
-  await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Shark", "Lake"); //                                                            // * Given that the odds are that we will get a "Shark" from the "Lake" card.
+  await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
+    "Shark",
+    "Lake Stroll Idea"
+  ); //                                                // * Given that the odds are that we will get a "Shark" from the "Lake Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                        // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSNSAndNSCards(
     1,
