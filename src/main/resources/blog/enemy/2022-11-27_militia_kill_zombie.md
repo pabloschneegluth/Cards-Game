@@ -1,6 +1,7 @@
 ---
 writer: 99riospol
 package: enemy
+coder: marcserranog
 ---
 # Militia Kill Zombie
 
@@ -16,7 +17,7 @@ You can kill a creeper with the militia.
  * Given there are 1 "Militia" cards.
  * Given there are 1 "Zombie" cards.
  * End the current moon.
- * There should be 0 "Creeper" cards.
- * There should be 1 "Zombie" cards.
+ * There should be 0 "Zombie" cards.
+ * There should be 1 "Militia" cards.
 
 
