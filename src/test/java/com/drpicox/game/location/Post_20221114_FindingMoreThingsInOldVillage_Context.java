@@ -16,6 +16,9 @@ import com.drpicox.game.game.GivenGameService;
 import com.drpicox.game.card.GivenCardService;
 import com.drpicox.game.game.api.GameDTO;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 @Component
 public class Post_20221114_FindingMoreThingsInOldVillage_Context {
 
@@ -55,12 +58,14 @@ public class Post_20221114_FindingMoreThingsInOldVillage_Context {
         // [ ] is the empty game right for this post?
     }
 
-    public void givenANewGameWithAStackOfNSNSAndNSCards(int n1, String s1, int n2, String s2, int n3, String s3) {
-        // text:  * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+    public void givenANewGameWithAStackOfNSNSAndNSCards(int n1, String s1, int n2, String s2, int n3, String s3) throws IOException, URISyntaxException {
+        // text:  * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
         // code: this.givenANewGameWithAStackOfNSNSAndNSCards(1, "Old Village", 1, "Old Village Stroll Idea", 1, "Villager")
         // hint: Post_20221124_ArcherWithArrowKill_Context.givenANewGameWithAStackOfNSNSAndNSCards
 
         // Add here what is given
+        givenGameService.givenGame("empty");
+        givenCardService.givenCards(1, "Berry");
         givenIdeaService.givenIdea("Old Village Stroll Idea");
         givenStackService.givenStacks(1, byNames(n1,s1).and(n2,s2).and(n3,s3));
         // And make sure that the game is in the right state (also for the frontend)
@@ -80,8 +85,8 @@ public class Post_20221114_FindingMoreThingsInOldVillage_Context {
     }
 
     public void givenThatTheOddsAreThatWeWillGetASFromTheSCard(String cardName, String ideaName) {
-        // text:  * Given that the odds are that we will get a "Berry" from the "Old Village" card.
-        // code: this.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Berry", "Old Village")
+        // text:  * Given that the odds are that we will get a "Berry" from the "Old Village Stroll Idea" card.
+        // code: this.givenThatTheOddsAreThatWeWillGetASFromTheSCard("Berry", "Old Village Stroll Idea")
         // hint: Post_20220727_IHaveAnIdeaToTakeAStrollInTheWoodAndFindRandomThings_Context.givenThatTheOddsAreThatWeWillGetASFromTheSCard
 
         // Add here what is given

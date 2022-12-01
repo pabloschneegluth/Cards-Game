@@ -10,7 +10,7 @@ import { Post_20221114_FindingMoreThingsInOldVillage_Context } from "./Post_2022
 test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   await runBeforeTestStarts(
     "location/2022-11-14_finding_more_things_in_old_village",
-    "fddba26e25bdabc2c59dc348547da5b6"
+    "23a7b173afea4eafb599b978813750d7"
   );
 
   const context = new Post_20221114_FindingMoreThingsInOldVillage_Context();
@@ -25,17 +25,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Berry           |                                                                                                                        // ## | Berry           |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Berry"); //                                                                        // * The "Old Village Stroll Idea" may create a "Berry" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Berry",
-    "Old Village"
-  ); //                                                         // * Given that the odds are that we will get a "Berry" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                             // * Given that the odds are that we will get a "Berry" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -57,17 +57,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Apple           |                                                                                                                        // ## | Apple           |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Apple"); //                                                                        // * The "Old Village Stroll Idea" may create a "Apple" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Apple",
-    "Old Village"
-  ); //                                                         // * Given that the odds are that we will get a "Apple" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                             // * Given that the odds are that we will get a "Apple" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -89,17 +89,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Villager        |                                                                                                                        // ## | Villager        |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Villager"); //                                                                     // * The "Old Village Stroll Idea" may create a "Villager" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Villager",
-    "Old Village"
-  ); //                                                      // * Given that the odds are that we will get a "Villager" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                          // * Given that the odds are that we will get a "Villager" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -121,17 +121,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Bone            |                                                                                                                        // ## | Bone            |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Bone"); //                                                                         // * The "Old Village Stroll Idea" may create a "Bone" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Bone",
-    "Old Village"
-  ); //                                                          // * Given that the odds are that we will get a "Bone" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                              // * Given that the odds are that we will get a "Bone" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -153,17 +153,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Wolf            |                                                                                                                        // ## | Wolf            |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Wolf"); //                                                                         // * The "Old Village Stroll Idea" may create a "Wolf" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Wolf",
-    "Old Village"
-  ); //                                                          // * Given that the odds are that we will get a "Wolf" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                              // * Given that the odds are that we will get a "Wolf" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -185,17 +185,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Stone           |                                                                                                                        // ## | Stone           |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Stone"); //                                                                        // * The "Old Village Stroll Idea" may create a "Stone" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Stone",
-    "Old Village"
-  ); //                                                         // * Given that the odds are that we will get a "Stone" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                             // * Given that the odds are that we will get a "Stone" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -217,17 +217,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Gold            |                                                                                                                        // ## | Gold            |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Gold"); //                                                                         // * The "Old Village Stroll Idea" may create a "Gold" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Gold",
-    "Old Village"
-  ); //                                                          // * Given that the odds are that we will get a "Gold" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                              // * Given that the odds are that we will get a "Gold" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -249,17 +249,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Iron            |                                                                                                                        // ## | Iron            |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Iron"); //                                                                         // * The "Old Village Stroll Idea" may create a "Iron" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Iron",
-    "Old Village"
-  ); //                                                          // * Given that the odds are that we will get a "Iron" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                              // * Given that the odds are that we will get a "Iron" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -281,17 +281,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Pear            |                                                                                                                        // ## | Pear            |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Pear"); //                                                                         // * The "Old Village Stroll Idea" may create a "Pear" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Pear",
-    "Old Village"
-  ); //                                                          // * Given that the odds are that we will get a "Pear" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                              // * Given that the odds are that we will get a "Pear" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -313,17 +313,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Diamond         |                                                                                                                        // ## | Diamond         |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Diamond"); //                                                                      // * The "Old Village Stroll Idea" may create a "Diamond" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Diamond",
-    "Old Village"
-  ); //                                                       // * Given that the odds are that we will get a "Diamond" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                           // * Given that the odds are that we will get a "Diamond" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -345,17 +345,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Pickaxe         |                                                                                                                        // ## | Pickaxe         |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Pickaxe"); //                                                                      // * The "Old Village Stroll Idea" may create a "Pickaxe" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Pickaxe",
-    "Old Village"
-  ); //                                                       // * Given that the odds are that we will get a "Pickaxe" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                           // * Given that the odds are that we will get a "Pickaxe" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -377,17 +377,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Militia         |                                                                                                                        // ## | Militia         |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Militia"); //                                                                      // * The "Old Village Stroll Idea" may create a "Militia" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Militia",
-    "Old Village"
-  ); //                                                       // * Given that the odds are that we will get a "Militia" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                           // * Given that the odds are that we will get a "Militia" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -409,17 +409,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Sword           |                                                                                                                        // ## | Sword           |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Sword"); //                                                                        // * The "Old Village Stroll Idea" may create a "Sword" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Sword",
-    "Old Village"
-  ); //                                                         // * Given that the odds are that we will get a "Sword" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                             // * Given that the odds are that we will get a "Sword" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -441,17 +441,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Cow             |                                                                                                                        // ## | Cow             |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Cow"); //                                                                          // * The "Old Village Stroll Idea" may create a "Cow" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Cow",
-    "Old Village"
-  ); //                                                           // * Given that the odds are that we will get a "Cow" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                               // * Given that the odds are that we will get a "Cow" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -473,17 +473,17 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Wood            |                                                                                                                        // ## | Wood            |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard("Old Village Stroll Idea", "Wood"); //                                                                         // * The "Old Village Stroll Idea" may create a "Wood" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Wood",
-    "Old Village"
-  ); //                                                          // * Given that the odds are that we will get a "Wood" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                              // * Given that the odds are that we will get a "Wood" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
@@ -505,20 +505,20 @@ test("2022-11-14_finding_more_things_in_old_village.md", async () => {
   // ## | Magic Component |                                                                                                                        // ## | Magic Component |
   await context.givenANewGameWithAStackOfNSNSAndNSCards(
     1,
-    "Old Village",
-    1,
     "Old Village Stroll Idea",
     1,
+    "Old Village",
+    1,
     "Villager"
-  ); //                         // * Given a new game with a stack of 1 "Old Village", 1 "Old Village Stroll Idea" and 1 "Villager" cards.
+  ); //                         // * Given a new game with a stack of 1 "Old Village Stroll Idea", 1 "Old Village" and 1 "Villager" cards.
   await context.theSMayCreateASCard(
     "Old Village Stroll Idea",
     "Magic Component"
   ); //                                                              // * The "Old Village Stroll Idea" may create a "Magic Component" card.
   await context.givenThatTheOddsAreThatWeWillGetASFromTheSCard(
     "Magic Component",
-    "Old Village"
-  ); //                                               // * Given that the odds are that we will get a "Magic Component" from the "Old Village" card.
+    "Old Village Stroll Idea"
+  ); //                                   // * Given that the odds are that we will get a "Magic Component" from the "Old Village Stroll Idea" card.
   await context.endTheCurrentMoon(); //                                                                                                            // * End the current moon.
   await context.thereShouldBeNStacksOfNSNSNSAndNSCards(
     1,
