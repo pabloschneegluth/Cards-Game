@@ -9,7 +9,7 @@ import { Post_20221124_ArcherWithArrowKill_Context } from "./Post_20221124_Arche
 
 test("2022-11-24_archer_with_arrow_kill.md", async () => {
   await runBeforeTestStarts(
-    "idea/2022-11-24_archer_with_arrow_kill",
+    "idea\\2022-11-24_archer_with_arrow_kill",
     "6e9058b3f4fd79f0bc06693c19064fd1"
   );
 
