@@ -9,7 +9,7 @@ import { Post_20221110_OldVillageStrollIdea_Context } from "./Post_20221110_OldV
 
 test("2022-11-10_old_village_stroll_idea.md", async () => {
   await runBeforeTestStarts(
-    "idea/2022-11-10_old_village_stroll_idea",
+    "idea\\2022-11-10_old_village_stroll_idea",
     "0629ced3be65af5295886c52ab85a61d"
   );
 

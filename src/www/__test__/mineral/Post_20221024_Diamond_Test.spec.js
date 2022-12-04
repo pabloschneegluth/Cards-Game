@@ -9,7 +9,7 @@ import { Post_20221024_Diamond_Context } from "./Post_20221024_Diamond_Context";
 
 test("2022-10-24_diamond.md", async () => {
   await runBeforeTestStarts(
-    "mineral/2022-10-24_diamond",
+    "mineral\\2022-10-24_diamond",
     "dcd6b0748aef03a336044007db7bdfcb"
   );
 
