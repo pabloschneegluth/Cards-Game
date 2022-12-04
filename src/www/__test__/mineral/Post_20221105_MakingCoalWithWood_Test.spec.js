@@ -9,7 +9,7 @@ import { Post_20221105_MakingCoalWithWood_Context } from "./Post_20221105_Making
 
 test("2022-11-05_making_coal_with_wood.md", async () => {
   await runBeforeTestStarts(
-    "mineral\\2022-11-05_making_coal_with_wood",
+    "mineral/2022-11-05_making_coal_with_wood",
     "876470fbc06e5c625c0f3f7c5f6b13db"
   );
 

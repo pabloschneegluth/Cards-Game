@@ -9,7 +9,7 @@ import { Post_20221117_FriendlyWolfKillWolf_Context } from "./Post_20221117_Frie
 
 test("2022-11-17_friendly_wolf_kill_wolf.md", async () => {
   await runBeforeTestStarts(
-    "animal\\2022-11-17_friendly_wolf_kill_wolf",
+    "animal/2022-11-17_friendly_wolf_kill_wolf",
     "49c8b7a6df6ebf664d2905224c5d6ef3"
   );
 

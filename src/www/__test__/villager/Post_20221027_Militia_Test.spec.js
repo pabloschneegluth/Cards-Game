@@ -9,7 +9,7 @@ import { Post_20221027_Militia_Context } from "./Post_20221027_Militia_Context";
 
 test("2022-10-27_militia.md", async () => {
   await runBeforeTestStarts(
-    "villager\\2022-10-27_militia",
+    "villager/2022-10-27_militia",
     "1e82756bd3fa29f980895f18155e4fb9"
   );
 

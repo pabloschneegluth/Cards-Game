@@ -9,7 +9,7 @@ import { Post_20221013_Wood_Context } from "./Post_20221013_Wood_Context";
 
 test("2022-10-13_wood.md", async () => {
   await runBeforeTestStarts(
-    "material\\2022-10-13_wood",
+    "material/2022-10-13_wood",
     "1967b7c683917c39434f841f7204f193"
   );
 
