@@ -9,7 +9,7 @@ import { Post_20221013_StoneHouse_Context } from "./Post_20221013_StoneHouse_Con
 
 test("2022-10-13_stone_house.md", async () => {
   await runBeforeTestStarts(
-    "building\\2022-10-13_stone_house",
+    "building/2022-10-13_stone_house",
     "01b41c689763ecbb7474da4cb3dfc435"
   );
 
