@@ -9,7 +9,7 @@ import { Post_20221013_Stone_Context } from "./Post_20221013_Stone_Context";
 
 test("2022-10-13_stone.md", async () => {
   await runBeforeTestStarts(
-    "material/2022-10-13_stone",
+    "material\\2022-10-13_stone",
     "a9875408f3610adfbd1a8893afd5b234"
   );
 
