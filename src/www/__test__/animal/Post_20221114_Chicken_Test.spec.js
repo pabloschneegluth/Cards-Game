@@ -9,7 +9,7 @@ import { Post_20221114_Chicken_Context } from "./Post_20221114_Chicken_Context";
 
 test("2022-11-14_chicken.md", async () => {
   await runBeforeTestStarts(
-    "animal\\2022-11-14_chicken",
+    "animal/2022-11-14_chicken",
     "64b073998c6621182178a84ce83c5065"
   );
 
