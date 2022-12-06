@@ -9,7 +9,7 @@ import { Post_20221110_Bow_Context } from "./Post_20221110_Bow_Context";
 
 test("2022-11-10_bow.md", async () => {
   await runBeforeTestStarts(
-    "weapon\\2022-11-10_bow",
+    "weapon/2022-11-10_bow",
     "d4c023cbd15b73955785de223109c7f2"
   );
 
