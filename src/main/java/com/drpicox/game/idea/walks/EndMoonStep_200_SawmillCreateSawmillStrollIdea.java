@@ -46,7 +46,7 @@ public class EndMoonStep_200_SawmillCreateSawmillStrollIdea implements EndMoonSt
         var stack =  stackService.findAllStack();
         for (var cards : stack) {
             var location = cards.getCards();
-            var lake = location.stream().filter( x -> x.getName().equals("Sawmill")).findFirst();
+            var lake = location.stream().filter( x -> x.getName().equals("Sawmillç")).findFirst();
             if(lake.isEmpty()==false){
                 ideaFactory.makeIdea(new IdeaFactorySettings("Sawmill Stroll Idea"));
             }

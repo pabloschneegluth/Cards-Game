@@ -2,15 +2,14 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { getIdeaDigestByName } from "./queries";
 
 export class Post_20221124_SawmillStrollIdea_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
+
   }
 
   async givenANewGameWithAStackOfNSCardsAndNSCard(n1, s1, n2, s2) {
@@ -20,9 +19,6 @@ export class Post_20221124_SawmillStrollIdea_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSCardsAndNSCard(n1, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -32,7 +28,6 @@ export class Post_20221124_SawmillStrollIdea_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeTheSIdea(expected) {
@@ -40,12 +35,8 @@ export class Post_20221124_SawmillStrollIdea_Context {
     // code: await this.thereShouldBeTheSIdea("Sawmill Stroll Idea")
     // hint: Post_20221124_MagicIdea_Context.thereShouldBeTheSIdea
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
-
-    throw new Error(
-      "The method thereShouldBeTheSIdea(expected) is not implemented yet."
-    );
+    var idea = getIdeaDigestByName(mainView, expected);
+    expect(idea.name).toMatch(expected)
   }
 
   async theSShouldHaveLevelNAndNXp(s1, n1, n2) {
@@ -53,9 +44,9 @@ export class Post_20221124_SawmillStrollIdea_Context {
     // code: await this.theSShouldHaveLevelNAndNXp("Sawmill Stroll Idea", 1, 0)
     // hint: Post_20221124_MagicIdea_Context.theSShouldHaveLevelNAndNXp
 
-    throw new Error(
-      "The method theSShouldHaveLevelNAndNXp(s1, n1, n2) is not implemented yet."
-    );
+    var idea = getIdeaDigestByName(mainView, s1);
+    expect(idea.level).toEqual( n1 );
+    expect(idea.xp).toEqual( n2 );
   }
 
   async afterTest() {
