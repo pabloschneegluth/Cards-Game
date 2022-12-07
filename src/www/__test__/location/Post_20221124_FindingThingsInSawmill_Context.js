@@ -61,8 +61,8 @@ export class Post_20221124_FindingThingsInSawmill_Context {
     n5,
     s4
   ) {
-    // text:  * There should be 1 stacks of 1 "Sawmill", 1 "Sawmill Stroll Idea", 1 "Villager" and 2 "Wood" cards.
-    // code: await this.thereShouldBeNStacksOfNSNSNSAndNSCards(1, 1, "Sawmill", 1, "Sawmill Stroll Idea", 1, "Villager", 2, "Wood")
+    // text:  * There should be 1 stacks of 1 "Sawmill Stroll Idea", 1 "Sawmill", 1 "Villager" and 2 "Wood" cards.
+    // code: await this.thereShouldBeNStacksOfNSNSNSAndNSCards(1, 1, "Sawmill Stroll Idea", 1, "Sawmill", 1, "Villager", 2, "Wood")
     // hint: Post_20221129_Scorpion_Context.thereShouldBeNStacksOfNSNSNSAndNSCards
 
     var names = Names.byNames(n2, s1)
