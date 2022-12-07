@@ -11,8 +11,8 @@ where you can learn the best magic skills.
 
 To get it you need a book and a magic component, which you can find in a chest.
 
- * Given a new game with a stack of 1 "Magic Component" card, 1 "Book" card, 1 "Build Idea", and 1 "Villager" cards.
- * Given there is the "Build Idea" idea at level 4 and 0 XP.
+ * Given a new game with a stack of 1 "Build Idea",1 "Villager", 1 "Magic Component" and 1 "Book" cards.
+ * Given there is the "Build Idea" idea at level 1 and 0 XP.
  * The "Build Idea" may create a "Magic Book" card.
  * Given that the odds are that we will get a "Magic Book" card from the "Build Idea" card.
  * End the current moon.
