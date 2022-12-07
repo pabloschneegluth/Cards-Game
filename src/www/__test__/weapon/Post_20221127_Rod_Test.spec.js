@@ -9,7 +9,7 @@ import { Post_20221127_Rod_Context } from "./Post_20221127_Rod_Context";
 
 test("2022-11-27_rod.md", async () => {
   await runBeforeTestStarts(
-    "weapon/2022-11-27_rod",
+    "weapon\\2022-11-27_rod",
     "79f1a50994a2dd7db8d4adbcee3e59a6"
   );
 

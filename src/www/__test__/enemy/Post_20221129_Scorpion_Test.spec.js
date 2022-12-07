@@ -9,7 +9,7 @@ import { Post_20221129_Scorpion_Context } from "./Post_20221129_Scorpion_Context
 
 test("2022-11-29_scorpion.md", async () => {
   await runBeforeTestStarts(
-    "enemy/2022-11-29_scorpion",
+    "enemy\\2022-11-29_scorpion",
     "01c9d35dbe8f0dc2b205ed02b7ec5314"
   );
 

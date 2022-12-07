@@ -9,7 +9,7 @@ import { Post_20221105_Coal_Context } from "./Post_20221105_Coal_Context";
 
 test("2022-11-05_coal.md", async () => {
   await runBeforeTestStarts(
-    "mineral/2022-11-05_coal",
+    "mineral\\2022-11-05_coal",
     "3bada2faa764f46ad1469ba7a50707f9"
   );
 
