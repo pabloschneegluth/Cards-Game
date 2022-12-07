@@ -45,6 +45,7 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         createBow(settings);
         createArrow(settings);
         createHammer(settings);
+        createRod(settings);
     }
 
     private void createFarm(IdeaEndMoonSettings settings) {
@@ -297,6 +298,25 @@ public class EndMoonStep_900_BuildIdea implements EndMoonStep {
         if(materials.size()!=4) return;
 
         cardFactory.makeCards(1, new CardFactorySettings("Hammer").withPosition(position));
+        cardService.discardCards(materials);
+    }
+    private void createRod(IdeaEndMoonSettings settings){
+        var cards = settings.getStack().getCards();
+        if (cards.size() != 6) return;
+
+        var position = settings.getPosition();
+        int totalMaterialsNeeded = 0;
+        Map<String, Integer> materialsNeeded = new HashMap<String, Integer>() {{
+            put("wood", 3);
+            put("diamond", 1);
+        }};
+        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
+            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
+        }
+        var materials = getMaterialsToBuild(materialsNeeded, cards);
+        if(materials.size()!=4) return;
+
+        cardFactory.makeCards(1, new CardFactorySettings("Rod").withPosition(position));
         cardService.discardCards(materials);
     }
 }
