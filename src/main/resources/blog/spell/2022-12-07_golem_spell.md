@@ -17,4 +17,4 @@ a golem to defend the village from the enemies.
  * The "Golem Spell" card progress should be 2 of 3.
  * End the current moon.
  * The "Golem Spell" card progress should be 3 of 3.
- * There should be 1 stack of 1 "Magic Idea", "Wizard" and "Defender Golem". 
+ * There should be 1 stack of 1 "Magic Idea", 1 "Wizard" and 1 "Defender Golem". 
