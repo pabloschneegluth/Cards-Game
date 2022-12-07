@@ -9,7 +9,7 @@ import { Post_20221129_Mummy_Context } from "./Post_20221129_Mummy_Context";
 
 test("2022-11-29_mummy.md", async () => {
   await runBeforeTestStarts(
-    "enemy\\2022-11-29_mummy",
+    "enemy/2022-11-29_mummy",
     "2f00fd7e84d8c4477a01d6fa0187ef54"
   );
 
