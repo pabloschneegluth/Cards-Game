@@ -9,7 +9,7 @@ import { Post_20221106_Lake_Context } from "./Post_20221106_Lake_Context";
 
 test("2022-11-06_lake.md", async () => {
   await runBeforeTestStarts(
-    "place\\2022-11-06_lake",
+    "place/2022-11-06_lake",
     "68e5fb6491ab072a8ca35ac1311e493c"
   );
 

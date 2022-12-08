@@ -2,6 +2,8 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import {Names} from "../util/Names";
+import {queryAllStackDigestByCardNames} from "../stack/queries";
 
 export class Post_20221124_BoneFragment_Context {
   async beforeTest() {
@@ -30,8 +32,13 @@ export class Post_20221124_BoneFragment_Context {
     // code: await this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Bone")
     // hint: Post_20221122_Hammer_Context.thereShouldBeNStacksOfNSNSAndNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(n2,s1)
+      .and(n3, s2)
+      .and(n4, s3)
+      .get();
+
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
 
   }
 
