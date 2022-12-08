@@ -1,0 +1,46 @@
+import { getByTestId, screen } from "@testing-library/react";
+import { mainView } from "../main";
+import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
+import { waitForEndMoon } from "../moon/actions";
+import {Names} from "../util/Names";
+import {queryAllStackDigestByCardNames} from "../stack/queries";
+
+export class Post_20221128_MountainKit_Context {
+  async beforeTest() {
+    // Do your setup here
+    await waitForEnterTheGame();
+  }
+
+  async givenANewGameWithAStackOfNSNSNSAndNS(n1, s1, n2, s2, n3, s3, n4, s4) {
+    // text:  * Given a new game with a stack of 1 "Build Idea", 1 "Villager", 1 "String" and 1 "Leather".
+    // code: await this.givenANewGameWithAStackOfNSNSNSAndNS(1, "Build Idea", 1, "Villager", 1, "String", 1, "Leather")
+
+    await waitForReloadGame();
+  }
+
+  async endTheCurrentMoon() {
+    // text:  * End the current moon.
+    // code: await this.endTheCurrentMoon()
+    // hint: Post_20221127_MilitiaKillZombie_Context.endTheCurrentMoon
+
+    await waitForEndMoon();
+  }
+
+  async thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
+    // text:  * There should be 1 stacks of 1 "Build Idea", 1 "Villager" and 1 "Mountain Kit" cards.
+    // code: await this.thereShouldBeNStacksOfNSNSAndNSCards(1, 1, "Build Idea", 1, "Villager", 1, "Mountain Kit")
+    // hint: Post_20221103_Milk_Context.thereShouldBeNStacksOfNSNSAndNSCards
+
+    var names = Names.byNames(n2, s1)
+      .and(n3, s2)
+      .and(n4, s3)
+      .get();
+
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
+  }
+
+  async afterTest() {
+    // Do your teardown here, if necessary
+  }
+}

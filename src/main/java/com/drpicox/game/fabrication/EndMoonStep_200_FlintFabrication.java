@@ -34,7 +34,7 @@ public class EndMoonStep_200_FlintFabrication implements EndMoonStep {
         var villager = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Villager")).findFirst();
         var stone = cards.stream().filter(card -> card.getName().equalsIgnoreCase("Stone")).findFirst();
 
-        if (pickaxe.isEmpty()) return;
+        if (pickaxe.isEmpty() || stone.isEmpty()) return;
 
         cardFactory.makeCard(new CardFactorySettings("Flint").withPosition(stone.get().getPosition()));
         cardFactory.makeCard(new CardFactorySettings("Flint").withPosition(stone.get().getPosition()));
