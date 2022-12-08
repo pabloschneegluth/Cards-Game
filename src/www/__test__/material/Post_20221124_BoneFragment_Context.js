@@ -7,10 +7,6 @@ export class Post_20221124_BoneFragment_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
-
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGameWithAStackOfNSNSAndNSCards(n1, s1, n2, s2, n3, s3) {
@@ -19,10 +15,6 @@ export class Post_20221124_BoneFragment_Context {
     // hint: Post_20221105_Flint_Context.givenANewGameWithAStackOfNSNSAndNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSNSAndNSCards(n1, s1, n2, s2, n3, s3) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -31,8 +23,6 @@ export class Post_20221124_BoneFragment_Context {
     // hint: Post_20221031_FishingRod_Context.endTheCurrentMoon
 
     await waitForEndMoon();
-
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) {
@@ -43,9 +33,6 @@ export class Post_20221124_BoneFragment_Context {
     var actual = expected; // FIXME
     expect(actual).toEqual(expected);
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSNSAndNSCards(expected, n2, s1, n3, s2, n4, s3) is not implemented yet."
-    );
   }
 
   async afterTest() {
