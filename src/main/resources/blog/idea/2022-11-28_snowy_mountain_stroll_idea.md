@@ -1,6 +1,7 @@
 ---
 writer: marcserranog
 package: idea
+coder: 99riospol
 ---
 
 # Snowy Mountain Stroll idea
