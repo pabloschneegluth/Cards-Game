@@ -1,6 +1,7 @@
 ---
 writer: marcserranog
 package: location
+coder: 99riospol
 ---
 
 # Finding things in Snowy Mountain
@@ -10,17 +11,11 @@ When he comes back from the Snowy Mountain, he loses it.
 
 | $CardName        |
 |------------------|
-| Ice              |
 | Grizzly          |
-| Ice Crown        |
-| Shelter          |
-| Igloo            |
-| Ice Golem        |
-| Frozen Skeleton  |
 
 
  * Given a new game with a stack of 1 "Snowy Mountain Stroll Idea", 1 "Snowy Mountain", 1 "Villager" card and 1 "Mountain Kit".
  * The "Snowy Mountain Stroll Idea" may create a "$CardName" card.
- * Given that the odds are that we will get a "$CardName" from the "Snowy Mountain Stroll Idea" card.
+ * Given that the odds are that we will get a "$CardName" from the "Snowy Mountain" card.
  * End the current moon.
  * There should be 1 stacks of 1 "Snowy Mountain Stroll Idea", 1 "Snowy Mountain", 1 "Villager" and 1 "$CardName" cards.
