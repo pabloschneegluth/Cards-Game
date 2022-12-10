@@ -36,7 +36,6 @@ public class EndMoonStep_900_BuildArrow implements EndMoonStep {
     private void createArrow(IdeaEndMoonSettings settings) {
         var cards = settings.getStack().getCards();
         int position = settings.getPosition();
-        int totalMaterialsNeeded = 0;
 
         List<String> stack = Arrays.asList("build idea", "villager", "stone", "wood");
 
@@ -48,15 +47,8 @@ public class EndMoonStep_900_BuildArrow implements EndMoonStep {
         if (BuildIdeaUtil.isCorrectStack(cards, stack) == false) {
             return;
         }
-        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
-            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
-        }
-
         var materials = BuildIdeaUtil.getMaterialsToBuild(materialsNeeded, cards);
 
-        if (materials.size() != totalMaterialsNeeded) {
-            return;
-        }
         cardFactory.makeCards(1, new CardFactorySettings("Arrow").withPosition(position));
         cardService.discardCards(materials);
     }

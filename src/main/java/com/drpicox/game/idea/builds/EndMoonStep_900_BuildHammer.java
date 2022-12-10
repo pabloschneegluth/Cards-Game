@@ -51,15 +51,8 @@ public class EndMoonStep_900_BuildHammer implements EndMoonStep {
         if (BuildIdeaUtil.isCorrectStack(cards, stack) == false) {
             return;
         }
-        for (Map.Entry<String, Integer> set : materialsNeeded.entrySet()) {
-            totalMaterialsNeeded=totalMaterialsNeeded+set.getValue();
-        }
-
         var materials = BuildIdeaUtil.getMaterialsToBuild(materialsNeeded, cards);
 
-        if (materials.size() != totalMaterialsNeeded) {
-            return;
-        }
         cardFactory.makeCards(1, new CardFactorySettings("Hammer").withPosition(position));
         cardService.discardCards(materials);
     }

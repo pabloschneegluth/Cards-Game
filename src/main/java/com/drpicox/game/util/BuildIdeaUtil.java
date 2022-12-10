@@ -1,6 +1,7 @@
 package com.drpicox.game.util;
 
 import com.drpicox.game.card.Card;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,7 +9,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class BuildIdeaUtil {
+
+public final class BuildIdeaUtil {
+
+    private BuildIdeaUtil() {
+
+    }
 
     public static List<Card> getMaterialsToBuild(Map<String, Integer> materialsNeeded, List<Card> cards) {
         List<Card> materials = new ArrayList<>();
@@ -17,10 +23,7 @@ public class BuildIdeaUtil {
             int numMaterialsNeeded = (set.getValue());
 
             cards.forEach(card -> {
-                var remaining = numMaterialsNeeded - materials.stream().
-                    filter(name -> name.getName().equalsIgnoreCase(set.getKey())).toList().size();
-
-                if (card.getName().equalsIgnoreCase(set.getKey()) && remaining != 0) {
+                if (card.getName().equalsIgnoreCase(set.getKey())) {
                     materials.add(card);
                 }
             });
