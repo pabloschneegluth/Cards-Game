@@ -9,7 +9,7 @@ import { Post_20221127_Arpia_Context } from "./Post_20221127_Arpia_Context";
 
 test("2022-11-27_arpia.md", async () => {
   await runBeforeTestStarts(
-    "enemy/2022-11-27_arpia",
+    "enemy\\2022-11-27_arpia",
     "7af7aca09deb48c664823f821c8d7c73"
   );
 
