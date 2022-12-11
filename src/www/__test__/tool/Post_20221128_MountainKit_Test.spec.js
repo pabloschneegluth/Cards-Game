@@ -9,7 +9,7 @@ import { Post_20221128_MountainKit_Context } from "./Post_20221128_MountainKit_C
 
 test("2022-11-28_mountain_kit.md", async () => {
   await runBeforeTestStarts(
-    "tool\\2022-11-28_mountain_kit",
+    "tool/2022-11-28_mountain_kit",
     "dfa6810322f0410979049dd6f2fdfafd"
   );
 

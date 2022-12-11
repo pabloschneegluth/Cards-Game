@@ -9,7 +9,7 @@ import { Post_20221128_FindingThingsInSnowyMountain_Context } from "./Post_20221
 
 test("2022-11-28_finding_things_in_snowy_mountain.md", async () => {
   await runBeforeTestStarts(
-    "location\\2022-11-28_finding_things_in_snowy_mountain",
+    "location/2022-11-28_finding_things_in_snowy_mountain",
     "8413cae96b732961b55911c43144dccf"
   );
 
