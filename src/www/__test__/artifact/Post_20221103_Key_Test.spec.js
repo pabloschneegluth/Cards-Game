@@ -9,7 +9,7 @@ import { Post_20221103_Key_Context } from "./Post_20221103_Key_Context";
 
 test("2022-11-03_key.md", async () => {
   await runBeforeTestStarts(
-    "artifact/2022-11-03_key",
+    "artifact\\2022-11-03_key",
     "0ee83df7621554e1c78472004714874f"
   );
 

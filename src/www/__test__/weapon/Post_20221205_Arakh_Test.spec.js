@@ -9,7 +9,7 @@ import { Post_20221205_Arakh_Context } from "./Post_20221205_Arakh_Context";
 
 test("2022-12-05_arakh.md", async () => {
   await runBeforeTestStarts(
-    "weapon/2022-12-05_arakh",
+    "weapon\\2022-12-05_arakh",
     "47e1d1ce130a4f2da3eb1b754af37f80"
   );
 
