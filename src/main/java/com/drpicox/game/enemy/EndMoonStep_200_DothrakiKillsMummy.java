@@ -19,10 +19,8 @@ public class EndMoonStep_200_DothrakiKillsMummy implements EndMoonStep {
         var mummy = cardService.findAllByName("Mummy");
         var dothrakis = cardService.findAllByName("Dothraki");
 
-        if (dothrakis.size() != 0) {
-            for (var dothraki : dothrakis) {
-                mummy.stream().findAny().ifPresent(card -> cardService.discardCard(card));
-            }
-        }
+        dothrakis.stream().forEach(dothraki -> {
+            mummy.stream().findAny().ifPresent(card -> cardService.discardCard(card));
+        });
     }
 }
