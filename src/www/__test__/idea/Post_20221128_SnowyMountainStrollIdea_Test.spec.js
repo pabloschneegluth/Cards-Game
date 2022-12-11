@@ -9,7 +9,7 @@ import { Post_20221128_SnowyMountainStrollIdea_Context } from "./Post_20221128_S
 
 test("2022-11-28_snowy_mountain_stroll_idea.md", async () => {
   await runBeforeTestStarts(
-    "idea\\2022-11-28_snowy_mountain_stroll_idea",
+    "idea/2022-11-28_snowy_mountain_stroll_idea",
     "0136f563ec80ae4baea8f8eed7213b96"
   );
 

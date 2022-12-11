@@ -9,7 +9,7 @@ import { Post_20221122_Hammer_Context } from "./Post_20221122_Hammer_Context";
 
 test("2022-11-22_hammer.md", async () => {
   await runBeforeTestStarts(
-    "tool\\2022-11-22_hammer",
+    "tool/2022-11-22_hammer",
     "7b0588a8cff6ea45cd3b6f8fbb218f3b"
   );
 

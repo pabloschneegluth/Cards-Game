@@ -9,7 +9,7 @@ import { Post_20221110_FindingThingsInLake_Context } from "./Post_20221110_Findi
 
 test("2022-11-10_finding_things_in_lake.md", async () => {
   await runBeforeTestStarts(
-    "location\\2022-11-10_finding_things_in_lake",
+    "location/2022-11-10_finding_things_in_lake",
     "fe8dec1b3beeb501b1531ccd5e2a52c9"
   );
 

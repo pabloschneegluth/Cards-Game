@@ -9,7 +9,7 @@ import { Post_20221127_MilitiaKillZombie_Context } from "./Post_20221127_Militia
 
 test("2022-11-27_militia_kill_zombie.md", async () => {
   await runBeforeTestStarts(
-    "enemy\\2022-11-27_militia_kill_zombie",
+    "enemy/2022-11-27_militia_kill_zombie",
     "8599a37d2a8b8144ec35a9afc5b6e8e2"
   );
 
