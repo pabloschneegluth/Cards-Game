@@ -4,6 +4,7 @@ import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
 import {Names} from "../util/Names";
 import {queryAllStackDigestByCardNames} from "../stack/queries";
+import {getIdeaDigestByName} from "../idea/queries";
 
 export class Post_20221128_SnowyMountain_Context {
   async beforeTest() {
@@ -27,11 +28,13 @@ export class Post_20221128_SnowyMountain_Context {
     await waitForReloadGame();
   }
 
-  async theSMayCreateASCard(s1, s2) {
+  async theSMayCreateASCard(ideaName, cardName) {
     // text:  * The "Woods Stroll Idea" may create a "Snowy Mountain" card.
     // code: await this.theSMayCreateASCard("Woods Stroll Idea", "Snowy Mountain")
     // hint: Post_20221114_Chicken_Context.theSMayCreateASCard
 
+    var idea = getIdeaDigestByName(mainView, ideaName);
+    expect(idea.mayCreateCards).toContain(cardName);
   }
 
   async givenThatTheOddsAreThatWeWillGetASCardFromTheSCard(s1, s2) {
