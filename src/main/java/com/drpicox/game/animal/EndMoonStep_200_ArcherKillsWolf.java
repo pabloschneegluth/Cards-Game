@@ -24,7 +24,7 @@ public class EndMoonStep_200_ArcherKillsWolf implements EndMoonStep{
             archers.stream().findAny().ifPresent(card -> {
 
                 cardService.discardCard(arrow.get());
-                cardService.discardCard(card);
+                cardService.discardCard(wolf);
             });
         });
     }
