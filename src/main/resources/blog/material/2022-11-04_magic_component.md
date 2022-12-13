@@ -1,6 +1,5 @@
 ---
 writer: marcserranog
-coder: Pabloooo6
 package: material
 ---
 # Magic Component
