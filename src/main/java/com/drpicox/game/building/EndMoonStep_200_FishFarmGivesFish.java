@@ -31,12 +31,12 @@ public class EndMoonStep_200_FishFarmGivesFish implements EndMoonStep {
     }
 
     private void createFish(List<Card> cards) {
-        for (var fishFarm : cards) {
-            if(cards.isEmpty())
-                return;
-            else if(fishFarm.getName().equalsIgnoreCase("Fish Farm")){
-                cardFactory.makeCards(1, new CardFactorySettings("Fish").withPosition(fishFarm.getPosition()));
+        if(cards.isEmpty())
+            return;
 
+        for (var fishFarm : cards) {
+            if(fishFarm.getName().equalsIgnoreCase("Fish Farm")){
+                cardFactory.makeCards(1, new CardFactorySettings("Fish").withPosition(fishFarm.getPosition()));
             }
         }
     }
