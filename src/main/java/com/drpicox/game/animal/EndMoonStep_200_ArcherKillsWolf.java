@@ -15,19 +15,18 @@ public class EndMoonStep_200_ArcherKillsWolf implements EndMoonStep{
 
     @Override
     public void execute(EndMoonSettings settings) {
-        var wolfs= cardService.findAllByName("Wolf");
+        var wolfs = cardService.findAllByName("Wolf");
         var archers = cardService.findAllByName("Archer");
         var arrows = cardService.findAllByName("Arrow");
-        if (archers.size() != 0) {
-            for (var archer : archers) {
-                    var arrow=arrows.get(0);
-                    var wolf=wolfs.get(0);
-                        cardService.discardCard(wolf);
-                        cardService.discardCard(arrow);
-                    }
 
-                }
-            }
+        wolfs.stream().forEach(wolf -> {
+            var arrow = arrows.stream().findAny();
+            archers.stream().findAny().ifPresent(card -> {
 
+                cardService.discardCard(arrow.get());
+                cardService.discardCard(card);
+            });
+        });
+    }
 
 }
