@@ -2,15 +2,14 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import {Names} from "../util/Names";
+import {queryAllStackDigestByCardNames} from "../stack/queries";
 
 export class Post_20221128_Dwarf_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGameWithAStackOfNSNSCards(n1, s1, n2, s2) {
@@ -19,10 +18,6 @@ export class Post_20221128_Dwarf_Context {
     // hint: Post_20221106_Archer_Context.givenANewGameWithAStackOfNSNSCards
 
     await waitForReloadGame();
-
-    throw new Error(
-      "The method givenANewGameWithAStackOfNSNSCards(n1, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -32,7 +27,6 @@ export class Post_20221128_Dwarf_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNStacksOfNSCards(expected, n2, s1) {
@@ -40,12 +34,11 @@ export class Post_20221128_Dwarf_Context {
     // code: await this.thereShouldBeNStacksOfNSCards(1, 1, "Dwarf")
     // hint: Post_20221106_Archer_Context.thereShouldBeNStacksOfNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(n2, s1).get();
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
 
-    throw new Error(
-      "The method thereShouldBeNStacksOfNSCards(expected, n2, s1) is not implemented yet."
-    );
+
   }
 
   async afterTest() {
