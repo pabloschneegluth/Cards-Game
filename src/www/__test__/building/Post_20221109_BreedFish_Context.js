@@ -2,15 +2,14 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import {Names} from "../util/Names";
+import {queryAllStackDigestByCardNames} from "../stack/queries";
 
 export class Post_20221109_BreedFish_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenANewGame() {
@@ -19,7 +18,6 @@ export class Post_20221109_BreedFish_Context {
 
     await waitForReloadGame();
 
-    throw new Error("The method givenANewGame() is not implemented yet.");
   }
 
   async givenAStackOfNSAndNSCards(n1, s1, n2, s2) {
@@ -28,9 +26,6 @@ export class Post_20221109_BreedFish_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenAStackOfNSAndNSCards(n1, s1, n2, s2) is not implemented yet."
-    );
   }
 
   async endTheCurrentMoon() {
@@ -40,7 +35,6 @@ export class Post_20221109_BreedFish_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeAStackOfNSNSAndNSCards(expected, s1, n2, s2, n3, s3) {
@@ -48,12 +42,14 @@ export class Post_20221109_BreedFish_Context {
     // code: await this.thereShouldBeAStackOfNSNSAndNSCards(1, "Villager", 1, "Fish farm", 1, "Fish")
     // hint: Post_20221019_Farm_Context.thereShouldBeNStackOfNSNSAndNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var names = Names.byNames(expected, s1)
+      .and(n2, s2)
+      .and(n3, s3)
+      .get();
 
-    throw new Error(
-      "The method thereShouldBeAStackOfNSNSAndNSCards(expected, s1, n2, s2, n3, s3) is not implemented yet."
-    );
+    var stacks = queryAllStackDigestByCardNames(mainView, names);
+    expect(stacks).toHaveLength(expected);
+
   }
 
   async afterTest() {
