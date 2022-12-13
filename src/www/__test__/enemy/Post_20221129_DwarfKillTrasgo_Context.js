@@ -2,15 +2,13 @@ import { getByTestId, screen } from "@testing-library/react";
 import { mainView } from "../main";
 import { waitForEnterTheGame, waitForReloadGame } from "../game/actions";
 import { waitForEndMoon } from "../moon/actions";
+import { queryAllCardByName } from "../card/queries";
 
 export class Post_20221129_DwarfKillTrasgo_Context {
   async beforeTest() {
     // Do your setup here
     await waitForEnterTheGame();
 
-    throw new Error(
-      "Please, review the implementation of beforeTest() and remove this exception when it is correct."
-    );
   }
 
   async givenThereAreNSCards(n1, s1) {
@@ -20,9 +18,7 @@ export class Post_20221129_DwarfKillTrasgo_Context {
 
     await waitForReloadGame();
 
-    throw new Error(
-      "The method givenThereAreNSCards(n1, s1) is not implemented yet."
-    );
+
   }
 
   async endTheCurrentMoon() {
@@ -32,7 +28,6 @@ export class Post_20221129_DwarfKillTrasgo_Context {
 
     await waitForEndMoon();
 
-    throw new Error("The method endTheCurrentMoon() is not implemented yet.");
   }
 
   async thereShouldBeNSCards(expected, s1) {
@@ -40,12 +35,10 @@ export class Post_20221129_DwarfKillTrasgo_Context {
     // code: await this.thereShouldBeNSCards(0, "Trasgo")
     // hint: Post_20221207_HunterKillGrizzly_Context.thereShouldBeNSCards
 
-    var actual = expected; // FIXME
-    expect(actual).toEqual(expected);
+    var actual = queryAllCardByName(mainView, s1);
+    expect(actual).toHaveLength(expected);
 
-    throw new Error(
-      "The method thereShouldBeNSCards(expected, s1) is not implemented yet."
-    );
+
   }
 
   async afterTest() {
