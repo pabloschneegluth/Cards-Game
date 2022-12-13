@@ -19,14 +19,12 @@ public class EndMoonStep_200_ArcherKillsWolf implements EndMoonStep{
         var archers = cardService.findAllByName("Archer");
         var arrows = cardService.findAllByName("Arrow");
 
-        wolfs.stream().forEach(wolf -> {
+            wolfs.stream().forEach(wolf -> {
             var arrow = arrows.stream().findAny();
             archers.stream().findAny().ifPresent(card -> {
-
                 cardService.discardCard(arrow.get());
                 cardService.discardCard(wolf);
             });
         });
     }
-
 }
